@@ -83,69 +83,24 @@ export default function Home() {
 
           {/* Dashboard Mockup with Frosted Card */}
           <div className="hero-dashboard fade-in fade-in-delay-3">
-            <div className="dashboard-bg">
-              <div className="dashboard-item">
-                <span className="dot dot-green"></span>
-                Upload Complete
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-green"></span>
-                Upload Complete
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-blue"></span>
-                Processing
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-green"></span>
-                Verification
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-amber"></span>
-                QTS Verified
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-purple"></span>
-                Received
-              </div>
-              <div className="dashboard-item">
-                <span className="dot dot-green"></span>
-                Complete
+            <div className="hero-card">
+              <h3 className="hero-card-title">Final Check Ready</h3>
+              <p className="hero-card-desc">All required compliance checks completed</p>
+              <div className="hero-card-tags">
+                <span className="tag tag-purple">AI-executed</span>
+                <span className="tag tag-amber">Human sign-off required</span>
+                <span className="tag tag-green">Audit-ready</span>
               </div>
             </div>
 
-            <div className="hero-card">
-              <div className="hero-card-badge">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <circle cx="6" cy="6" r="6" fill="#00B69B" />
-                  <path
-                    d="M5 8.5L3 6.5l.7-.7L5 7.1l3.3-3.3.7.7L5 8.5z"
-                    fill="#fff"
-                  />
-                </svg>
-                Final Check Ready
-              </div>
-              <h3>All required compliance checks completed</h3>
-              <div className="hero-card-tags">
-                <span className="tag">
-                  <span className="tag-check">✓</span> AI-executed
-                </span>
-                <span className="tag">
-                  <span className="tag-check">✓</span> Human sign-off required
-                </span>
-                <span className="tag">
-                  <span className="tag-check">✓</span> Audit-ready
-                </span>
-              </div>
-              <div className="hero-card-cta">
-                <a
-                  href="#early-access"
-                  className="btn btn-dark"
-                  id="hero-card-cta-btn"
-                >
-                  Join the Waitlist →
-                </a>
-              </div>
+            <div className="hero-dashboard-cta">
+              <a
+                href="#early-access"
+                className="btn btn-dark"
+                id="hero-card-cta-btn"
+              >
+                Join the Waitlist →
+              </a>
             </div>
           </div>
         </div>
@@ -357,6 +312,93 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== AUDIT READY BY DESIGN ========== */}
+      <section className="audit-section" id="audit-ready">
+        <div className="container">
+          <div className="audit-content fade-in">
+            <h2 className="section-title">
+              <strong>Audit Ready</strong> by Design
+            </h2>
+            <p className="section-subtitle">
+              Every decision explained, time-stamped, and defensible.
+              <br />
+              <br />
+              Caio records how each compliance outcome is reached — including the
+              rules applied, the evidence assessed, and the exact moment each
+              decision is made.
+              <br />
+              <br />
+              AI execution and human approval logged separately.
+              <br />
+              <br />
+              This creates a clear, reviewable history that stands up to audits,
+              inspections, and client challenge.
+            </p>
+          </div>
+
+          <div className="audit-demo-card fade-in fade-in-delay-2">
+            <div className="audit-card-header">
+              <span className="audit-card-logo">Caio</span>
+              <div className="audit-card-meta">
+                <h4>John Smith</h4>
+                <p>Candidate ID: 12345</p>
+              </div>
+            </div>
+
+            <p className="audit-check-title">Check: TRA Status</p>
+
+            <div className="audit-ai-badge">
+              <div className="audit-ai-icon">
+                <svg width="14" height="14" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="11" fill="#063A50" />
+                  <path
+                    d="M11 4.07c.28 0 .55.12.75.34.2.22.31.52.31.83 0 .43-.21.82-.53 1.02V7h.53c.99 0 1.94.43 2.64 1.2.7.77 1.09 1.82 1.09 2.91h.53c.14 0 .28.06.38.17.1.11.16.26.16.41v1.76c0 .16-.06.3-.16.42-.1.11-.24.17-.38.17h-.53v.59c0 .31-.11.61-.31.83-.2.22-.47.34-.75.34H7.27c-.28 0-.56-.12-.76-.34-.2-.22-.31-.52-.31-.83v-.59h-.53c-.14 0-.28-.06-.38-.17-.1-.11-.16-.26-.16-.42v-1.76c0-.16.06-.3.16-.41.1-.11.24-.17.38-.17h.53c0-1.09.39-2.14 1.09-2.91C7.99 7.43 8.94 7 9.93 7h.53v-.74c-.32-.2-.53-.59-.53-1.02 0-.31.11-.61.31-.83.2-.22.47-.34.76-.34zM8.6 10.52c-.35 0-.69.15-.94.43-.25.28-.39.65-.39 1.04s.14.76.39 1.04c.25.28.59.43.94.43s.69-.15.94-.43c.25-.28.39-.65.39-1.04s-.14-.76-.39-1.04c-.25-.28-.59-.43-.94-.43zm4.8 0c-.35 0-.69.15-.94.43-.25.28-.39.65-.39 1.04s.14.76.39 1.04c.25.28.59.43.94.43s.69-.15.94-.43c.25-.28.39-.65.39-1.04s-.14-.76-.39-1.04c-.25-.28-.59-.43-.94-.43z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <span>AI Execution (Caio)</span>
+            </div>
+
+            <div className="audit-decision">
+              <h3>
+                <strong>Decision:</strong> Fully Qualified Teacher
+              </h3>
+            </div>
+
+            <div className="audit-reasoning">
+              <p>Reasoning</p>
+              <ul>
+                <li>QTS verified</li>
+                <li>Induction complete</li>
+                <li>No prohibitions</li>
+                <li>No Section 128 restriction</li>
+              </ul>
+            </div>
+
+            <p className="audit-timestamp">Executed: 14 Jan 2026 · 14:32</p>
+
+            <div className="audit-outcome">
+              <div className="audit-outcome-icon">
+                <svg viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M5 8.5L3 6.5l.7-.7L5 7.1l3.3-3.3.7.7L5 8.5z"
+                    fill="#fff"
+                  />
+                </svg>
+              </div>
+              <span>
+                Outcome: <strong>Final-Check-Ready</strong>
+              </span>
+            </div>
+
+            <p className="audit-signoff">
+              AI-executed checks complete. Ready for human sign-off.
+            </p>
           </div>
         </div>
       </section>
