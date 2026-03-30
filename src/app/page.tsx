@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
@@ -44,20 +45,17 @@ export default function Home() {
       <header className="header" id="header">
         <div className="container">
           <a href="/" className="logo" id="logo">
-            Caio<span className="logo-dot">.</span>
+            <Image
+              src="/caio-logo.png"
+              alt="Caio"
+              width={80}
+              height={32}
+              priority
+              style={{ height: 'auto' }}
+            />
           </a>
           <a href="#early-access" className="btn btn-primary" id="header-cta">
-            <span className="btn-icon">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M4 10h12m0 0l-4-4m4 4l-4 4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <span className="btn-arrow">→</span>
             Join the Waitlist
           </a>
         </div>
@@ -77,7 +75,8 @@ export default function Home() {
           </p>
           <div className="hero-cta fade-in fade-in-delay-2">
             <a href="#early-access" className="btn btn-dark" id="hero-cta-btn">
-              Join the Waitlist →
+              <span className="btn-arrow">→</span>
+              Join the Waitlist
             </a>
           </div>
 
@@ -99,7 +98,8 @@ export default function Home() {
                 className="btn btn-dark"
                 id="hero-card-cta-btn"
               >
-                Join the Waitlist →
+                <span className="btn-arrow">→</span>
+                Join the Waitlist
               </a>
             </div>
           </div>
@@ -782,7 +782,8 @@ export default function Home() {
               className="btn btn-dark"
               id="early-access-cta"
             >
-              Join the Waitlist →
+              <span className="btn-arrow">→</span>
+              Join the Waitlist
             </a>
           </div>
         </div>
@@ -799,17 +800,7 @@ export default function Home() {
             </p>
           </div>
           <a href="#early-access" className="btn btn-primary" id="footer-cta">
-            <span className="btn-icon">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M4 10h12m0 0l-4-4m4 4l-4 4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <span className="btn-arrow">→</span>
             Join the Waitlist
           </a>
         </div>

@@ -129,6 +129,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: 13px 32px;
 }
 
 .btn-primary:hover {
@@ -162,6 +164,13 @@ h1, h2, h3, h4, h5, h6 {
   fill: currentColor;
 }
 
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
 /* ========== HEADER ========== */
 .header {
   position: sticky;
@@ -186,15 +195,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--color-dark-blue);
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
 }
 
-.logo-dot {
-  color: var(--color-dark-blue);
+.logo img {
+  height: 28px;
+  width: auto;
 }
 
 /* ========== HERO ========== */
