@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -10,21 +12,23 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Caio — AI-Powered Compliance for Education Recruitment",
+  title: "Caio — Compliance Infrastructure for Regulated Sectors",
   description:
-    "Caio's AI agents execute candidate onboarding and end-to-end compliance — producing clear, auditable Final-Check-Ready outcomes. Faster. Safer. Smarter.",
+    "Caio determines compliance — producing clear, auditable outcomes for every candidate. Infrastructure for education, healthcare, and social care recruitment.",
   keywords: [
-    "AI compliance",
+    "compliance infrastructure",
     "education recruitment",
-    "candidate onboarding",
+    "healthcare staffing",
+    "social care compliance",
     "audit ready",
     "KCSIE",
     "REC Audited",
+    "deterministic compliance",
   ],
   openGraph: {
-    title: "Caio — AI-Powered Compliance for Education Recruitment",
+    title: "Caio — Compliance Infrastructure for Regulated Sectors",
     description:
-      "AI agents execute candidate onboarding and end-to-end compliance — producing clear, auditable Final-Check-Ready outcomes.",
+      "Know who's compliant. Instantly. Caio determines compliance — producing clear, auditable outcomes for every candidate.",
     type: "website",
   },
 };
@@ -36,7 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={plusJakarta.variable}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
