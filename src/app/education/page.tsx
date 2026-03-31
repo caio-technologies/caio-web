@@ -35,11 +35,9 @@ export default function EducationPage() {
                 KCSIE-aligned compliance,<br />executed end to end.
               </h1>
               <p className="edu-hero-sub fade-in fade-in-delay-1">
-                Every required check is completed.
-              </p>
-              <p className="edu-hero-sub fade-in fade-in-delay-1">
                 From onboarding through to expiries, checks are executed automatically, returning a clear compliance outcome ready for&nbsp;approval.
               </p>
+              <p className="hp-hero-powered fade-in fade-in-delay-2">Powered by AI execution and deterministic decisioning.</p>
               <div className="edu-hero-cta fade-in fade-in-delay-2">
                 <a href="#join-waitlist" className="btn btn-dark" id="edu-hero-cta">
                   Join the Waitlist

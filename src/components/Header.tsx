@@ -72,6 +72,18 @@ export default function Header() {
               ))}
             </div>
           </div>
+          <Link
+            href="/insights"
+            className={`nav-link ${pathname === "/insights" ? "nav-link-active" : ""}`}
+          >
+            Insights
+          </Link>
+          <Link
+            href="/contact"
+            className={`nav-link ${pathname === "/contact" ? "nav-link-active" : ""}`}
+          >
+            Contact
+          </Link>
         </nav>
 
         <div className="header-actions">
