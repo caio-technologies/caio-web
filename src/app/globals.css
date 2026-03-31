@@ -418,13 +418,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 
 /* ========== OUTCOMES ========== */
 .hp-outcomes { padding: var(--section-padding); background: var(--color-dark-blue); color: #FFFFFF; }
-.hp-outcomes-micro { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); margin-bottom: 20px; }
-.hp-outcomes-headline { font-family: var(--font-display); font-size: 42px; font-weight: 800; line-height: 1.15; color: #FFFFFF; max-width: 600px; margin: 0 0 16px; }
-.hp-outcomes-sub { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 0 56px; line-height: 1.5; }
-.hp-outcomes-statements { display: flex; flex-direction: column; gap: 0; max-width: 640px; }
-.hp-outcome-statement { font-size: 20px; font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08); }
-.hp-outcome-statement:first-child { font-size: 22px; font-weight: 600; color: #FFFFFF; border-top: none; padding-top: 0; }
-.hp-outcome-statement:last-child { padding-bottom: 0; }
+.hp-outcomes-micro { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); margin-bottom: 20px; text-align: center; }
+.hp-outcomes-headline { font-family: var(--font-display); font-size: 42px; font-weight: 800; line-height: 1.15; color: #FFFFFF; max-width: 600px; margin: 0 auto 16px; text-align: center; }
+.hp-outcomes-sub { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 640px; margin: 0 auto 56px; line-height: 1.5; text-align: center; }
+.hp-outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.hp-outcome-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: 32px 28px; transition: all var(--transition-normal); }
+.hp-outcome-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.hp-outcome-headline { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 12px; }
+.hp-outcome-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin: 0; }
 
 /* ========== EDUCATION PAGE ========== */
 /* Education hero */
@@ -804,10 +805,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ========== INSIGHTS PAGE ========== */
-.insights-hero { padding: 120px 0 40px; background: linear-gradient(180deg, var(--color-surface) 0%, #FFFFFF 100%); }
-.insights-hero-headline { font-family: var(--font-display); font-size: 44px; font-weight: 800; line-height: 1.15; color: var(--color-dark-blue); margin: 0 0 20px; }
-.insights-hero-sub { font-size: 17px; color: var(--color-text-secondary); line-height: 1.7; max-width: 560px; }
-.insights-grid-section { padding: 60px 0 100px; background: #FFFFFF; }
+.insights-page { padding: 120px 0 100px; background: #FFFFFF; }
+.insights-header { margin-bottom: 24px; }
+.insights-title { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--color-dark-blue); margin: 0 0 8px; }
+.insights-sub { font-size: 16px; color: var(--color-text-secondary); margin: 0; }
+.insights-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.insights-tag { font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: var(--radius-full); border: 1px solid var(--color-border-light); background: #FFFFFF; color: var(--color-text-secondary); cursor: pointer; transition: all var(--transition-fast); }
+.insights-tag:hover { border-color: var(--color-blue); color: var(--color-dark-blue); }
+.insights-tag-active { background: var(--color-dark-blue); color: #FFFFFF; border-color: var(--color-dark-blue); }
+.insights-tag-active:hover { background: var(--color-dark-blue); color: #FFFFFF; }
 .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .insights-card { padding: 32px; border-radius: var(--radius-xl); border: 1px solid var(--color-border-light); background: #FFFFFF; transition: all var(--transition-normal); display: flex; flex-direction: column; }
 .insights-card:hover { border-color: var(--color-blue); box-shadow: 0 4px 24px rgba(0,0,0,0.06); transform: translateY(-2px); }

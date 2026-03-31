@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const posts = [
   {
@@ -53,7 +53,11 @@ const posts = [
   },
 ];
 
+const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
+
 export default function InsightsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -74,24 +78,34 @@ export default function InsightsPage() {
     };
   }, []);
 
+  const filteredPosts =
+    activeCategory === "All"
+      ? posts
+      : posts.filter((p) => p.category === activeCategory);
+
   return (
     <main>
-      <section className="insights-hero" id="insights-hero">
+      <section className="insights-page" id="insights">
         <div className="container">
-          <span className="edu-hero-label fade-in">Insights</span>
-          <h1 className="insights-hero-headline fade-in">
-            Thinking on compliance,<br />infrastructure, and AI.
-          </h1>
-          <p className="insights-hero-sub fade-in fade-in-delay-1">
-            From the team building Caio — perspectives on deterministic compliance, AI agents, and what it takes to be audit-ready by design.
-          </p>
-        </div>
-      </section>
+          <div className="insights-header fade-in">
+            <h1 className="insights-title">Insights</h1>
+            <p className="insights-sub">Thinking on compliance, infrastructure, and AI.</p>
+          </div>
 
-      <section className="insights-grid-section" id="insights-posts">
-        <div className="container">
+          <div className="insights-tags fade-in fade-in-delay-1">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`insights-tag ${activeCategory === cat ? "insights-tag-active" : ""}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="insights-grid">
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <article key={post.slug} className="insights-card fade-in">
                 <div className="insights-card-category">{post.category}</div>
                 <h2 className="insights-card-title">{post.title}</h2>

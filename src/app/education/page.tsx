@@ -106,7 +106,7 @@ export default function EducationPage() {
       <section className="edu-system" id="how-it-runs">
         <div className="container">
           <h2 className="edu-system-title fade-in">Compliance runs as a system, not a process</h2>
-          <p className="edu-system-sub fade-in fade-in-delay-1">From first document to final decision, compliance is executed automatically — continuously, consistently, and in line with KCSIE.</p>
+          <p className="edu-system-sub fade-in fade-in-delay-1">From first document to final decision, compliance is executed automatically — continuously, consistently, and in line with KCSIE, APSCo, and the REC.</p>
 
           <div className="edu-system-grid fade-in fade-in-delay-2">
             <div className="edu-system-card">

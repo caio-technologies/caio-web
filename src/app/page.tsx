@@ -51,9 +51,7 @@ export default function HomePage() {
             Compliance.<br />Run differently.
           </h1>
           <p className="hp-hero-sub fade-in fade-in-delay-1">
-            Stop chasing documents and questioning whether you are compliant.
-            <br />
-            Caio runs checks, resolves gaps, and determines compliance end to end, with full audit.
+            Stop chasing documents. Stop second-guessing compliance. Caio runs checks, resolves gaps, and determines compliance end to end, delivering clear, auditable outcomes.
           </p>
           <p className="hp-hero-powered fade-in fade-in-delay-2">Powered by AI execution and deterministic decisioning.</p>
 
@@ -249,33 +247,34 @@ export default function HomePage() {
                 <div className="hp-lifecycle-avatar">JM</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">James Mitchell</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-active">Active</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
                 </div>
-                <span className="hp-lifecycle-detail">DBS valid · Renewed 12 days ago</span>
+                <span className="hp-lifecycle-detail">DBS renewed automatically before expiry</span>
+                <span className="hp-lifecycle-action">Candidate contacted · New certificate validated · 4 min</span>
               </div>
               <div className="hp-lifecycle-candidate">
                 <div className="hp-lifecycle-avatar">SR</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">Sarah Roberts</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-expiring">Expiring</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
                 </div>
-                <span className="hp-lifecycle-detail">Right to Work expires in 14 days</span>
-                <span className="hp-lifecycle-action">Renewal requested automatically</span>
+                <span className="hp-lifecycle-detail">Right to Work verified and renewed</span>
+                <span className="hp-lifecycle-action">Document collected and validated automatically · 12 min</span>
               </div>
               <div className="hp-lifecycle-candidate">
                 <div className="hp-lifecycle-avatar">AK</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">Anya Kapoor</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-flagged">Flagged</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
                 </div>
-                <span className="hp-lifecycle-detail">Safeguarding certificate missing</span>
-                <span className="hp-lifecycle-action">Document requested · Candidate notified</span>
+                <span className="hp-lifecycle-detail">Safeguarding certificate collected and validated</span>
+                <span className="hp-lifecycle-action">Requested, received, and cleared automatically · 22 min</span>
               </div>
               <div className="hp-lifecycle-candidate">
                 <div className="hp-lifecycle-avatar">DW</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">David Williams</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Re-cleared</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
                 </div>
                 <span className="hp-lifecycle-detail">Updated DBS received and validated</span>
                 <span className="hp-lifecycle-action">Resolved automatically · 8 min</span>
@@ -353,11 +352,23 @@ export default function HomePage() {
             Compliance should scale with your business, not your team.
           </p>
 
-          <div className="hp-outcomes-statements fade-in fade-in-delay-1">
-            <p className="hp-outcome-statement">Manual compliance work is replaced by automated execution</p>
-            <p className="hp-outcome-statement">Cost per cleared candidate is reduced</p>
-            <p className="hp-outcome-statement">Compliance scales without increasing your team</p>
-            <p className="hp-outcome-statement">Your workforce stays continuously compliant and audit-ready</p>
+          <div className="hp-outcomes-grid fade-in fade-in-delay-1">
+            <div className="hp-outcome-card">
+              <span className="hp-outcome-headline">No manual checks</span>
+              <p className="hp-outcome-desc">Every check is executed automatically. Your team reviews outcomes, not paperwork.</p>
+            </div>
+            <div className="hp-outcome-card">
+              <span className="hp-outcome-headline">Lower cost per candidate</span>
+              <p className="hp-outcome-desc">Document chasing, follow-ups, and data entry are handled by AI agents — not your compliance team.</p>
+            </div>
+            <div className="hp-outcome-card">
+              <span className="hp-outcome-headline">Same team, more candidates</span>
+              <p className="hp-outcome-desc">Compliance scales with volume. Process more candidates without adding headcount.</p>
+            </div>
+            <div className="hp-outcome-card">
+              <span className="hp-outcome-headline">Always audit-ready</span>
+              <p className="hp-outcome-desc">Expiries are caught, renewals are triggered, and your workforce stays compliant at all times.</p>
+            </div>
           </div>
         </div>
       </section>
