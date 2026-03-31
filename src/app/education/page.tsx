@@ -28,17 +28,65 @@ export default function EducationPage() {
       {/* ========== HERO ========== */}
       <section className="edu-hero" id="hero">
         <div className="container">
-          <span className="edu-hero-label fade-in">Education sector</span>
-          <h1 className="edu-hero-headline fade-in">
-            KCSIE-aligned compliance,<br />executed end to end.
-          </h1>
-          <p className="edu-hero-sub fade-in fade-in-delay-1">
-            Caio is an AI compliance platform that runs every check required to place a candidate into a UK&nbsp;school — from DBS and safeguarding to references and qualifications. AI agents execute the work. Your team reviews the&nbsp;outcome.
-          </p>
-          <div className="edu-hero-cta fade-in fade-in-delay-2">
-            <a href="#join-waitlist" className="btn btn-dark" id="edu-hero-cta">
-              Join the Waitlist
-            </a>
+          <div className="edu-hero-grid">
+            <div className="edu-hero-content">
+              <span className="edu-hero-label fade-in">Education sector</span>
+              <h1 className="edu-hero-headline fade-in">
+                KCSIE-aligned compliance,<br />executed end to end.
+              </h1>
+              <p className="edu-hero-sub fade-in fade-in-delay-1">
+                Every required check is completed.
+              </p>
+              <p className="edu-hero-sub fade-in fade-in-delay-1">
+                From onboarding through to expiries, checks are executed automatically, returning a clear compliance outcome ready for&nbsp;approval.
+              </p>
+              <div className="edu-hero-cta fade-in fade-in-delay-2">
+                <a href="#join-waitlist" className="btn btn-dark" id="edu-hero-cta">
+                  Join the Waitlist
+                </a>
+              </div>
+            </div>
+            <div className="edu-hero-card fade-in fade-in-delay-2">
+              <div className="edu-hero-card-header">
+                <div className="edu-hero-card-avatar">SM</div>
+                <div>
+                  <div className="edu-hero-card-name">Sarah Mitchell</div>
+                  <div className="edu-hero-card-role">Mathematics Teacher · Secondary</div>
+                </div>
+                <span className="edu-hero-card-badge edu-hero-card-badge-cleared">Cleared</span>
+              </div>
+              <div className="edu-hero-card-checks">
+                <div className="edu-hero-card-check">
+                  <span className="edu-hero-card-check-icon edu-hero-card-check-pass">✓</span>
+                  <span>TRA prohibition check</span>
+                  <span className="edu-hero-card-check-meta">No issues found</span>
+                </div>
+                <div className="edu-hero-card-check">
+                  <span className="edu-hero-card-check-icon edu-hero-card-check-pass">✓</span>
+                  <span>DBS Update Service</span>
+                  <span className="edu-hero-card-check-meta">Status current</span>
+                </div>
+                <div className="edu-hero-card-check">
+                  <span className="edu-hero-card-check-icon edu-hero-card-check-pass">✓</span>
+                  <span>Right to Work</span>
+                  <span className="edu-hero-card-check-meta">Verified</span>
+                </div>
+                <div className="edu-hero-card-check">
+                  <span className="edu-hero-card-check-icon edu-hero-card-check-pass">✓</span>
+                  <span>References</span>
+                  <span className="edu-hero-card-check-meta">2 of 2 received</span>
+                </div>
+                <div className="edu-hero-card-check">
+                  <span className="edu-hero-card-check-icon edu-hero-card-check-pass">✓</span>
+                  <span>Qualifications &amp; QTS</span>
+                  <span className="edu-hero-card-check-meta">Confirmed</span>
+                </div>
+              </div>
+              <div className="edu-hero-card-footer">
+                <span className="edu-hero-card-footer-label">Compliance outcome</span>
+                <span className="edu-hero-card-footer-status">Ready for approval</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -92,6 +140,30 @@ export default function EducationPage() {
         </div>
       </section>
 
+      {/* ========== AI AGENTS ========== */}
+      <section className="edu-agents-statement" id="ai-agents">
+        <div className="container">
+          <h2 className="edu-agents-statement-headline fade-in">
+            AI agents execute every check.<br />
+            Deterministic rules decide every outcome.
+          </h2>
+          <p className="edu-agents-statement-closing fade-in fade-in-delay-1">
+            Same rules. Every candidate. Every time.
+          </p>
+          <div className="edu-agents-statement-checks fade-in fade-in-delay-2">
+            <span>TRA prohibition check</span>
+            <span className="edu-agents-dot"></span>
+            <span>DBS Update Service</span>
+            <span className="edu-agents-dot"></span>
+            <span>Right to Work</span>
+            <span className="edu-agents-dot"></span>
+            <span>Qualifications &amp; QTS</span>
+            <span className="edu-agents-dot"></span>
+            <span>References</span>
+          </div>
+        </div>
+      </section>
+
       {/* ========== EXPIRIES ========== */}
       <section className="edu-expiries" id="expiries">
         <div className="container">
@@ -140,46 +212,6 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* ========== WHAT CHANGES ========== */}
-      <section className="edu-usps" id="why-caio">
-        <div className="container">
-          <h2 className="edu-usps-title fade-in">What changes when compliance runs through Caio</h2>
-          <div className="edu-usps-grid">
-            <div className="edu-usp fade-in">
-              <h3>Checks run in minutes, not days</h3>
-              <p>Documents are read, extracted, and validated the moment they&apos;re uploaded. Missing information is chased automatically — no team involvement until sign-off.</p>
-            </div>
-            <div className="edu-usp fade-in fade-in-delay-1">
-              <h3>Same rules, every candidate, every time</h3>
-              <p>KCSIE requirements are applied deterministically. What gets cleared for one candidate will always get cleared for the next — removing inconsistency and audit risk.</p>
-            </div>
-            <div className="edu-usp fade-in fade-in-delay-2">
-              <h3>Audit-ready from day one</h3>
-              <p>Every action, decision, and document is logged with full reasoning and timestamps. When an auditor asks how a candidate was cleared, you have the answer instantly.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== WHAT CAIO CHECKS ========== */}
-      <section className="edu-checks" id="checks">
-        <div className="container">
-          <span className="hp-outcomes-micro fade-in">Full KCSIE-aligned scope</span>
-          <h2 className="hp-outcomes-headline fade-in">
-            Every check required to place into a UK school
-          </h2>
-          <p className="hp-outcomes-sub fade-in">
-            Caio covers the complete KCSIE compliance scope — identity and right to work, safeguarding and DBS, qualifications, references, and employment history. Aligned to KCSIE, APSCo, REC, and CCS framework requirements.
-          </p>
-
-          <div className="edu-scope-categories fade-in fade-in-delay-1">
-            <div className="edu-scope-item">Identity &amp; Right to Work</div>
-            <div className="edu-scope-item">Safeguarding &amp; DBS</div>
-            <div className="edu-scope-item">Qualifications &amp; TRA</div>
-            <div className="edu-scope-item">References &amp; History</div>
-          </div>
-        </div>
-      </section>
 
       {/* ========== AUDIT READINESS ========== */}
       <section className="edu-audit" id="audit-ready">
