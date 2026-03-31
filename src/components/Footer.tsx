@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,32 +7,22 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="footer-logo">Caio.</div>
-            <p className="footer-tagline">Faster. Safer. Smarter.</p>
+            <Image src="/caio-logo.png" alt="Caio" width={80} height={32} className="footer-logo-img" style={{ height: "auto" }} />
+            <div className="footer-meta">
+              <p className="footer-tagline">Faster. Safer. Smarter.</p>
+              <a href="mailto:support@usecaio.com" className="footer-email">support@usecaio.com</a>
+            </div>
           </div>
-
-          <nav className="footer-nav">
-            <div className="footer-nav-group">
-              <h4>Sectors</h4>
-              <Link href="/education">Education</Link>
-              <Link href="/healthcare">Healthcare</Link>
-              <Link href="/social-care">Social Care</Link>
-            </div>
-            <div className="footer-nav-group">
-              <h4>Company</h4>
-              <Link href="#book-demo">Book a Demo</Link>
-              <a href="mailto:support@usecaio.com">Contact</a>
-            </div>
-          </nav>
+          <Link href="#book-demo" className="footer-cta">
+            Join the Waitlist <span className="footer-cta-arrow">→</span>
+          </Link>
         </div>
-
         <div className="footer-bottom">
-          <p className="footer-copyright">
-            © {new Date().getFullYear()} Caio. All rights reserved.
-          </p>
-          <p className="footer-email">
-            <a href="mailto:support@usecaio.com">support@usecaio.com</a>
-          </p>
+          <p className="footer-copyright">© {new Date().getFullYear()} Caio. All rights reserved.</p>
+          <div className="footer-legal">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

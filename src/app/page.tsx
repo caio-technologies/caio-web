@@ -65,6 +65,7 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* ========== HOW CAIO WORKS ========== */}
       <section className="hp-how" id="how-it-works">
         <div className="container">
@@ -130,97 +131,233 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== PRODUCT SHOWCASE ========== */}
-      <section className="hp-showcase" id="showcase">
+      {/* ========== BEFORE / AFTER COMPARISON ========== */}
+      <section className="hp-comparison" id="showcase">
         <div className="container">
-          <div className="hp-showcase-grid">
-            <div className="hp-showcase-text fade-in">
-              <h2 className="hp-showcase-title">Audit Ready by Design</h2>
-              <p className="hp-showcase-desc">
-                Every decision explained, time-stamped, and defensible.
-              </p>
-              <p className="hp-showcase-body">
-                Caio records how each outcome is reached. The rules applied, the evidence assessed, and the exact moment the decision is made.
-              </p>
-              <p className="hp-showcase-body">
-                Nothing is hidden. Nothing is lost.
-              </p>
-              <p className="hp-showcase-body">
-                Every step is recorded and reviewable.
-              </p>
-            </div>
-            <div className="hp-showcase-image fade-in fade-in-delay-1">
-              {[
-                {
-                  decision: "Fully Qualified Teacher",
-                  rule: "APSCo Req 7 — Verify TRA status confirms QTS, no prohibitions, and no Section 128 restrictions.",
-                  finding: "TRA record confirmed. QTS awarded 2016. Induction completed. No prohibitions or restrictions found.",
-                  time: "2.3 seconds",
-                  timestamp: "30 Mar 2026, 14:32:07"
-                },
-                {
-                  decision: "Registered Nurse",
-                  rule: "CQC Reg 19 — Verify NMC registration is active with no conditions, cautions, or fitness-to-practise concerns.",
-                  finding: "NMC Pin verified. Registration active. No conditions, cautions or restrictions found. Revalidation current.",
-                  time: "1.8 seconds",
-                  timestamp: "30 Mar 2026, 14:33:41"
-                },
-                {
-                  decision: "Qualified Care Worker",
-                  rule: "CQC Reg 19 — Confirm enhanced DBS with barred list check, mandatory training, and right to work.",
-                  finding: "Enhanced DBS clear. Adult barred list checked. Mandatory care certificate completed. Right to work confirmed.",
-                  time: "2.1 seconds",
-                  timestamp: "30 Mar 2026, 14:35:19"
-                }
-              ].map((card, idx) => (
-                <div
-                  key={idx}
-                  className={`assessment-card ${idx === currentSector ? 'assessment-card-active' : 'assessment-card-hidden'}`}
-                >
-                  <div className="assessment-auto-bar">
-                    <span className="assessment-auto-icon">⚡</span>
-                    <span className="assessment-auto-text">Automatically executed</span>
-                    <span className="assessment-auto-divider">·</span>
-                    <span className="assessment-auto-text">{card.time}</span>
-                    <span className="assessment-auto-divider">·</span>
-                    <span className="assessment-auto-text">No human input required</span>
-                  </div>
-                  <div className="assessment-decision">
-                    <div className="assessment-decision-result">
-                      <span className="assessment-decision-key">Caio Decision:</span>
-                      <span className="assessment-decision-value">{card.decision}</span>
-                    </div>
-                    <div className="assessment-rule">
-                      <span className="assessment-rule-label">Rule:</span>
-                      <span className="assessment-rule-text">{card.rule}</span>
-                    </div>
-                    <div className="assessment-rule">
-                      <span className="assessment-rule-label">Finding:</span>
-                      <span className="assessment-rule-text">{card.finding}</span>
-                    </div>
-                    <div className="assessment-timestamp-row">
-                      <span className="assessment-timestamp-text">Executed: {card.timestamp}</span>
-                    </div>
-                  </div>
+          <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
+            Stop chasing. Start clearing.
+          </h2>
+          <p className="hp-comparison-sub fade-in fade-in-delay-1">
+            What takes your team days of emails and follow-ups, Caio resolves in minutes.
+          </p>
+          <p className="hp-comparison-micro fade-in fade-in-delay-1">
+            AI agents execute checks, follow up automatically, and resolve issues in real time.
+          </p>
 
-                  <div className="assessment-outcome">
-                    <span className="assessment-outcome-icon">✓</span>
-                    <span className="assessment-outcome-label">Cleared</span>
-                    <span className="assessment-outcome-desc">— All checks passed. Ready for human sign-off.</span>
-                  </div>
+          <div className="hp-comparison-grid fade-in fade-in-delay-2">
+            {/* LEFT: Without Caio */}
+            <div className="hp-compare-card hp-compare-before">
+              <div className="hp-compare-header hp-compare-header-before">
+                <div className="hp-compare-header-left">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="16" height="12" rx="2"/>
+                    <path d="M2 4l8 6 8-6"/>
+                  </svg>
+                  <span className="hp-compare-label">Without Caio</span>
                 </div>
-              ))}
-              <div className="assessment-indicators">
-                {["Education", "Healthcare", "Social Care"].map((label, idx) => (
-                  <span
-                    key={idx}
-                    className={`assessment-indicator ${idx === currentSector ? 'assessment-indicator-active' : ''}`}
-                  >
-                    {label}
-                  </span>
-                ))}
+                <span className="hp-compare-duration hp-compare-duration-before">8+ days</span>
+              </div>
+              <div className="hp-compare-body">
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Fri 16:48</span>
+                  </div>
+                  <p className="hp-timeline-msg">Candidate submits DBS certificate via email.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Mon 09:12</span>
+                  </div>
+                  <p className="hp-timeline-msg">Sorry for the delay in getting back to you. Unfortunately the certificate is cut off — please re-submit.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Tue 14:36</span>
+                  </div>
+                  <p className="hp-timeline-msg">Just following up on the DBS re-upload.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Wed 10:21</span>
+                  </div>
+                  <p className="hp-timeline-msg">Thanks for re-submitting. I&apos;m afraid this is still incorrect — please re-submit.</p>
+                </div>
+                <div className="hp-email-item hp-email-lost">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Following Wednesday 16:58</span>
+                  </div>
+                  <p className="hp-timeline-msg"><strong>Candidate secured a role elsewhere → Offlined</strong></p>
+                </div>
               </div>
             </div>
+
+            {/* RIGHT: With Caio */}
+            <div className="hp-compare-card hp-compare-after">
+              <div className="hp-compare-header hp-compare-header-after">
+                <div className="hp-compare-header-left">
+                  <img src="/caio-logo.png" alt="Caio" className="hp-compare-logo" />
+                </div>
+                <span className="hp-compare-duration hp-compare-duration-after">11 minutes</span>
+              </div>
+              <div className="hp-compare-body">
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-action">DBS certificate uploaded.</div>
+                  <span className="hp-caio-time">Fri 17:02</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-system">Issue detected automatically. Issue date not visible.</div>
+                  <span className="hp-caio-time">Fri 17:03</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-action">Re-upload requested automatically with clear guidance.</div>
+                  <span className="hp-caio-time">Fri 17:04</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-system">Corrected DBS received and validated.</div>
+                  <span className="hp-caio-time">Fri 17:11</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-resolved">Final-Check-Ready</div>
+                  <span className="hp-caio-time">Fri 17:13</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== CONTINUOUS COMPLIANCE ========== */}
+      <section className="hp-continuous" id="continuous">
+        <div className="container">
+          <span className="hp-continuous-micro fade-in">Continuous monitoring. Automatic resolution.</span>
+          <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
+            Cleared. And kept compliant.
+          </h2>
+          <p className="hp-continuous-sub fade-in fade-in-delay-1">
+            Caio doesn&apos;t stop at clearance. It continuously checks, flags, and re-validates every candidate — ensuring your workforce stays compliant at all times.
+          </p>
+
+          {/* Lifecycle flow */}
+          <div className="hp-lifecycle fade-in fade-in-delay-2">
+            <div className="hp-lifecycle-track">
+              <div className="hp-lifecycle-candidate">
+                <div className="hp-lifecycle-avatar">JM</div>
+                <div className="hp-lifecycle-info">
+                  <span className="hp-lifecycle-name">James Mitchell</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-active">Active</span>
+                </div>
+                <span className="hp-lifecycle-detail">DBS valid · Renewed 12 days ago</span>
+              </div>
+              <div className="hp-lifecycle-candidate">
+                <div className="hp-lifecycle-avatar">SR</div>
+                <div className="hp-lifecycle-info">
+                  <span className="hp-lifecycle-name">Sarah Roberts</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-expiring">Expiring</span>
+                </div>
+                <span className="hp-lifecycle-detail">Right to Work expires in 14 days</span>
+                <span className="hp-lifecycle-action">Renewal requested automatically</span>
+              </div>
+              <div className="hp-lifecycle-candidate">
+                <div className="hp-lifecycle-avatar">AK</div>
+                <div className="hp-lifecycle-info">
+                  <span className="hp-lifecycle-name">Anya Kapoor</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-flagged">Flagged</span>
+                </div>
+                <span className="hp-lifecycle-detail">Safeguarding certificate missing</span>
+                <span className="hp-lifecycle-action">Document requested · Candidate notified</span>
+              </div>
+              <div className="hp-lifecycle-candidate">
+                <div className="hp-lifecycle-avatar">DW</div>
+                <div className="hp-lifecycle-info">
+                  <span className="hp-lifecycle-name">David Williams</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Re-cleared</span>
+                </div>
+                <span className="hp-lifecycle-detail">Updated DBS received and validated</span>
+                <span className="hp-lifecycle-action">Resolved automatically · 8 min</span>
+              </div>
+            </div>
+          </div>
+
+          <p className="hp-continuous-core fade-in fade-in-delay-3">
+            Every candidate is continuously checked, flagged, and re-cleared as requirements change.
+          </p>
+
+          <div className="hp-continuous-points fade-in fade-in-delay-3">
+            <div className="hp-continuous-point">
+              <svg className="hp-continuous-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#D1FAE5"/><path d="M5.5 9l2.5 2.5L12.5 7" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <p>Expiries handled automatically before they become risks</p>
+            </div>
+            <div className="hp-continuous-point">
+              <svg className="hp-continuous-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#D1FAE5"/><path d="M5.5 9l2.5 2.5L12.5 7" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <p>New requirements applied instantly across your workforce</p>
+            </div>
+            <div className="hp-continuous-point">
+              <svg className="hp-continuous-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#D1FAE5"/><path d="M5.5 9l2.5 2.5L12.5 7" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <p>Issues detected and resolved without manual chasing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== EXECUTION / CONTROL ========== */}
+      <section className="hp-control" id="control">
+        <div className="container">
+          <h2 className="hp-control-title fade-in">
+            Execution by Caio. <span className="hp-control-title-light">Control stays with you.</span>
+          </h2>
+
+          <div className="hp-control-flow fade-in fade-in-delay-1">
+            <div className="hp-control-card">
+              <span className="hp-control-num">01</span>
+              <h3 className="hp-control-card-title">Caio Executes</h3>
+              <p className="hp-control-card-desc">AI agents run checks, chase documents, and resolve gaps — automatically, 24/7.</p>
+            </div>
+            <div className="hp-control-divider">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M20 10l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <div className="hp-control-card">
+              <span className="hp-control-num">02</span>
+              <h3 className="hp-control-card-title">Team Reviews</h3>
+              <p className="hp-control-card-desc">Your compliance team sees every action, every decision, every outcome — in real time.</p>
+            </div>
+            <div className="hp-control-divider">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M20 10l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <div className="hp-control-card">
+              <span className="hp-control-num">03</span>
+              <h3 className="hp-control-card-title">You Approve</h3>
+              <p className="hp-control-card-desc">Nothing goes final without your sign-off. Full authority, zero bottleneck.</p>
+            </div>
+          </div>
+
+          <p className="hp-control-bottom fade-in fade-in-delay-2">
+            Caio does the heavy lifting. Your team makes the final call.
+          </p>
+        </div>
+      </section>
+
+
+      {/* ========== OUTCOMES ========== */}
+      <section className="hp-outcomes" id="outcomes">
+        <div className="container">
+          <span className="hp-outcomes-micro fade-in">Operational impact</span>
+          <h2 className="hp-outcomes-headline fade-in">
+            What changes when compliance runs itself
+          </h2>
+          <p className="hp-outcomes-sub fade-in">
+            Compliance should scale with your business, not your team.
+          </p>
+
+          <div className="hp-outcomes-statements fade-in fade-in-delay-1">
+            <p className="hp-outcome-statement">Manual compliance work is replaced by automated execution</p>
+            <p className="hp-outcome-statement">Cost per cleared candidate is reduced</p>
+            <p className="hp-outcome-statement">Compliance scales without increasing your team</p>
+            <p className="hp-outcome-statement">Your workforce stays continuously compliant and audit-ready</p>
           </div>
         </div>
       </section>
