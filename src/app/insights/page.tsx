@@ -8,51 +8,51 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    slug: "why-deterministic-rules",
-    title: "Why compliance decisions should be deterministic — not probabilistic",
+    slug: "kcsie-2025-what-changes-for-agencies",
+    title: "KCSIE 2025: what the latest guidance means for recruitment agencies placing into schools",
     excerpt:
-      "AI is transforming how checks are executed. But the decision itself? That needs to be rule-based, auditable, and repeatable. Here's why Caio separates execution from assessment.",
-    category: "Engineering",
-    date: "Coming soon",
-  },
-  {
-    slug: "kcsie-gap",
-    title: "The KCSIE compliance gap most agencies don't see until audit",
-    excerpt:
-      "You run the checks. You collect the documents. But when an auditor asks for a single, timestamped trail from onboarding to clearance — can you produce it?",
+      "Every September brings updates. This year's KCSIE changes tighten requirements around online checks, overseas verifications, and how agencies evidence their processes to schools. We break down what matters.",
     category: "Education",
     date: "Coming soon",
   },
   {
-    slug: "ai-agents-compliance",
-    title: "AI agents in compliance: what they do and what they don't decide",
+    slug: "single-central-record-still-a-spreadsheet",
+    title: "Your Single Central Record is still a spreadsheet. That's a safeguarding risk.",
     excerpt:
-      "AI agents execute TRA checks, query the DBS Update Service, and validate Right to Work — autonomously. But they never make the compliance decision. That's by design.",
-    category: "Product",
-    date: "Coming soon",
-  },
-  {
-    slug: "expiry-management",
-    title: "Expiry management isn't a reminder — it's a process",
-    excerpt:
-      "Most systems flag an expiry. Caio runs the entire renewal: contacting the candidate, collecting the document, validating it, and clearing the check. No human needed until sign-off.",
-    category: "Product",
-    date: "Coming soon",
-  },
-  {
-    slug: "audit-ready-by-design",
-    title: "What 'audit-ready' actually means when every decision is logged",
-    excerpt:
-      "If your compliance process produces a clear, timestamped record for every candidate — from document upload through to final decision — audit isn't a scramble. It's a report.",
+      "The SCR is the most audited document in education recruitment. Yet most agencies maintain it manually, with gaps they don't discover until an auditor does. There's a better way to think about it.",
     category: "Compliance",
     date: "Coming soon",
   },
   {
-    slug: "building-for-regulated-sectors",
-    title: "Building compliance infrastructure for sectors that can't afford to get it wrong",
+    slug: "ai-agents-what-they-execute",
+    title: "What AI agents actually do inside a compliance check — and what they never decide",
     excerpt:
-      "Education, healthcare, and social care share one thing: the cost of non-compliance is measured in safeguarding risk, not just fines. That changes how you build.",
-    category: "Company",
+      "AI agents query the DBS Update Service, run TRA prohibition checks, and validate Right to Work documents — autonomously. But the compliance decision? That's made by deterministic rules, not AI. Here's why that distinction matters.",
+    category: "Product",
+    date: "Coming soon",
+  },
+  {
+    slug: "dbs-expiry-renewals-broken-process",
+    title: "The DBS expiry problem: why flagging a date isn't the same as managing a renewal",
+    excerpt:
+      "Most compliance systems send a reminder when a DBS certificate is about to expire. Then what? Someone emails the candidate, chases the re-upload, checks the document, updates the record. That's not automation — it's a to-do list.",
+    category: "Operations",
+    date: "Coming soon",
+  },
+  {
+    slug: "manual-compliance-true-cost",
+    title: "The hidden cost of manual compliance: what agencies actually spend chasing documents",
+    excerpt:
+      "Between email chains, re-uploads, spreadsheet updates, and audit prep, the average compliance officer spends 60% of their time on process — not judgement. We mapped the true cost.",
+    category: "Industry",
+    date: "Coming soon",
+  },
+  {
+    slug: "deterministic-vs-probabilistic-compliance",
+    title: "Why compliance decisions need to be deterministic — not probabilistic",
+    excerpt:
+      "AI can extract data from documents and run checks autonomously. But should AI decide whether a candidate is compliant? In regulated sectors where safeguarding is the standard, the answer is no — and the architecture should reflect that.",
+    category: "Engineering",
     date: "Coming soon",
   },
 ];
