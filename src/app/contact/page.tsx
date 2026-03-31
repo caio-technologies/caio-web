@@ -1,12 +1,28 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Contact — Caio",
-  description:
-    "Get in touch with Caio. Whether you're an education, healthcare, or social care recruiter — we'd like to hear from you.",
-};
+import { useEffect } from "react";
 
 export default function ContactPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main>
       <section className="contact-hero" id="contact-hero">
