@@ -23,12 +23,13 @@ export default function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/education", label: "Education" },
-    { href: "/healthcare", label: "Healthcare" },
-    { href: "/social-care", label: "Social Care" },
+  const sectorLinks = [
+    { href: "/education", label: "Education", live: true },
+    { href: "/healthcare", label: "Healthcare", live: false },
+    { href: "/social-care", label: "Social Care", live: false },
   ];
+
+  const isSectorPage = sectorLinks.some((s) => pathname === s.href);
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`} id="header">
@@ -45,15 +46,32 @@ export default function Header() {
         </Link>
 
         <nav className={`nav ${mobileMenuOpen ? "nav-open" : ""}`} id="main-nav">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`nav-link ${pathname === link.href ? "nav-link-active" : ""}`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            href="/"
+            className={`nav-link ${pathname === "/" ? "nav-link-active" : ""}`}
+          >
+            Home
+          </Link>
+          <div className={`nav-dropdown ${isSectorPage ? "nav-link-active" : ""}`}>
+            <span className="nav-link nav-dropdown-trigger">
+              Sectors
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className="nav-chevron">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <div className="nav-dropdown-menu">
+              {sectorLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-dropdown-item ${pathname === link.href ? "nav-dropdown-item-active" : ""}`}
+                >
+                  {link.label}
+                  {!link.live && <span className="nav-dropdown-badge">Soon</span>}
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
 
         <div className="header-actions">

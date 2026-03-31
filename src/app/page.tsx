@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="container">
           <span className="hp-continuous-micro fade-in">Continuous monitoring. Automatic resolution.</span>
           <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
-            Cleared. And kept compliant.
+            Compliant. And kept compliant.
           </h2>
           <p className="hp-continuous-sub fade-in fade-in-delay-1">
             Caio doesn&apos;t stop at clearance. It continuously checks, flags, and re-validates every candidate — ensuring your workforce stays compliant at all times.
