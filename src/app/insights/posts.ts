@@ -1,0 +1,232 @@
+export interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  content: string;
+}
+
+export const posts: Post[] = [
+  {
+    slug: "kcsie-2025-what-changes-for-agencies",
+    title: "KCSIE 2025: what the latest guidance means for recruitment agencies placing into schools",
+    excerpt:
+      "Every September brings updates. This year\u2019s KCSIE changes tighten requirements around online checks, overseas verifications, and how agencies evidence their processes to schools. We break down what matters.",
+    category: "Education",
+    date: "Coming soon",
+    content: `Every year, the Department for Education updates Keeping Children Safe in Education (KCSIE). And every year, agencies scramble to understand what\u2019s changed and what it means for their compliance processes.
+
+The 2025 update is no different \u2014 but the implications are sharper than usual.
+
+## What\u2019s changing
+
+This year\u2019s guidance tightens requirements in three key areas:
+
+**Online checks.** Agencies are now expected to carry out online/social media checks as part of their safer recruitment process. This isn\u2019t new in principle, but the 2025 guidance makes it explicit: schools will expect documented evidence that these checks were completed before a candidate is placed.
+
+**Overseas verifications.** For candidates who have lived or worked abroad, enhanced verification is now expected. This includes obtaining a certificate of good conduct or equivalent from the relevant country \u2014 and documenting the outcome.
+
+**Evidencing processes.** Schools are increasingly asking agencies to demonstrate not just what checks were done, but how the process works end to end. A tick in a box is no longer sufficient. Agencies need to show a clear audit trail.
+
+## What this means for agencies
+
+For most agencies, these changes create more work. More documents to chase. More evidence to compile. More risk of gaps.
+
+The challenge isn\u2019t understanding the guidance \u2014 it\u2019s executing against it consistently, at scale, across every candidate.
+
+## How Caio handles this
+
+Caio\u2019s compliance engine is designed to execute checks against the latest regulatory requirements automatically. When KCSIE updates, the rules update. Every candidate is checked against the current standard \u2014 not last year\u2019s.
+
+No manual re-reading of guidance. No hoping someone remembered to add the new check. The system runs the compliance process end to end.`,
+  },
+  {
+    slug: "single-central-record-still-a-spreadsheet",
+    title: "Your Single Central Record is still a spreadsheet. That\u2019s a safeguarding risk.",
+    excerpt:
+      "The SCR is the most audited document in education recruitment. Yet most agencies maintain it manually, with gaps they don\u2019t discover until an auditor does. There\u2019s a better way to think about it.",
+    category: "Compliance",
+    date: "Coming soon",
+    content: `The Single Central Record is the most important compliance document in education recruitment. It\u2019s the first thing auditors ask for. It\u2019s the document that determines whether a school can evidence its safeguarding obligations.
+
+And for most agencies, it\u2019s a spreadsheet.
+
+## The spreadsheet problem
+
+Spreadsheets are flexible. That\u2019s their strength and their weakness. They don\u2019t enforce data integrity. They don\u2019t flag when a DBS check has expired. They don\u2019t tell you that a reference was received but never reviewed.
+
+They record what someone typed. Not what actually happened.
+
+## What auditors actually look for
+
+Auditors don\u2019t just want to see that a check was done. They want to see when it was done, by whom, what the outcome was, and whether it was done before the candidate was placed.
+
+A spreadsheet can\u2019t answer those questions reliably. A system can.
+
+## The shift from record-keeping to compliance execution
+
+The SCR shouldn\u2019t be something you maintain. It should be something your system produces \u2014 as a by-product of actually running compliance.
+
+When checks are executed automatically, every action is logged. Every document is timestamped. Every decision is recorded with a clear audit trail.
+
+The SCR becomes an output, not an input. That\u2019s the difference between record-keeping and compliance infrastructure.`,
+  },
+  {
+    slug: "ai-agents-what-they-execute",
+    title: "What AI agents actually do inside a compliance check \u2014 and what they never decide",
+    excerpt:
+      "AI agents query the DBS Update Service, run TRA prohibition checks, and validate Right to Work documents \u2014 autonomously. But the compliance decision? That\u2019s made by deterministic rules, not AI. Here\u2019s why that distinction matters.",
+    category: "Product",
+    date: "Coming soon",
+    content: `There\u2019s a lot of noise about AI in compliance. Most of it conflates two very different things: execution and decision-making.
+
+At Caio, we use AI agents for execution. They do the work. But they never make the compliance decision.
+
+## What AI agents do
+
+AI agents inside Caio perform specific, well-defined tasks:
+
+**Document collection.** Agents contact candidates, request documents, and follow up automatically. No email chains. No manual chasing.
+
+**Database queries.** Agents query the DBS Update Service, check TRA prohibition lists, and verify Right to Work status \u2014 in real time.
+
+**Data extraction.** When a document is uploaded, AI extracts the relevant data: name, date of birth, certificate number, expiry date. It validates the document against expected fields.
+
+## What AI agents don\u2019t do
+
+AI agents don\u2019t decide whether a candidate is compliant. That decision is made by deterministic rules \u2014 hard-coded logic that evaluates the data against regulatory requirements.
+
+This is a deliberate architectural choice. In regulated sectors, compliance decisions need to be predictable, auditable, and explainable. A probabilistic model cannot provide that.
+
+## Why the distinction matters
+
+If an auditor asks why a candidate was cleared, the answer should never be "the AI thought they were fine." It should be: "All required checks returned positive results against the current regulatory framework. Here\u2019s the evidence."
+
+That\u2019s the difference between AI-assisted process and AI-decided outcomes. Caio uses the former, never the latter.`,
+  },
+  {
+    slug: "dbs-expiry-renewals-broken-process",
+    title: "The DBS expiry problem: why flagging a date isn\u2019t the same as managing a renewal",
+    excerpt:
+      "Most compliance systems send a reminder when a DBS certificate is about to expire. Then what? Someone emails the candidate, chases the re-upload, checks the document, updates the record. That\u2019s not automation \u2014 it\u2019s a to-do list.",
+    category: "Operations",
+    date: "Coming soon",
+    content: `Every compliance team knows the DBS expiry problem. You track dates. You set reminders. And when a certificate is about to expire, someone sends an email.
+
+Then they wait. And chase. And chase again.
+
+## The reminder fallacy
+
+Most compliance systems treat expiry management as a notification problem. They flag the date and expect a human to handle the rest.
+
+But the rest is where the work is:
+
+- Contacting the candidate
+- Explaining what\u2019s needed
+- Following up when they don\u2019t respond
+- Checking the new certificate when it arrives
+- Updating the record
+- Confirming the candidate is still compliant
+
+A reminder doesn\u2019t do any of that. It just creates a task for someone who already has too many.
+
+## What actual renewal management looks like
+
+Real renewal management means the system handles the entire lifecycle:
+
+1. Detects the upcoming expiry
+2. Contacts the candidate automatically
+3. Follows up on a defined schedule
+4. Receives and validates the new document
+5. Updates the compliance status
+6. Flags any issues for human review
+
+The compliance officer\u2019s role shifts from chasing documents to reviewing outcomes. That\u2019s the difference between a to-do list and a system.
+
+## How Caio handles renewals
+
+Caio monitors every expiry date across your entire workforce. When a renewal is needed, AI agents execute the process end to end \u2014 from first contact to document validation.
+
+Your team reviews the outcome. The system does the work.`,
+  },
+  {
+    slug: "manual-compliance-true-cost",
+    title: "The hidden cost of manual compliance: what agencies actually spend chasing documents",
+    excerpt:
+      "Between email chains, re-uploads, spreadsheet updates, and audit prep, the average compliance officer spends 60% of their time on process \u2014 not judgement. We mapped the true cost.",
+    category: "Industry",
+    date: "Coming soon",
+    content: `Compliance is expensive. But not in the way most agencies think.
+
+The cost isn\u2019t in the checks themselves. It\u2019s in the process around them: the emails, the follow-ups, the re-uploads, the spreadsheet updates, the audit prep.
+
+## Where the time goes
+
+We\u2019ve spoken to dozens of compliance teams. The pattern is consistent:
+
+**Document chasing: 30-40% of time.** Emailing candidates, following up on missing documents, explaining what\u2019s needed. The same emails, sent hundreds of times.
+
+**Data entry: 15-20% of time.** Updating spreadsheets, CRMs, and compliance records manually. Often the same data entered in multiple places.
+
+**Audit preparation: 10-15% of time.** Compiling evidence, cross-referencing records, filling gaps discovered during the preparation process itself.
+
+**Actual compliance judgement: 15-20% of time.** Reviewing outcomes, making decisions, handling edge cases. The work that actually requires human expertise.
+
+## The cost equation
+
+For a team of five compliance officers, that\u2019s roughly three to four people\u2019s worth of time spent on process \u2014 not judgement.
+
+At an average cost of \u00a335,000-45,000 per compliance officer, the process overhead is \u00a3105,000-180,000 per year. For work that a system could execute.
+
+## What changes with automation
+
+When the process is automated, compliance officers spend their time on what they\u2019re actually hired for: judgement, oversight, and exception handling.
+
+The team doesn\u2019t shrink. It gets more effective. More candidates processed. Fewer gaps. Better audit outcomes.`,
+  },
+  {
+    slug: "deterministic-vs-probabilistic-compliance",
+    title: "Why compliance decisions need to be deterministic \u2014 not probabilistic",
+    excerpt:
+      "AI can extract data from documents and run checks autonomously. But should AI decide whether a candidate is compliant? In regulated sectors where safeguarding is the standard, the answer is no \u2014 and the architecture should reflect that.",
+    category: "Engineering",
+    date: "Coming soon",
+    content: `There are two ways to make a decision with software: deterministically or probabilistically.
+
+Deterministic: if all conditions are met, the answer is yes. If any condition is not met, the answer is no. The same inputs always produce the same output.
+
+Probabilistic: based on the data, the answer is probably yes. Or probably no. With a confidence score.
+
+In compliance, only one of these is acceptable.
+
+## The problem with probabilistic compliance
+
+Large language models are probabilistic. They\u2019re designed to predict the most likely output given an input. That\u2019s useful for many things. Compliance decisions isn\u2019t one of them.
+
+When an auditor asks "is this candidate compliant?", the answer needs to be definitive. Not "87% likely to be compliant." Not "based on the available evidence, probably." Definitive.
+
+## What deterministic compliance looks like
+
+A deterministic compliance engine evaluates candidates against a defined set of rules:
+
+- Does the candidate have a valid DBS check? Yes or no.
+- Is the TRA prohibition check clear? Yes or no.
+- Has Right to Work been verified? Yes or no.
+- Have references been received and reviewed? Yes or no.
+
+If all required checks pass, the candidate is compliant. If any fail, they\u2019re not. There\u2019s no ambiguity.
+
+## Where AI fits
+
+AI is excellent at executing the tasks that feed into the compliance decision: collecting documents, querying databases, extracting data, following up with candidates.
+
+But the decision itself \u2014 compliant or not \u2014 should be made by rules, not predictions.
+
+## Caio\u2019s architecture
+
+Caio separates execution from decision-making by design. AI agents handle the work. Deterministic rules make the compliance determination. The result is a system that\u2019s fast, consistent, and auditable.
+
+Every decision can be explained. Every outcome can be traced. That\u2019s what regulated sectors require.`,
+  },
+];
