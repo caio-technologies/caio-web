@@ -51,7 +51,7 @@ export default function HomePage() {
             Compliance.<br />Run differently.
           </h1>
           <p className="hp-hero-sub fade-in fade-in-delay-1">
-            Stop chasing documents. Stop second-guessing compliance. Caio runs checks, resolves gaps, and determines compliance end to end, delivering clear, auditable outcomes.
+            Caio runs checks, resolves gaps, and determines compliance end to end — delivering clear, auditable outcomes.
           </p>
           <p className="hp-hero-powered fade-in fade-in-delay-2">Powered by AI execution and deterministic decisioning.</p>
 
@@ -141,6 +141,19 @@ export default function HomePage() {
           <p className="hp-comparison-micro fade-in fade-in-delay-1">
             AI agents execute checks, follow up automatically, and resolve issues in real time.
           </p>
+
+          {/* Mobile stat highlight */}
+          <div className="hp-comparison-stat fade-in fade-in-delay-2">
+            <div className="hp-comparison-stat-item hp-comparison-stat-before">
+              <span className="hp-comparison-stat-label">Manual process</span>
+              <span className="hp-comparison-stat-value">Days</span>
+            </div>
+            <span className="hp-comparison-stat-arrow">→</span>
+            <div className="hp-comparison-stat-item hp-comparison-stat-after">
+              <span className="hp-comparison-stat-label">With Caio</span>
+              <span className="hp-comparison-stat-value">Minutes</span>
+            </div>
+          </div>
 
           <div className="hp-comparison-grid fade-in fade-in-delay-2">
             {/* LEFT: Without Caio */}
@@ -237,7 +250,7 @@ export default function HomePage() {
             Compliant. And kept compliant.
           </h2>
           <p className="hp-continuous-sub fade-in fade-in-delay-1">
-            Caio doesn&apos;t stop at clearance. It continuously checks, flags, and re-validates every candidate — ensuring your workforce stays compliant at all times.
+            Caio doesn&apos;t stop at clearance. It continuously checks, flags, and re-validates every candidate — keeping your workforce compliant.
           </p>
 
           {/* Lifecycle flow */}
@@ -283,7 +296,7 @@ export default function HomePage() {
           </div>
 
           <p className="hp-continuous-core fade-in fade-in-delay-3">
-            Every candidate is continuously checked, flagged, and re-cleared as requirements change.
+            Every candidate is continuously checked, flagged, and re-cleared automatically.
           </p>
 
           <div className="hp-continuous-points fade-in fade-in-delay-3">
@@ -307,7 +320,7 @@ export default function HomePage() {
       <section className="hp-control" id="control">
         <div className="container">
           <h2 className="hp-control-title fade-in">
-            Execution by Caio. <span className="hp-control-title-light">Control stays with you.</span>
+            Execution by Caio.<br /><span className="hp-control-title-light">Control stays with you.</span>
           </h2>
 
           <div className="hp-control-flow fade-in fade-in-delay-1">
@@ -377,7 +390,7 @@ export default function HomePage() {
       <section className="hp-sectors" id="sectors">
         <div className="container">
           <h2 className="section-title fade-in">
-            Built in education. Expanding across regulated sectors.
+            Built in education.<br />Expanding across regulated sectors.
           </h2>
 
           <div className="hp-sectors-grid">
