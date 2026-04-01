@@ -50,7 +50,10 @@ export default function HomePage() {
             </span>
             Compliance.<br />Run differently.
           </h1>
-          <p className="hp-hero-sub fade-in fade-in-delay-1">
+          <p className="hp-hero-sub hp-hero-sub-desktop fade-in fade-in-delay-1">
+            Stop chasing documents. Stop second-guessing compliance. Caio runs checks, resolves gaps, and determines compliance end to end, delivering clear, auditable outcomes.
+          </p>
+          <p className="hp-hero-sub hp-hero-sub-mobile fade-in fade-in-delay-1">
             Caio runs checks, resolves gaps, and determines compliance end to end — delivering clear, auditable outcomes.
           </p>
           <p className="hp-hero-powered fade-in fade-in-delay-2">Powered by AI execution and deterministic decisioning.</p>
