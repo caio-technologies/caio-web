@@ -69,8 +69,8 @@ export default function HomePage() {
         <div className="container">
           <h2 className="section-title fade-in">A system that runs compliance end to end</h2>
           <p className="hp-how-sub fade-in fade-in-delay-1">
-            Caio runs compliance from first document to final outcome.<br />
-            AI agents execute checks, resolve gaps, and keep every candidate moving.
+            Caio runs compliance from first document to final&nbsp;outcome.<br />
+            AI agents execute checks, resolve gaps, and keep every candidate&nbsp;moving.
           </p>
 
           <div className="hp-how-grid fade-in fade-in-delay-2">
@@ -285,7 +285,7 @@ export default function HomePage() {
       <section className="hp-sectors" id="sectors">
         <div className="container">
           <h2 className="section-title fade-in">
-            Built in education.<br />Expanding across regulated sectors.
+            Built in education.<br />Expanding across regulated&nbsp;sectors.
           </h2>
 
           <div className="hp-sectors-grid">

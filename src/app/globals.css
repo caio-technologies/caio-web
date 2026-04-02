@@ -843,6 +843,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hp-comparison { padding: 48px 0; }
   .steps-grid, .efficiency-grid, .compliance-grid { grid-template-columns: 1fr; }
   .hp-features-grid, .hp-metrics-grid, .hp-sectors-grid { grid-template-columns: 1fr; }
+  /* Mobile sector cards: no flip, show content directly */
+  .hp-sector-flip-wrapper { min-height: auto; }
+  .hp-sector-flip-inner { min-height: auto; transform-style: flat; }
+  .hp-sector-flip-wrapper:hover .hp-sector-flip-inner { transform: none; }
+  .hp-sector-flip-front, .hp-sector-flip-back { position: relative; height: auto; }
+  .hp-sector-flip-front { padding: 24px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+  .hp-sector-flip-back { transform: none; padding: 20px 24px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); border-top: none; }
+  .hp-sector-excerpt { font-size: 13px; }
   .hp-problem-grid { grid-template-columns: 1fr; }
   .execution-flow { flex-direction: column; }
   .hp-hero-proof { flex-direction: column; gap: 16px; }
