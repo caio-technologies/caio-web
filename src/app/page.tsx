@@ -69,8 +69,8 @@ export default function HomePage() {
         <div className="container">
           <h2 className="section-title fade-in">A system that runs compliance end to end</h2>
           <p className="hp-how-sub fade-in fade-in-delay-1">
-            Caio runs compliance from first document to final&nbsp;outcome.<br />
-            AI agents execute checks, resolve gaps, and keep every candidate&nbsp;moving.
+            Caio runs compliance from first document to&nbsp;final&nbsp;outcome.<br />
+            AI agents execute checks, resolve gaps, and keep every&nbsp;candidate&nbsp;moving.
           </p>
 
           <div className="hp-how-grid fade-in fade-in-delay-2">
@@ -113,7 +113,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="hp-how-card-title">Decide</h3>
-              <p className="hp-how-card-desc">Compliance requirements are evaluated and a clear outcome is produced.</p>
+              <p className="hp-how-card-desc">Compliance requirements are evaluated and a clear outcome is&nbsp;produced.</p>
             </div>
             <div className="hp-how-card hp-how-card-final">
               <div className="hp-how-icon hp-how-icon-final">
@@ -137,7 +137,7 @@ export default function HomePage() {
           <div className="hp-cost-layout">
             <div className="hp-cost-left fade-in">
               <h2 className="hp-cost-headline">What compliance really costs your business</h2>
-              <p className="hp-cost-sub">Time and people. Revenue lost. Risk left sitting in the process.</p>
+              <p className="hp-cost-sub">Time and people. Revenue lost. Risk left sitting in&nbsp;the&nbsp;process.</p>
               <div className="hp-cost-stats">
                 <div className="hp-cost-stat">
                   <span className="hp-cost-stat-value">70%</span>
@@ -297,7 +297,8 @@ export default function HomePage() {
                 </div>
                 <div className="hp-sector-flip-back">
                   <span className="hp-sector-badge">Education</span>
-                  <p className="hp-sector-excerpt">KCSIE-aligned compliance, executed end to end. From onboarding through to expiries.</p>
+                  <span className="hp-sector-status hp-sector-status-mobile">Live</span>
+                  <p className="hp-sector-excerpt">KCSIE-aligned compliance, executed end to end. From onboarding through to&nbsp;expiries.</p>
                   <span className="hp-sector-flip-cta">Explore &rarr;</span>
                 </div>
               </div>
@@ -311,7 +312,8 @@ export default function HomePage() {
                 </div>
                 <div className="hp-sector-flip-back">
                   <span className="hp-sector-badge">Healthcare</span>
-                  <p className="hp-sector-excerpt">CQC-aligned compliance for healthcare recruitment. Automated checks, continuous monitoring.</p>
+                  <span className="hp-sector-status hp-sector-status-soon hp-sector-status-mobile">Coming soon</span>
+                  <p className="hp-sector-excerpt">CQC-aligned compliance for healthcare recruitment. Automated checks, continuous&nbsp;monitoring.</p>
                   <span className="hp-sector-flip-cta">Learn more &rarr;</span>
                 </div>
               </div>
@@ -325,7 +327,8 @@ export default function HomePage() {
                 </div>
                 <div className="hp-sector-flip-back">
                   <span className="hp-sector-badge">Social Care</span>
-                  <p className="hp-sector-excerpt">Compliance infrastructure for social care recruitment. Consistent, auditable, always current.</p>
+                  <span className="hp-sector-status hp-sector-status-soon hp-sector-status-mobile">Coming soon</span>
+                  <p className="hp-sector-excerpt">Compliance infrastructure for social care recruitment. Consistent, auditable, always&nbsp;current.</p>
                   <span className="hp-sector-flip-cta">Learn more &rarr;</span>
                 </div>
               </div>
@@ -337,7 +340,7 @@ export default function HomePage() {
       {/* ========== CONTINUOUS COMPLIANCE ========== */}
       <section className="hp-continuous" id="continuous">
         <div className="container">
-          <span className="hp-continuous-micro fade-in">Continuous monitoring. Automatic resolution.</span>
+          <span className="hp-continuous-micro fade-in">Continuous monitoring. Automatic&nbsp;resolution.</span>
           <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
             Compliant. And kept compliant.
           </h2>

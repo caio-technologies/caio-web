@@ -459,6 +459,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .hp-sector-status-soon { background: rgba(148,163,184,0.12); color: var(--color-text-muted); }
 .hp-sector-excerpt { font-size: 14px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; flex: 1; display: flex; align-items: center; }
 .hp-sector-flip-cta { font-size: 13px; font-weight: 700; color: var(--color-primary); }
+.hp-sector-status-mobile { display: none; }
 
 /* ========== FINAL CTA ========== */
 .hp-final-cta { padding: var(--section-padding); background: var(--color-bg); text-align: center; }
@@ -843,14 +844,21 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hp-comparison { padding: 48px 0; }
   .steps-grid, .efficiency-grid, .compliance-grid { grid-template-columns: 1fr; }
   .hp-features-grid, .hp-metrics-grid, .hp-sectors-grid { grid-template-columns: 1fr; }
-  /* Mobile sector cards: no flip, show content directly */
+  /* Mobile sector cards: single unified tile, no flip */
   .hp-sector-flip-wrapper { min-height: auto; }
   .hp-sector-flip-inner { min-height: auto; transform-style: flat; }
   .hp-sector-flip-wrapper:hover .hp-sector-flip-inner { transform: none; }
   .hp-sector-flip-front, .hp-sector-flip-back { position: relative; height: auto; }
-  .hp-sector-flip-front { padding: 24px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
-  .hp-sector-flip-back { transform: none; padding: 20px 24px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); border-top: none; }
-  .hp-sector-excerpt { font-size: 13px; }
+  .hp-sector-flip-front { display: none; }
+  .hp-sector-flip-back { transform: none; padding: 24px; border-radius: var(--radius-xl); }
+  .hp-sector-flip-back .hp-sector-badge { display: block; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .hp-sector-excerpt { font-size: 14px; margin-top: 8px; }
+  .hp-sector-flip-cta { margin-top: 12px; }
+  .hp-sector-front-education + .hp-sector-flip-back { background: var(--color-dark-blue); color: #fff; }
+  .hp-sector-front-education + .hp-sector-flip-back .hp-sector-badge { color: #fff; }
+  .hp-sector-front-education + .hp-sector-flip-back .hp-sector-excerpt { color: rgba(255,255,255,0.75); }
+  .hp-sector-front-education + .hp-sector-flip-back .hp-sector-flip-cta { color: var(--color-accent); }
+  .hp-sector-status-mobile { display: inline-block; margin-top: 4px; }
   .hp-problem-grid { grid-template-columns: 1fr; }
   .execution-flow { flex-direction: column; }
   .hp-hero-proof { flex-direction: column; gap: 16px; }
@@ -899,9 +907,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hp-cost { padding: 64px 0; }
   .hp-cost-layout { grid-template-columns: 1fr; gap: 32px; }
   .hp-cost-left { position: static; }
-  .hp-cost-stats { margin-top: 24px; padding-top: 20px; gap: 24px; }
-  .hp-cost-stat-value { font-size: 24px; }
-  .hp-cost-stat-label { font-size: 12px; }
+  .hp-cost-stats { margin-top: 28px; padding-top: 24px; padding-bottom: 8px; gap: 0; flex-direction: column; }
+  .hp-cost-stat { padding: 16px 0; }
+  .hp-cost-stat:first-child { border-bottom: 1px solid var(--color-border-light); padding-top: 0; }
+  .hp-cost-stat:last-child { padding-bottom: 0; }
+  .hp-cost-stat-value { font-size: 28px; }
+  .hp-cost-stat-label { font-size: 13px; }
+  .hp-comparison-stat { max-width: 100%; box-sizing: border-box; overflow: hidden; }
   /* Education page mobile fixes */
   .edu-hero { padding: 80px 0 40px; }
   .edu-hero-grid { grid-template-columns: 1fr; gap: 32px; }
