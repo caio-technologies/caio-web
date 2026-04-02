@@ -259,6 +259,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .hp-cost-micro { display: block; font-size: 12px; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
 .hp-cost-headline { font-family: var(--font-display); font-size: clamp(30px, 3.5vw, 40px); font-weight: 800; color: var(--color-dark-blue); line-height: 1.15; letter-spacing: -0.8px; margin: 0 0 20px; }
 .hp-cost-sub { font-size: 17px; font-weight: 400; color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
+.hp-cost-stats { display: flex; gap: 32px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--color-border-light); }
+.hp-cost-stat { flex: 1; }
+.hp-cost-stat-value { display: block; font-family: var(--font-display); font-size: clamp(28px, 3vw, 36px); font-weight: 800; color: var(--color-dark-blue); letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 6px; }
+.hp-cost-stat-label { display: block; font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
 .hp-cost-right { display: flex; flex-direction: column; gap: 36px; padding-top: 4px; }
 .hp-cost-block { padding-left: 24px; border-left: 2px solid var(--color-border-light); }
 .hp-cost-lead { font-size: 18px; font-weight: 600; color: var(--color-dark-blue); line-height: 1.4; margin: 0 0 6px; }

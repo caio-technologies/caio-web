@@ -138,6 +138,16 @@ export default function HomePage() {
             <div className="hp-cost-left fade-in">
               <h2 className="hp-cost-headline">What compliance really costs your business</h2>
               <p className="hp-cost-sub">The real cost is the time, people, and process required to clear candidates.</p>
+              <div className="hp-cost-stats">
+                <div className="hp-cost-stat">
+                  <span className="hp-cost-stat-value">40%</span>
+                  <span className="hp-cost-stat-label">of back-office time spent on compliance admin</span>
+                </div>
+                <div className="hp-cost-stat">
+                  <span className="hp-cost-stat-value">8+ days</span>
+                  <span className="hp-cost-stat-label">average time to clear a single candidate</span>
+                </div>
+              </div>
             </div>
             <div className="hp-cost-right">
               <div className="hp-cost-block fade-in">
