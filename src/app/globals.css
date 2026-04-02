@@ -827,6 +827,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hp-hero { padding: 60px 0 40px; min-height: calc(100svh - 72px); display: flex; align-items: center; justify-content: center; }
   .hero-title { font-size: 34px; letter-spacing: -1px; }
   .hp-hero-headline { font-size: 32px; letter-spacing: -1.5px; }
+  .hp-hero-is-over { display: block; }
+  .hp-hero-sector { width: auto; text-align: left; margin-right: 8px; }
   .hero-subtitle, .hp-hero-sub { font-size: 15px; }
   .hp-hero-sub-desktop { display: none; }
   .hp-hero-sub-mobile { display: block; }
@@ -889,6 +891,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hp-cost { padding: 64px 0; }
   .hp-cost-layout { grid-template-columns: 1fr; gap: 32px; }
   .hp-cost-left { position: static; }
+  .hp-cost-stats { margin-top: 24px; padding-top: 20px; gap: 24px; }
+  .hp-cost-stat-value { font-size: 24px; }
+  .hp-cost-stat-label { font-size: 12px; }
   /* Education page mobile fixes */
   .edu-hero { padding: 80px 0 40px; }
   .edu-hero-grid { grid-template-columns: 1fr; gap: 32px; }

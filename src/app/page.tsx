@@ -35,7 +35,7 @@ export default function HomePage() {
         setCurrentSector((prev) => (prev + 1) % sectors.length);
         setIsAnimating(false);
       }, 400);
-    }, 4000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -49,7 +49,7 @@ export default function HomePage() {
             <span className={`hp-hero-sector ${isAnimating ? "sector-exit" : "sector-enter"}`}>
               {sectors[currentSector]}
             </span>
-            compliance is over
+            compliance <span className="hp-hero-is-over">is over</span>
           </h1>
           <p className="hp-hero-conviction fade-in fade-in-delay-1">
             AI agents execute every check.<br />Deterministic rules decide every outcome.
@@ -137,15 +137,15 @@ export default function HomePage() {
           <div className="hp-cost-layout">
             <div className="hp-cost-left fade-in">
               <h2 className="hp-cost-headline">What compliance really costs your business</h2>
-              <p className="hp-cost-sub">The real cost is the time, people, and process required to clear candidates.</p>
+              <p className="hp-cost-sub">Time and people. Revenue lost. Risk left sitting in the process.</p>
               <div className="hp-cost-stats">
                 <div className="hp-cost-stat">
-                  <span className="hp-cost-stat-value">40%</span>
-                  <span className="hp-cost-stat-label">of back-office time spent on compliance admin</span>
+                  <span className="hp-cost-stat-value">70%</span>
+                  <span className="hp-cost-stat-label">of compliance hours spent on avoidable admin</span>
                 </div>
                 <div className="hp-cost-stat">
-                  <span className="hp-cost-stat-value">8+ days</span>
-                  <span className="hp-cost-stat-label">average time to clear a single candidate</span>
+                  <span className="hp-cost-stat-value">10,000+</span>
+                  <span className="hp-cost-stat-label">hours wasted daily across the industry on automatable compliance tasks</span>
                 </div>
               </div>
             </div>
