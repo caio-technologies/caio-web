@@ -32,7 +32,6 @@ function ContactForm() {
     <main>
       <section className="contact-hero" id="contact-hero">
         <div className="container">
-          <span className="edu-hero-label fade-in">Contact</span>
           <h1 className="contact-hero-headline fade-in">
             {reason === "demo" ? "Book a demo." : "Let\u2019s talk."}
           </h1>
