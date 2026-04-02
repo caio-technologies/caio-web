@@ -60,12 +60,20 @@ export default function InsightsPage() {
 
           <div className="insights-grid">
             {filteredPosts.map((post) => (
-              <Link key={post.slug} href={`/insights/${post.slug}`} className="insights-card fade-in">
-                <div className="insights-card-category">{post.category}</div>
-                <h2 className="insights-card-title">{post.title}</h2>
-                <p className="insights-card-excerpt">{post.excerpt}</p>
-                <div className="insights-card-meta">
-                  <span className="insights-card-date">{post.date}</span>
+              <Link key={post.slug} href={`/insights/${post.slug}`} className="insights-flip-wrapper fade-in">
+                <div className="insights-flip-inner">
+                  <div className="insights-flip-front" data-category={post.category.toLowerCase()}>
+                    <div className="insights-card-category">{post.category}</div>
+                    <h2 className="insights-card-title">{post.title}</h2>
+                    <div className="insights-card-meta">
+                      <span className="insights-card-date">{post.date}</span>
+                    </div>
+                  </div>
+                  <div className="insights-flip-back">
+                    <div className="insights-card-category">{post.category}</div>
+                    <p className="insights-card-excerpt">{post.excerpt}</p>
+                    <span className="insights-flip-cta">Read article →</span>
+                  </div>
                 </div>
               </Link>
             ))}

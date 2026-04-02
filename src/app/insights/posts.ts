@@ -14,7 +14,7 @@ export const posts: Post[] = [
     excerpt:
       "Every September brings updates. This year\u2019s KCSIE changes tighten requirements around online checks, overseas verifications, and how agencies evidence their processes to schools. We break down what matters.",
     category: "Education",
-    date: "Coming soon",
+    date: "2 April 2025",
     content: `Every year, the Department for Education updates Keeping Children Safe in Education (KCSIE). And every year, agencies scramble to understand what\u2019s changed and what it means for their compliance processes.
 
 The 2025 update is no different \u2014 but the implications are sharper than usual.
@@ -47,7 +47,7 @@ No manual re-reading of guidance. No hoping someone remembered to add the new ch
     excerpt:
       "The SCR is the most audited document in education recruitment. Yet most agencies maintain it manually, with gaps they don\u2019t discover until an auditor does. There\u2019s a better way to think about it.",
     category: "Compliance",
-    date: "Coming soon",
+    date: "26 March 2025",
     content: `The Single Central Record is the most important compliance document in education recruitment. It\u2019s the first thing auditors ask for. It\u2019s the document that determines whether a school can evidence its safeguarding obligations.
 
 And for most agencies, it\u2019s a spreadsheet.
@@ -78,7 +78,7 @@ The SCR becomes an output, not an input. That\u2019s the difference between reco
     excerpt:
       "AI agents query the DBS Update Service, run TRA prohibition checks, and validate Right to Work documents \u2014 autonomously. But the compliance decision? That\u2019s made by deterministic rules, not AI. Here\u2019s why that distinction matters.",
     category: "Product",
-    date: "Coming soon",
+    date: "19 March 2025",
     content: `There\u2019s a lot of noise about AI in compliance. Most of it conflates two very different things: execution and decision-making.
 
 At Caio, we use AI agents for execution. They do the work. But they never make the compliance decision.
@@ -111,7 +111,7 @@ That\u2019s the difference between AI-assisted process and AI-decided outcomes. 
     excerpt:
       "Most compliance systems send a reminder when a DBS certificate is about to expire. Then what? Someone emails the candidate, chases the re-upload, checks the document, updates the record. That\u2019s not automation \u2014 it\u2019s a to-do list.",
     category: "Operations",
-    date: "Coming soon",
+    date: "12 March 2025",
     content: `Every compliance team knows the DBS expiry problem. You track dates. You set reminders. And when a certificate is about to expire, someone sends an email.
 
 Then they wait. And chase. And chase again.
@@ -156,7 +156,7 @@ Your team reviews the outcome. The system does the work.`,
     excerpt:
       "Between email chains, re-uploads, spreadsheet updates, and audit prep, the average compliance officer spends 60% of their time on process \u2014 not judgement. We mapped the true cost.",
     category: "Industry",
-    date: "Coming soon",
+    date: "5 March 2025",
     content: `Compliance is expensive. But not in the way most agencies think.
 
 The cost isn\u2019t in the checks themselves. It\u2019s in the process around them: the emails, the follow-ups, the re-uploads, the spreadsheet updates, the audit prep.
@@ -191,7 +191,7 @@ The team doesn\u2019t shrink. It gets more effective. More candidates processed.
     excerpt:
       "AI can extract data from documents and run checks autonomously. But should AI decide whether a candidate is compliant? In regulated sectors where safeguarding is the standard, the answer is no \u2014 and the architecture should reflect that.",
     category: "Engineering",
-    date: "Coming soon",
+    date: "27 February 2025",
     content: `There are two ways to make a decision with software: deterministically or probabilistically.
 
 Deterministic: if all conditions are met, the answer is yes. If any condition is not met, the answer is no. The same inputs always produce the same output.

@@ -101,6 +101,10 @@ export default function BlogPostPage() {
         <div className="container">
           <div className="blog-post-body fade-in fade-in-delay-1">
             {renderContent(post.content)}
+            <div className="blog-post-author">
+              <span className="blog-post-author-label">Written by</span>
+              <span className="blog-post-author-name">Caio Team</span>
+            </div>
           </div>
 
           {/* Related articles */}

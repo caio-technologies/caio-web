@@ -66,6 +66,157 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== ERA STATEMENT ========== */}
+      <section className="hp-era" id="era-over">
+        <div className="container">
+          <h2 className="hp-era-headline fade-in">
+            The era of manual compliance is over
+          </h2>
+          <p className="hp-era-subline fade-in fade-in-delay-1">
+            AI agents execute every check.<br />Deterministic rules decide every outcome.
+          </p>
+          <p className="hp-era-closer fade-in fade-in-delay-2">Same rules. Every candidate. Every time.</p>
+        </div>
+      </section>
+
+      {/* ========== COST OF MANUAL COMPLIANCE ========== */}
+      <section className="hp-cost" id="cost">
+        <div className="container">
+          <div className="hp-cost-layout">
+            <div className="hp-cost-left fade-in">
+              <h2 className="hp-cost-headline">Manual compliance is costing more than you think</h2>
+              <p className="hp-cost-sub">The real cost is the time, people, and process required to clear candidates.</p>
+            </div>
+            <div className="hp-cost-right">
+              <div className="hp-cost-block fade-in">
+                <p className="hp-cost-lead">It is inefficient and unnecessarily expensive.</p>
+                <p className="hp-cost-support">Time goes into chasing, re-checking, and admin instead of clearing candidates.</p>
+              </div>
+              <div className="hp-cost-block fade-in">
+                <p className="hp-cost-lead">It pulls revenue out of the business.</p>
+                <p className="hp-cost-support">Fee earners get dragged into compliance, and placements slow down.</p>
+              </div>
+              <div className="hp-cost-block fade-in">
+                <p className="hp-cost-lead">It leaves risk sitting in the process.</p>
+                <p className="hp-cost-support">Gaps only surface under audit or incident.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== BEFORE / AFTER COMPARISON ========== */}
+      <section className="hp-comparison" id="showcase">
+        <div className="container">
+          <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
+            Stop chasing. Start clearing.
+          </h2>
+          <p className="hp-comparison-sub fade-in fade-in-delay-1">
+            What takes your team days of emails and follow-ups, Caio resolves in minutes.
+          </p>
+          <p className="hp-comparison-micro fade-in fade-in-delay-1">
+            AI agents execute checks, follow up automatically, and resolve issues in real time.
+          </p>
+
+          {/* Mobile stat highlight */}
+          <div className="hp-comparison-stat fade-in fade-in-delay-2">
+            <div className="hp-comparison-stat-item hp-comparison-stat-before">
+              <span className="hp-comparison-stat-label">Manual process</span>
+              <span className="hp-comparison-stat-value">Days</span>
+            </div>
+            <span className="hp-comparison-stat-arrow">&rarr;</span>
+            <div className="hp-comparison-stat-item hp-comparison-stat-after">
+              <span className="hp-comparison-stat-label">With Caio</span>
+              <span className="hp-comparison-stat-value">Minutes</span>
+            </div>
+          </div>
+
+          <div className="hp-comparison-grid fade-in fade-in-delay-2">
+            {/* LEFT: Without Caio */}
+            <div className="hp-compare-card hp-compare-before">
+              <div className="hp-compare-header hp-compare-header-before">
+                <div className="hp-compare-header-left">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="16" height="12" rx="2"/>
+                    <path d="M2 4l8 6 8-6"/>
+                  </svg>
+                  <span className="hp-compare-label">Without Caio</span>
+                </div>
+                <span className="hp-compare-duration hp-compare-duration-before">8+ days</span>
+              </div>
+              <div className="hp-compare-body">
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Fri 16:48</span>
+                  </div>
+                  <p className="hp-timeline-msg">Candidate submits DBS certificate via email.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Mon 09:12</span>
+                  </div>
+                  <p className="hp-timeline-msg">Sorry for the delay in getting back to you. Unfortunately the certificate is cut off — please re-submit.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Tue 14:36</span>
+                  </div>
+                  <p className="hp-timeline-msg">Just following up on the DBS re-upload.</p>
+                </div>
+                <div className="hp-email-item">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Wed 10:21</span>
+                  </div>
+                  <p className="hp-timeline-msg">Thanks for re-submitting. I&apos;m afraid this is still incorrect — please re-submit.</p>
+                </div>
+                <div className="hp-email-item hp-email-lost">
+                  <div className="hp-email-meta">
+                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
+                    <span className="hp-timeline-time">Following Wednesday 16:58</span>
+                  </div>
+                  <p className="hp-timeline-msg"><strong>Candidate secured a role elsewhere &rarr; Offlined</strong></p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT: With Caio */}
+            <div className="hp-compare-card hp-compare-after">
+              <div className="hp-compare-header hp-compare-header-after">
+                <div className="hp-compare-header-left">
+                  <img src="/caio-logo.png" alt="Caio" className="hp-compare-logo" />
+                </div>
+                <span className="hp-compare-duration hp-compare-duration-after">11 minutes</span>
+              </div>
+              <div className="hp-compare-body">
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-action">DBS certificate uploaded.</div>
+                  <span className="hp-caio-time">Fri 17:02</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-system">Issue detected automatically. Issue date not visible.</div>
+                  <span className="hp-caio-time">Fri 17:03</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-action">Re-upload requested automatically with clear guidance.</div>
+                  <span className="hp-caio-time">Fri 17:04</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-system">Corrected DBS received and validated.</div>
+                  <span className="hp-caio-time">Fri 17:11</span>
+                </div>
+                <div className="hp-caio-step">
+                  <div className="hp-caio-bubble hp-caio-bubble-resolved">Final-Check-Ready</div>
+                  <span className="hp-caio-time">Fri 17:13</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ========== HOW CAIO WORKS ========== */}
       <section className="hp-how" id="how-it-works">
@@ -132,118 +283,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== BEFORE / AFTER COMPARISON ========== */}
-      <section className="hp-comparison" id="showcase">
-        <div className="container">
-          <h2 className="section-title fade-in" style={{ textAlign: 'center', marginBottom: '16px' }}>
-            Stop chasing. Start clearing.
-          </h2>
-          <p className="hp-comparison-sub fade-in fade-in-delay-1">
-            What takes your team days of emails and follow-ups, Caio resolves in minutes.
-          </p>
-          <p className="hp-comparison-micro fade-in fade-in-delay-1">
-            AI agents execute checks, follow up automatically, and resolve issues in real time.
-          </p>
-
-          {/* Mobile stat highlight */}
-          <div className="hp-comparison-stat fade-in fade-in-delay-2">
-            <div className="hp-comparison-stat-item hp-comparison-stat-before">
-              <span className="hp-comparison-stat-label">Manual process</span>
-              <span className="hp-comparison-stat-value">Days</span>
-            </div>
-            <span className="hp-comparison-stat-arrow">→</span>
-            <div className="hp-comparison-stat-item hp-comparison-stat-after">
-              <span className="hp-comparison-stat-label">With Caio</span>
-              <span className="hp-comparison-stat-value">Minutes</span>
-            </div>
-          </div>
-
-          <div className="hp-comparison-grid fade-in fade-in-delay-2">
-            {/* LEFT: Without Caio */}
-            <div className="hp-compare-card hp-compare-before">
-              <div className="hp-compare-header hp-compare-header-before">
-                <div className="hp-compare-header-left">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="4" width="16" height="12" rx="2"/>
-                    <path d="M2 4l8 6 8-6"/>
-                  </svg>
-                  <span className="hp-compare-label">Without Caio</span>
-                </div>
-                <span className="hp-compare-duration hp-compare-duration-before">8+ days</span>
-              </div>
-              <div className="hp-compare-body">
-                <div className="hp-email-item">
-                  <div className="hp-email-meta">
-                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
-                    <span className="hp-timeline-time">Fri 16:48</span>
-                  </div>
-                  <p className="hp-timeline-msg">Candidate submits DBS certificate via email.</p>
-                </div>
-                <div className="hp-email-item">
-                  <div className="hp-email-meta">
-                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
-                    <span className="hp-timeline-time">Mon 09:12</span>
-                  </div>
-                  <p className="hp-timeline-msg">Sorry for the delay in getting back to you. Unfortunately the certificate is cut off — please re-submit.</p>
-                </div>
-                <div className="hp-email-item">
-                  <div className="hp-email-meta">
-                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
-                    <span className="hp-timeline-time">Tue 14:36</span>
-                  </div>
-                  <p className="hp-timeline-msg">Just following up on the DBS re-upload.</p>
-                </div>
-                <div className="hp-email-item">
-                  <div className="hp-email-meta">
-                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
-                    <span className="hp-timeline-time">Wed 10:21</span>
-                  </div>
-                  <p className="hp-timeline-msg">Thanks for re-submitting. I&apos;m afraid this is still incorrect — please re-submit.</p>
-                </div>
-                <div className="hp-email-item hp-email-lost">
-                  <div className="hp-email-meta">
-                    <svg className="hp-email-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 3l6 4 6-4"/></svg>
-                    <span className="hp-timeline-time">Following Wednesday 16:58</span>
-                  </div>
-                  <p className="hp-timeline-msg"><strong>Candidate secured a role elsewhere → Offlined</strong></p>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT: With Caio */}
-            <div className="hp-compare-card hp-compare-after">
-              <div className="hp-compare-header hp-compare-header-after">
-                <div className="hp-compare-header-left">
-                  <img src="/caio-logo.png" alt="Caio" className="hp-compare-logo" />
-                </div>
-                <span className="hp-compare-duration hp-compare-duration-after">11 minutes</span>
-              </div>
-              <div className="hp-compare-body">
-                <div className="hp-caio-step">
-                  <div className="hp-caio-bubble hp-caio-bubble-action">DBS certificate uploaded.</div>
-                  <span className="hp-caio-time">Fri 17:02</span>
-                </div>
-                <div className="hp-caio-step">
-                  <div className="hp-caio-bubble hp-caio-bubble-system">Issue detected automatically. Issue date not visible.</div>
-                  <span className="hp-caio-time">Fri 17:03</span>
-                </div>
-                <div className="hp-caio-step">
-                  <div className="hp-caio-bubble hp-caio-bubble-action">Re-upload requested automatically with clear guidance.</div>
-                  <span className="hp-caio-time">Fri 17:04</span>
-                </div>
-                <div className="hp-caio-step">
-                  <div className="hp-caio-bubble hp-caio-bubble-system">Corrected DBS received and validated.</div>
-                  <span className="hp-caio-time">Fri 17:11</span>
-                </div>
-                <div className="hp-caio-step">
-                  <div className="hp-caio-bubble hp-caio-bubble-resolved">Final-Check-Ready</div>
-                  <span className="hp-caio-time">Fri 17:13</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ========== CONTINUOUS COMPLIANCE ========== */}
       <section className="hp-continuous" id="continuous">
