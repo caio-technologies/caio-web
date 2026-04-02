@@ -13,8 +13,8 @@ export default function Footer() {
               <a href="mailto:support@usecaio.com" className="footer-email">support@usecaio.com</a>
             </div>
           </div>
-          <Link href="#book-demo" className="footer-cta">
-            Join the Waitlist <span className="footer-cta-arrow">→</span>
+          <Link href="/contact?reason=demo" className="footer-cta">
+            Book a Demo <span className="footer-cta-arrow">→</span>
           </Link>
         </div>
         <div className="footer-bottom">

@@ -40,8 +40,11 @@ export default function EducationPage() {
               </p>
               <p className="hp-hero-powered fade-in fade-in-delay-2">Powered by AI execution and deterministic decisioning.</p>
               <div className="edu-hero-cta fade-in fade-in-delay-2">
-                <a href="#join-waitlist" className="btn btn-dark" id="edu-hero-cta">
-                  Join the Waitlist
+                <a href="/contact?reason=demo" className="btn btn-dark" id="edu-hero-cta">
+                  Book a Demo
+                </a>
+                <a href="/contact" className="btn btn-outline" id="edu-hero-contact">
+                  Get in Touch
                 </a>
               </div>
             </div>
@@ -343,17 +346,20 @@ export default function EducationPage() {
       </section>
 
       {/* ========== CTA ========== */}
-      <section className="hp-final-cta" id="join-waitlist">
+      <section className="hp-final-cta" id="book-demo">
         <div className="container">
           <h2 className="section-title fade-in">
             Ready to run education compliance differently?
           </h2>
           <p className="hp-how-sub fade-in fade-in-delay-1" style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 32px' }}>
-            Join the waitlist to see how Caio executes KCSIE-aligned compliance for education recruitment.
+            See how Caio executes KCSIE-aligned compliance for education recruitment.
           </p>
           <div className="hp-final-cta-buttons fade-in fade-in-delay-2">
-            <a href="mailto:support@usecaio.com" className="btn btn-dark" id="edu-cta-demo">
-              Join the Waitlist
+            <a href="/contact?reason=demo" className="btn btn-dark" id="edu-cta-demo">
+              Book a Demo
+            </a>
+            <a href="/contact" className="btn btn-outline" id="edu-cta-contact">
+              Get in Touch
             </a>
           </div>
         </div>

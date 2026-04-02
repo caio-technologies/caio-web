@@ -57,8 +57,11 @@ export default function HomePage() {
           <p className="hp-hero-closer fade-in fade-in-delay-2">Same rules. Every candidate. Every time.</p>
 
           <div className="hp-hero-ctas fade-in fade-in-delay-3">
-            <a href="#join-waitlist" className="btn btn-dark" id="hp-hero-primary-cta">
-              Join the Waitlist
+            <a href="/contact?reason=demo" className="btn btn-dark" id="hp-hero-primary-cta">
+              Book a Demo
+            </a>
+            <a href="/contact" className="btn btn-outline" id="hp-hero-secondary-cta">
+              Get in Touch
             </a>
           </div>
         </div>
@@ -69,8 +72,7 @@ export default function HomePage() {
         <div className="container">
           <h2 className="section-title fade-in">A system that runs compliance end to end</h2>
           <p className="hp-how-sub fade-in fade-in-delay-1">
-            Caio runs compliance from first document to&nbsp;final&nbsp;outcome.<br />
-            AI agents execute checks, resolve gaps, and keep every&nbsp;candidate&nbsp;moving.
+            Caio runs compliance from first document to final outcome. AI agents execute checks, resolve gaps, and keep every candidate moving.
           </p>
 
           <div className="hp-how-grid fade-in fade-in-delay-2">
@@ -285,7 +287,7 @@ export default function HomePage() {
       <section className="hp-sectors" id="sectors">
         <div className="container">
           <h2 className="section-title fade-in">
-            Built in education.<br />Expanding across regulated&nbsp;sectors.
+            Built in education. Expanding across regulated&nbsp;sectors.
           </h2>
 
           <div className="hp-sectors-grid">
@@ -355,7 +357,7 @@ export default function HomePage() {
                 <div className="hp-lifecycle-avatar">JM</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">James Mitchell</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">DBS Renewed</span>
                 </div>
                 <span className="hp-lifecycle-detail">DBS renewed automatically before expiry</span>
                 <span className="hp-lifecycle-action">Candidate contacted · New certificate validated · 4 min</span>
@@ -364,7 +366,7 @@ export default function HomePage() {
                 <div className="hp-lifecycle-avatar">SR</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">Sarah Roberts</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">RtW Verified</span>
                 </div>
                 <span className="hp-lifecycle-detail">Right to Work verified and renewed</span>
                 <span className="hp-lifecycle-action">Document collected and validated automatically · 12 min</span>
@@ -373,7 +375,7 @@ export default function HomePage() {
                 <div className="hp-lifecycle-avatar">AK</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">Anya Kapoor</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-active">Safeguarding ✓</span>
                 </div>
                 <span className="hp-lifecycle-detail">Safeguarding certificate collected and validated</span>
                 <span className="hp-lifecycle-action">Requested, received, and cleared automatically · 22 min</span>
@@ -382,7 +384,7 @@ export default function HomePage() {
                 <div className="hp-lifecycle-avatar">DW</div>
                 <div className="hp-lifecycle-info">
                   <span className="hp-lifecycle-name">David Williams</span>
-                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">Cleared</span>
+                  <span className="hp-lifecycle-badge hp-lifecycle-cleared">DBS Updated</span>
                 </div>
                 <span className="hp-lifecycle-detail">Updated DBS received and validated</span>
                 <span className="hp-lifecycle-action">Resolved automatically · 8 min</span>
@@ -485,14 +487,17 @@ export default function HomePage() {
 
 
       {/* ========== FINAL CTA ========== */}
-      <section className="hp-final-cta" id="join-waitlist">
+      <section className="hp-final-cta" id="book-demo">
         <div className="container">
           <h2 className="section-title fade-in">
             Make compliance consistent, auditable, and scalable
           </h2>
           <div className="hp-final-cta-buttons fade-in fade-in-delay-1">
-            <a href="mailto:support@usecaio.com" className="btn btn-dark" id="hp-final-cta-demo">
-              Join the Waitlist
+            <a href="/contact?reason=demo" className="btn btn-dark" id="hp-final-cta-demo">
+              Book a Demo
+            </a>
+            <a href="/contact" className="btn btn-outline" id="hp-final-cta-contact">
+              Get in Touch
             </a>
           </div>
         </div>

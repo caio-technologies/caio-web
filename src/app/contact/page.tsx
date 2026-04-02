@@ -1,8 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function ContactPage() {
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const reason = searchParams.get("reason");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,11 +34,18 @@ export default function ContactPage() {
         <div className="container">
           <span className="edu-hero-label fade-in">Contact</span>
           <h1 className="contact-hero-headline fade-in">
-            Let&apos;s talk.
+            {reason === "demo" ? "Book a demo." : "Let\u2019s talk."}
           </h1>
           <p className="contact-hero-sub fade-in fade-in-delay-1">
-            Whether you&apos;re exploring compliance infrastructure for your agency or want to learn more about how Caio works — we&apos;d like to hear from you.
+            {reason === "demo"
+              ? "See how Caio runs compliance end to end \u2014 from first document to final outcome. We\u2019ll walk you through the platform and answer any questions."
+              : "Whether you\u2019re exploring compliance infrastructure for your agency or want to learn more about how Caio works \u2014 we\u2019d like to hear from you."}
           </p>
+          <div className="contact-hero-mobile-cta fade-in fade-in-delay-2">
+            <a href="#contact-form-element" className="btn btn-dark" id="contact-hero-demo-cta">
+              Book a Demo
+            </a>
+          </div>
         </div>
       </section>
 
@@ -64,7 +76,9 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="contact-form-card fade-in fade-in-delay-1">
-              <h2 className="contact-form-title">Send us a message</h2>
+              <h2 className="contact-form-title">
+                {reason === "demo" ? "Request a demo" : "Send us a message"}
+              </h2>
               <form className="contact-form" id="contact-form-element">
                 <div className="contact-form-row">
                   <div className="contact-form-group">
@@ -80,22 +94,33 @@ export default function ContactPage() {
                   <label htmlFor="contact-company">Company</label>
                   <input type="text" id="contact-company" name="company" placeholder="Your company name" />
                 </div>
-                <div className="contact-form-group">
-                  <label htmlFor="contact-sector">Sector</label>
-                  <select id="contact-sector" name="sector">
-                    <option value="">Select a sector</option>
-                    <option value="education">Education</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="social-care">Social Care</option>
-                    <option value="other">Other</option>
-                  </select>
+                <div className="contact-form-row">
+                  <div className="contact-form-group">
+                    <label htmlFor="contact-sector">Sector</label>
+                    <select id="contact-sector" name="sector">
+                      <option value="">Select a sector</option>
+                      <option value="education">Education</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="social-care">Social Care</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="contact-form-group">
+                    <label htmlFor="contact-reason">Enquiry type</label>
+                    <select id="contact-reason" name="reason" defaultValue={reason === "demo" ? "demo" : ""}>
+                      <option value="">Select a reason</option>
+                      <option value="demo">Book a demo</option>
+                      <option value="general">General enquiry</option>
+                      <option value="partnership">Partnership</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="contact-form-group">
                   <label htmlFor="contact-message">Message</label>
-                  <textarea id="contact-message" name="message" rows={5} placeholder="Tell us what you're looking for..." required></textarea>
+                  <textarea id="contact-message" name="message" rows={5} placeholder={reason === "demo" ? "Tell us about your agency and what you'd like to see in the demo..." : "Tell us what you're looking for..."} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-dark contact-form-submit" id="contact-submit">
-                  Send Message
+                  {reason === "demo" ? "Request Demo" : "Send Message"}
                 </button>
               </form>
             </div>
@@ -103,5 +128,13 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense>
+      <ContactForm />
+    </Suspense>
   );
 }

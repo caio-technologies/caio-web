@@ -87,8 +87,8 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link href="#join-waitlist" className="btn btn-primary" id="header-cta">
-            Join the Waitlist
+          <Link href="/contact?reason=demo" className="btn btn-primary" id="header-cta">
+            Book a Demo
           </Link>
           <button
             className={`mobile-menu-btn ${mobileMenuOpen ? "active" : ""}`}
