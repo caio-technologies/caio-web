@@ -45,11 +45,11 @@ export default function HomePage() {
       <section className="hp-hero" id="hero">
         <div className="container">
           <h1 className="hp-hero-headline fade-in">
-            The era of manual<br />
+            A new era for<br />
             <span className={`hp-hero-sector ${isAnimating ? "sector-exit" : "sector-enter"}`}>
               {sectors[currentSector]}
             </span>
-            compliance <span className="hp-hero-is-over">is over</span>
+            compliance
           </h1>
           <p className="hp-hero-conviction fade-in fade-in-delay-1">
             AI agents execute every check.<br />Deterministic rules decide every&nbsp;outcome.
