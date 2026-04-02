@@ -52,7 +52,7 @@ export default function HomePage() {
             compliance <span className="hp-hero-is-over">is over</span>
           </h1>
           <p className="hp-hero-conviction fade-in fade-in-delay-1">
-            AI agents execute every check.<br />Deterministic rules decide every outcome.
+            AI agents execute every check.<br />Deterministic rules decide every&nbsp;outcome.
           </p>
           <p className="hp-hero-closer fade-in fade-in-delay-2">Same rules. Every candidate. Every time.</p>
 

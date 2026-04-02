@@ -824,7 +824,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 @media (max-width: 768px) {
   :root { --section-padding: 64px 0; --container-padding: 0 20px; }
   .hero { padding: 48px 0 32px; }
-  .hp-hero { padding: 60px 0 40px; min-height: calc(100svh - 72px); display: flex; align-items: center; justify-content: center; }
+  .hp-hero { padding: 60px 0 40px; min-height: auto; display: flex; align-items: flex-start; justify-content: center; }
   .hero-title { font-size: 34px; letter-spacing: -1px; }
   .hp-hero-headline { font-size: 32px; letter-spacing: -1.5px; }
   .hp-hero-is-over { display: block; }
