@@ -991,15 +991,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .insights-flip-front[data-category="product"] { background: #efe8fc; border-color: #d4c3f5; }
 .insights-flip-front[data-category="product"] .insights-card-category { color: #6d28d9; background: rgba(109, 40, 217, 0.12); }
 .insights-flip-front[data-category="product"] .insights-card-meta { border-color: rgba(109, 40, 217, 0.12); background: rgba(109, 40, 217, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
-.insights-flip-front[data-category="operations"] { background: #fef3e2; border-color: #f5deb3; }
-.insights-flip-front[data-category="operations"] .insights-card-category { color: #b45309; background: rgba(180, 83, 9, 0.12); }
-.insights-flip-front[data-category="operations"] .insights-card-meta { border-color: rgba(180, 83, 9, 0.12); background: rgba(180, 83, 9, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
-.insights-flip-front[data-category="industry"] { background: #e4f6f8; border-color: #b4e5ec; }
-.insights-flip-front[data-category="industry"] .insights-card-category { color: #0e7490; background: rgba(14, 116, 144, 0.12); }
-.insights-flip-front[data-category="industry"] .insights-card-meta { border-color: rgba(14, 116, 144, 0.12); background: rgba(14, 116, 144, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
-.insights-flip-front[data-category="engineering"] { background: #fde8ec; border-color: #f5c2cc; }
-.insights-flip-front[data-category="engineering"] .insights-card-category { color: #be123c; background: rgba(190, 18, 60, 0.12); }
-.insights-flip-front[data-category="engineering"] .insights-card-meta { border-color: rgba(190, 18, 60, 0.12); background: rgba(190, 18, 60, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
+.insights-flip-front[data-category="healthcare"] { background: #eef6fb; border-color: #c5ddf0; }
+.insights-flip-front[data-category="healthcare"] .insights-card-category { color: #1e6fa0; background: rgba(30, 111, 160, 0.12); }
+.insights-flip-front[data-category="healthcare"] .insights-card-meta { border-color: rgba(30, 111, 160, 0.12); background: rgba(30, 111, 160, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
+.insights-flip-front[data-category="social care"] { background: #fef3e2; border-color: #f5deb3; }
+.insights-flip-front[data-category="social care"] .insights-card-category { color: #b45309; background: rgba(180, 83, 9, 0.12); }
+.insights-flip-front[data-category="social care"] .insights-card-meta { border-color: rgba(180, 83, 9, 0.12); background: rgba(180, 83, 9, 0.06); margin: auto -32px -32px; padding: 16px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
 .insights-card { text-decoration: none; color: inherit; }
 
 /* ========== BLOG POST PAGE ========== */
@@ -1067,4 +1064,22 @@ a.contact-info-value:hover { color: var(--color-blue); }
   .contact-hero { padding: 64px 0 20px; }
   .contact-content { padding: 32px 0 60px; }
   .contact-hero-mobile-cta { display: block; }
+  .legal-title { font-size: 36px; }
+  .legal-body h2 { font-size: 20px; }
 }
+
+/* ========== LEGAL PAGES (Privacy, Terms) ========== */
+.legal-header { padding: 100px 0 32px; background: linear-gradient(180deg, var(--color-surface) 0%, #FFFFFF 100%); text-align: left; }
+.legal-title { font-family: var(--font-display); font-size: 48px; font-weight: 800; color: var(--color-dark-blue); margin: 0 0 8px; }
+.legal-effective { font-size: 14px; color: var(--color-text-muted); font-weight: 500; margin: 0; }
+.legal-page { padding: 0 0 100px; background: #FFFFFF; }
+.legal-body { max-width: 760px; margin: 0 auto; padding: 48px 0; }
+.legal-body h2 { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--color-dark-blue); margin: 40px 0 16px; padding-top: 16px; border-top: 1px solid var(--color-border-light); }
+.legal-body h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.legal-body h3 { font-size: 16px; font-weight: 700; color: var(--color-dark-blue); margin: 24px 0 8px; }
+.legal-body p { font-size: 16px; color: var(--color-text-secondary); line-height: 1.8; margin: 0 0 16px; }
+.legal-body ul { font-size: 16px; color: var(--color-text-secondary); line-height: 1.8; margin: 0 0 16px; padding-left: 24px; }
+.legal-body ul li { margin-bottom: 8px; }
+.legal-body ul li strong { color: var(--color-dark-blue); font-weight: 700; }
+.legal-body a { color: var(--color-blue); text-decoration: none; font-weight: 600; transition: color var(--transition-fast); }
+.legal-body a:hover { color: var(--color-dark-blue); }

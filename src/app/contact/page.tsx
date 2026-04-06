@@ -33,11 +33,13 @@ function ContactForm() {
       <section className="contact-hero" id="contact-hero">
         <div className="container">
           <h1 className="contact-hero-headline fade-in">
-            {reason === "demo" ? "Book a demo." : "Let\u2019s talk."}
+            {reason === "demo" ? "Book a demo." : reason === "register" ? "Register your interest." : "Let\u2019s talk."}
           </h1>
           <p className="contact-hero-sub fade-in fade-in-delay-1">
             {reason === "demo"
               ? "See how Caio runs compliance end to end \u2014 from first document to final outcome. We\u2019ll walk you through the platform and answer any questions."
+              : reason === "register"
+              ? "We\u2019re building compliance infrastructure for your sector. Leave your details and we\u2019ll be in touch when we\u2019re ready."
               : "Whether you\u2019re exploring compliance infrastructure for your agency or want to learn more about how Caio works \u2014 we\u2019d like to hear from you."}
           </p>
           <div className="contact-hero-mobile-cta fade-in fade-in-delay-2">
@@ -76,7 +78,7 @@ function ContactForm() {
             </div>
             <div className="contact-form-card fade-in fade-in-delay-1">
               <h2 className="contact-form-title">
-                {reason === "demo" ? "Request a demo" : "Send us a message"}
+                {reason === "demo" ? "Request a demo" : reason === "register" ? "Register your interest" : "Send us a message"}
               </h2>
               <form className="contact-form" id="contact-form-element">
                 <div className="contact-form-row">
@@ -106,9 +108,10 @@ function ContactForm() {
                   </div>
                   <div className="contact-form-group">
                     <label htmlFor="contact-reason">Enquiry type</label>
-                    <select id="contact-reason" name="reason" defaultValue={reason === "demo" ? "demo" : ""}>
+                    <select id="contact-reason" name="reason" defaultValue={reason === "demo" ? "demo" : reason === "register" ? "register" : ""}>
                       <option value="">Select a reason</option>
                       <option value="demo">Book a demo</option>
+                      <option value="register">Register interest</option>
                       <option value="general">General enquiry</option>
                       <option value="partnership">Partnership</option>
                     </select>
@@ -116,10 +119,10 @@ function ContactForm() {
                 </div>
                 <div className="contact-form-group">
                   <label htmlFor="contact-message">Message</label>
-                  <textarea id="contact-message" name="message" rows={5} placeholder={reason === "demo" ? "Tell us about your agency and what you'd like to see in the demo..." : "Tell us what you're looking for..."} required></textarea>
+                  <textarea id="contact-message" name="message" rows={5} placeholder={reason === "demo" ? "Tell us about your agency and what you'd like to see in the demo..." : reason === "register" ? "Tell us about your agency and which sector you operate in..." : "Tell us what you're looking for..."} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-dark contact-form-submit" id="contact-submit">
-                  {reason === "demo" ? "Request Demo" : "Send Message"}
+                  {reason === "demo" ? "Request Demo" : reason === "register" ? "Register Interest" : "Send Message"}
                 </button>
               </form>
             </div>

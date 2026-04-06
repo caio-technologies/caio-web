@@ -16,7 +16,7 @@ export default function SocialCarePage() {
             </p>
             <p className="hp-hero-powered">Powered by AI execution and deterministic decisioning.</p>
             <div className="edu-hero-cta">
-              <a href="mailto:support@usecaio.com" className="btn btn-dark" id="social-care-cta">
+              <a href="/contact?reason=register" className="btn btn-dark" id="social-care-cta">
                 Register Interest
               </a>
             </div>

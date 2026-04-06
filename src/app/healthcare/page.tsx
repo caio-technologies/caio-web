@@ -16,7 +16,7 @@ export default function HealthcarePage() {
             </p>
             <p className="hp-hero-powered">Powered by AI execution and deterministic decisioning.</p>
             <div className="edu-hero-cta">
-              <a href="mailto:support@usecaio.com" className="btn btn-dark" id="healthcare-cta">
+              <a href="/contact?reason=register" className="btn btn-dark" id="healthcare-cta">
                 Register Interest
               </a>
             </div>

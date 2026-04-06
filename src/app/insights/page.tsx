@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { posts } from "./posts";
 
-const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
+const categories = ["All", "Education", "Healthcare", "Social Care", "Compliance", "Product"];
 
 export default function InsightsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,7 +31,7 @@ export default function InsightsPage() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [activeCategory]);
 
   const filteredPosts =
     activeCategory === "All"
