@@ -26,6 +26,40 @@ export default function DeckPage() {
     }
   };
 
+  useEffect(() => {
+    if (!authed) return;
+    const header = document.querySelector(".header") as HTMLElement;
+    const footer = document.querySelector(".footer") as HTMLElement;
+    if (header) header.style.display = "none";
+    if (footer) footer.style.display = "none";
+    return () => { if (header) header.style.display = ""; if (footer) footer.style.display = ""; };
+  }, [authed]);
+
+  useEffect(() => {
+    if (!authed) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); goTo(current + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current - 1); }
+      if (e.key === "Home") { e.preventDefault(); goTo(0); }
+      if (e.key === "End") { e.preventDefault(); goTo(TOTAL_SLIDES - 1); }
+      if (e.key === "f") {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [current, goTo, authed]);
+
+  const handleClick = (e: React.MouseEvent) => {
+    const t = e.target as HTMLElement;
+    if (t.closest(".deck-nav")) return;
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    if (x < rect.width / 3) goTo(current - 1);
+    else if (x > rect.width * 2 / 3) goTo(current + 1);
+  };
+
   // Password gate
   if (!authed) {
     return (
@@ -49,39 +83,6 @@ export default function DeckPage() {
       </div>
     );
   }
-
-
-  useEffect(() => {
-    const header = document.querySelector(".header") as HTMLElement;
-    const footer = document.querySelector(".footer") as HTMLElement;
-    if (header) header.style.display = "none";
-    if (footer) footer.style.display = "none";
-    return () => { if (header) header.style.display = ""; if (footer) footer.style.display = ""; };
-  }, []);
-
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); goTo(current + 1); }
-      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current - 1); }
-      if (e.key === "Home") { e.preventDefault(); goTo(0); }
-      if (e.key === "End") { e.preventDefault(); goTo(TOTAL_SLIDES - 1); }
-      if (e.key === "f") {
-        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-        else document.exitFullscreen();
-      }
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [current, goTo]);
-
-  const handleClick = (e: React.MouseEvent) => {
-    const t = e.target as HTMLElement;
-    if (t.closest(".deck-nav")) return;
-    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    if (x < rect.width / 3) goTo(current - 1);
-    else if (x > rect.width * 2 / 3) goTo(current + 1);
-  };
 
   return (
     <div className="deck" onClick={handleClick}>
