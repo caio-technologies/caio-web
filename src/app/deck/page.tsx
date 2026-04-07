@@ -110,14 +110,14 @@ export default function DeckPage() {
         </div>
       </div>
 
-      {/* ===== 2. ERA IS OVER ===== */}
+      {/* ===== 2. A NEW ERA ===== */}
       <div className={`deck-slide ${current === 1 ? "deck-slide-active" : ""}`}>
         <Sidebar num="02" /><WaveBottom />
         <div className="deck-body deck-s2">
-          <h2 className="deck-s2-title">The era of manual<br/>compliance is over</h2>
+          <h2 className="deck-s2-title">A new era for<br/>regulated sector compliance</h2>
           <div className="deck-s2-points">
-            {["No longer financially viable","No longer regulatorily sufficient","No longer technologically required"].map((t,i)=>(
-              <div key={i} className="deck-s2-point"><XIcon /><span>{t}</span></div>
+            {["Education recruitment — safeguarding, DBS, right-to-work","Healthcare staffing — clinical credentials, revalidation, fitness to practise","Social care — workforce registration, training verification, care standards"].map((t,i)=>(
+              <div key={i} className="deck-s2-point"><TickIcon /><span>{t}</span></div>
             ))}
           </div>
         </div>
