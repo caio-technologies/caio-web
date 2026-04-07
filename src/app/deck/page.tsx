@@ -66,7 +66,7 @@ export default function DeckPage() {
     return (
       <div className="deck-gate">
         <div className="deck-gate-card">
-          <div className="deck-gate-logo"><Image src="/caio-logo.png" alt="Caio" width={120} height={48} /></div>
+          <div className="deck-gate-logo"><Image src="/caio-logo.png" alt="Caio" width={102} height={41} /></div>
           <p className="deck-gate-sub">This presentation is password protected.</p>
           <form onSubmit={handleUnlock} className="deck-gate-form">
             <input
@@ -102,7 +102,7 @@ export default function DeckPage() {
           <svg viewBox="0 0 600 300" fill="none">{[0,7,14,21,28,35,42,49,56].map(o=><path key={o} d={`M0 ${160+o} C100 ${100+o} 200 ${220+o} 350 ${130+o} S500 ${90+o} 600 ${150+o}`} stroke="#00B69B" strokeWidth="1.2" strokeOpacity="0.2" fill="none"/>)}</svg>
         </div>
         <div className="deck-s1-content">
-          <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={160} height={64} /></div>
+          <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={136} height={54} /></div>
           <div className="deck-s1-bottom">
             <span className="deck-label">PRE-SEED DECK</span>
             <h1 className="deck-s1-title">The Compliance Infrastructure<br/>for Regulated Recruitment</h1>
@@ -432,7 +432,7 @@ export default function DeckPage() {
         </div>
         <div className="deck-s16-content">
           <h2 className="deck-s16-title">Thank you</h2>
-          <div className="deck-s16-logo"><Image src="/caio-logo.png" alt="Caio" width={140} height={56} /></div>
+          <div className="deck-s16-logo"><Image src="/caio-logo.png" alt="Caio" width={119} height={48} /></div>
         </div>
         <div className="deck-s16-watermark">
           <svg viewBox="0 0 500 200" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.06">
@@ -447,7 +447,7 @@ export default function DeckPage() {
 
 /* ===== Sub-components ===== */
 function Sidebar({ num }: { num: string }) {
-  return <div className="deck-sidebar"><span className="deck-sidebar-logo"><Image src="/caio-logo.png" alt="Caio" width={24} height={24} /></span><span className="deck-sidebar-num">{num} | PRE-SEED DECK</span></div>;
+  return <div className="deck-sidebar"><span className="deck-sidebar-logo"><Image src="/caio-logo.png" alt="Caio" width={20} height={20} /></span><span className="deck-sidebar-num">{num} | PRE-SEED DECK</span></div>;
 }
 function WaveBottom() {
   return <div className="deck-wave deck-wave-bottom"><svg viewBox="0 0 1200 200" fill="none">{[0,8,16,24,32,40,48].map(o=><path key={o} d={`M0 ${100+o} C200 ${40+o} 400 ${160+o} 600 ${80+o} S900 ${140+o} 1200 ${100+o}`} stroke="#D0E0DA" strokeWidth="1.2" strokeOpacity="0.6" fill="none"/>)}</svg></div>;
