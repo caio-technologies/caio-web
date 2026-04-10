@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
-const TOTAL_SLIDES = 16;
+const TOTAL_SLIDES = 17;
 const DECK_PASS = "caio2026";
 
 export default function DeckPage() {
@@ -95,11 +95,21 @@ export default function DeckPage() {
 
       {/* ===== 1. TITLE ===== */}
       <div className={`deck-slide ${current === 0 ? "deck-slide-active" : ""}`}>
-        <div className="deck-wave deck-wave-left">
-          <svg viewBox="0 0 400 300" fill="none">{[0,8,16,24,32,40,48].map(o=><path key={o} d={`M0 ${140+o} C80 ${80+o} 160 ${200+o} 280 ${120+o} S400 ${180+o} 500 ${140+o}`} stroke="#D0E0DA" strokeWidth="1.2" strokeOpacity="0.7" fill="none"/>)}</svg>
-        </div>
-        <div className="deck-wave deck-wave-right">
-          <svg viewBox="0 0 600 300" fill="none">{[0,7,14,21,28,35,42,49,56].map(o=><path key={o} d={`M0 ${160+o} C100 ${100+o} 200 ${220+o} 350 ${130+o} S500 ${90+o} 600 ${150+o}`} stroke="#00B69B" strokeWidth="1.2" strokeOpacity="0.2" fill="none"/>)}</svg>
+        <div className="deck-wave deck-wave-full">
+          <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="none">
+            {Array.from({length: 22}).map((_, i) => {
+              const t = i / 21;
+              const amp = 120 + Math.sin(t * Math.PI) * 60;
+              const phase = t * Math.PI * 2;
+              const y1 = 250 + Math.sin(phase) * amp;
+              const y2 = 250 + Math.sin(phase + 1.8) * amp * 0.7;
+              const y3 = 250 + Math.cos(phase) * amp * 0.9;
+              const y4 = 250 + Math.sin(phase + 3.2) * amp * 0.6;
+              const y5 = 250 + Math.cos(phase + 1.2) * amp * 0.8;
+              const y6 = 250 + Math.sin(phase + 4.5) * amp * 0.5;
+              return <path key={i} d={`M-30 ${y1} C200 ${y2} 350 ${y3} 550 ${y4} C750 ${y5} 950 ${y3} 1100 ${y6} C1250 ${y2} 1350 ${y4} 1430 ${y1}`} stroke="#5EC4D6" strokeWidth="1.1" strokeOpacity={0.18 + t * 0.18} fill="none"/>
+            })}
+          </svg>
         </div>
         <div className="deck-s1-content">
           <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={136} height={54} /></div>
@@ -110,18 +120,30 @@ export default function DeckPage() {
         </div>
       </div>
 
-      {/* ===== 2. A NEW ERA ===== */}
-      <div className={`deck-slide ${current === 1 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="02" /><WaveBottom />
-        <div className="deck-body deck-s2">
-          <h2 className="deck-s2-title">A new era for<br/>regulated sector compliance</h2>
-          <div className="deck-s2-points">
-            {["Education recruitment — safeguarding, DBS, right-to-work","Healthcare staffing — clinical credentials, revalidation, fitness to practise","Social care — workforce registration, training verification, care standards"].map((t,i)=>(
-              <div key={i} className="deck-s2-point"><TickIcon /><span>{t}</span></div>
-            ))}
+      {/* ===== 2. ERA IS OVER ===== */}
+      <div className={`deck-slide deck-slide-s2b ${current === 1 ? "deck-slide-active" : ""}`}>
+        <Sidebar num="02" />
+        {/* Custom flowing swirls — bottom-left to center-right */}
+        <div className="deck-wave deck-wave-s2b">
+          <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="xMidYMax meet">
+            {Array.from({length: 18}).map((_, i) => {
+              const t = i / 17;
+              const baseY = 320 - t * 180;
+              const amp = 30 + t * 25;
+              return <path key={i} d={`M-20 ${baseY + Math.sin(t * 4) * amp} C180 ${baseY - amp * 0.6 + Math.cos(t * 3) * 20} 400 ${baseY + amp * 0.8 + Math.sin(t * 5) * 15} 650 ${baseY - amp * 0.3 + Math.cos(t * 2.5) * 25} C850 ${baseY + amp * 0.5 + Math.sin(t * 3.5) * 18} 1050 ${baseY - amp * 0.4 + Math.cos(t * 4.5) * 12} 1420 ${baseY + Math.sin(t * 2) * amp * 0.7}`} stroke="#5EC4D6" strokeWidth="1.1" strokeOpacity={0.12 + t * 0.14} fill="none"/>;
+            })}
+          </svg>
+        </div>
+        <div className="deck-body deck-s2b">
+          <h2 className="deck-s2b-title">The era of manual<br/>compliance is over</h2>
+          <div className="deck-s2b-points">
+            <div className="deck-s2b-point"><XIcon /><span>No longer financially viable</span></div>
+            <div className="deck-s2b-point"><XIcon /><span>No longer regulatorily sufficient</span></div>
+            <div className="deck-s2b-point"><XIcon /><span>No longer technologically required</span></div>
           </div>
         </div>
       </div>
+
 
       {/* ===== 3. REAL COST ===== */}
       <div className={`deck-slide ${current === 2 ? "deck-slide-active" : ""}`}>
@@ -395,7 +417,7 @@ export default function DeckPage() {
         </div>
       </div>
 
-      {/* ===== 15. THE ASK ===== */}
+      {/* ===== 14. THE ASK ===== */}
       <div className={`deck-slide ${current === 14 ? "deck-slide-active" : ""}`}>
         <Sidebar num="03" />
         <div className="deck-body deck-s15">
@@ -425,8 +447,21 @@ export default function DeckPage() {
         </div>
       </div>
 
-      {/* ===== 16. THANK YOU ===== */}
+      {/* ===== 15. A NEW ERA ===== */}
       <div className={`deck-slide ${current === 15 ? "deck-slide-active" : ""}`}>
+        <Sidebar num="15" /><WaveBottom />
+        <div className="deck-body deck-s2">
+          <h2 className="deck-s2-title">A new era for<br/>regulated sector compliance</h2>
+          <div className="deck-s2-points">
+            {["Education recruitment — safeguarding, DBS, right-to-work","Healthcare staffing — clinical credentials, revalidation, fitness to practise","Social care — workforce registration, training verification, care standards"].map((t,i)=>(
+              <div key={i} className="deck-s2-point"><TickIcon /><span>{t}</span></div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ===== 16. THANK YOU ===== */}
+      <div className={`deck-slide ${current === 16 ? "deck-slide-active" : ""}`}>
         <div className="deck-wave deck-wave-top-right">
           <svg viewBox="0 0 600 200" fill="none">{[0,7,14,21,28,35,42,49].map(o=><path key={o} d={`M0 ${80+o} C120 ${30+o} 240 ${130+o} 400 ${60+o} S550 ${100+o} 600 ${80+o}`} stroke="#00B69B" strokeWidth="1.2" strokeOpacity="0.2" fill="none"/>)}</svg>
         </div>
