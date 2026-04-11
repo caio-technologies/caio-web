@@ -95,51 +95,28 @@ export default function DeckPage() {
 
       {/* ===== 1. TITLE ===== */}
       <div className={`deck-slide ${current === 0 ? "deck-slide-active" : ""}`}>
-        <div className="deck-wave deck-wave-full">
-          <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="none">
-            {Array.from({length: 22}).map((_, i) => {
-              const t = i / 21;
-              const amp = 120 + Math.sin(t * Math.PI) * 60;
-              const phase = t * Math.PI * 2;
-              const y1 = 250 + Math.sin(phase) * amp;
-              const y2 = 250 + Math.sin(phase + 1.8) * amp * 0.7;
-              const y3 = 250 + Math.cos(phase) * amp * 0.9;
-              const y4 = 250 + Math.sin(phase + 3.2) * amp * 0.6;
-              const y5 = 250 + Math.cos(phase + 1.2) * amp * 0.8;
-              const y6 = 250 + Math.sin(phase + 4.5) * amp * 0.5;
-              return <path key={i} d={`M-30 ${y1} C200 ${y2} 350 ${y3} 550 ${y4} C750 ${y5} 950 ${y3} 1100 ${y6} C1250 ${y2} 1350 ${y4} 1430 ${y1}`} stroke="#5EC4D6" strokeWidth="1.1" strokeOpacity={0.18 + t * 0.18} fill="none"/>
-            })}
-          </svg>
-        </div>
-        <div className="deck-s1-content">
-          <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={136} height={54} /></div>
-          <div className="deck-s1-bottom">
+        <div className="deck-s1-content deck-s1-centered">
+          <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={109} height={43} /></div>
+          <div className="deck-s1-center">
             <span className="deck-label">PRE-SEED DECK</span>
-            <h1 className="deck-s1-title">The Compliance Infrastructure<br/>for Regulated Recruitment</h1>
+            <h1 className="deck-s1-title">A new era in compliance<br/>for regulated staffing</h1>
+            <div className="deck-s1-taglines">
+              <p className="deck-s1-sub">AI agents execute every check.<br/>Deterministic rules decide every outcome.</p>
+              <p className="deck-s1-closer">Same rules. Every candidate. Every time.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ===== 2. ERA IS OVER ===== */}
+      {/* ===== 2. THE PROBLEM ===== */}
       <div className={`deck-slide deck-slide-s2b ${current === 1 ? "deck-slide-active" : ""}`}>
         <Sidebar num="02" />
-        {/* Custom flowing swirls — bottom-left to center-right */}
-        <div className="deck-wave deck-wave-s2b">
-          <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="xMidYMax meet">
-            {Array.from({length: 18}).map((_, i) => {
-              const t = i / 17;
-              const baseY = 320 - t * 180;
-              const amp = 30 + t * 25;
-              return <path key={i} d={`M-20 ${baseY + Math.sin(t * 4) * amp} C180 ${baseY - amp * 0.6 + Math.cos(t * 3) * 20} 400 ${baseY + amp * 0.8 + Math.sin(t * 5) * 15} 650 ${baseY - amp * 0.3 + Math.cos(t * 2.5) * 25} C850 ${baseY + amp * 0.5 + Math.sin(t * 3.5) * 18} 1050 ${baseY - amp * 0.4 + Math.cos(t * 4.5) * 12} 1420 ${baseY + Math.sin(t * 2) * amp * 0.7}`} stroke="#5EC4D6" strokeWidth="1.1" strokeOpacity={0.12 + t * 0.14} fill="none"/>;
-            })}
-          </svg>
-        </div>
         <div className="deck-body deck-s2b">
-          <h2 className="deck-s2b-title">The era of manual<br/>compliance is over</h2>
+          <h2 className="deck-s2b-title">Manual compliance is unsafe,<br/>inconsistent, and inefficient</h2>
           <div className="deck-s2b-points">
-            <div className="deck-s2b-point"><XIcon /><span>No longer financially viable</span></div>
-            <div className="deck-s2b-point"><XIcon /><span>No longer regulatorily sufficient</span></div>
-            <div className="deck-s2b-point"><XIcon /><span>No longer technologically required</span></div>
+            <div className="deck-s2b-point"><h3>Unsafe</h3><p>Manual processes lead to gaps and missed checks, with candidates cleared when they shouldn&apos;t be</p></div>
+            <div className="deck-s2b-point"><h3>Inconsistent</h3><p>The same candidate produces different outcomes depending on who processes them, without clear explanation</p></div>
+            <div className="deck-s2b-point"><h3>Inefficient</h3><p>Expensive human time is spent on tasks that can be automated, driving unnecessary cost and lost productivity</p></div>
           </div>
         </div>
       </div>
@@ -150,17 +127,16 @@ export default function DeckPage() {
         <Sidebar num="03" />
         <div className="deck-body deck-s3">
           <h2 className="deck-s3-title">The Real Cost of Manual Compliance</h2>
-          <p className="deck-s3-sub">The cost of compliance failure extends far beyond operational inefficiency — <u>it creates material exposure</u>.</p>
           <div className="deck-s3-cards">
             <div className="deck-s3-card">
               <h3>Financial Cost</h3>
-              <p>Across the UK, recruitment agencies operating in regulated markets spend an estimated £260m–£300m per year on compliance labour and manual processing.</p>
-              <p>Of this, approximately 75% (£195m–£225m) relates to repetitive, rules-based activity that can now be executed end-to-end by autonomous AI&nbsp;agents.</p>
+              <p>UK agencies spend <strong>£260m–£300m</strong> annually on compliance</p>
+              <p><strong>~75% (£195m–£225m)</strong> is repetitive, rules-based work that can now be automated</p>
             </div>
             <div className="deck-s3-card">
               <h3>Risk Exposure</h3>
-              <p>Manual compliance relies on human judgement across fragmented systems, making outcomes inherently inconsistent.</p>
-              <p>As volume increases, risk accumulates silently, until it is exposed through audit, incident, or regulatory scrutiny.</p>
+              <p>Manual compliance relies on <strong>human judgement</strong> across fragmented systems, creating inconsistent outcomes</p>
+              <p>Risk accumulates silently until exposed through <strong>audit, incident, or regulatory failure</strong></p>
             </div>
           </div>
         </div>
@@ -171,14 +147,13 @@ export default function DeckPage() {
         <Sidebar num="04" />
         <div className="deck-body deck-s4">
           <h2 className="deck-s4-heading">Solution</h2>
-          <p className="deck-s4-bold">Caio replaces manual compliance with autonomous, agent-driven execution.</p>
-          <p className="deck-s4-sub">Through Caio, compliance execution shifts from human judgement to deterministic systems, with agents executing checks, decisions, and escalations end-to-end to materially reduce compliance overhead.</p>
+          <p className="deck-s4-bold">Caio replaces manual compliance with AI agents and deterministic rules.</p>
+          <p className="deck-s4-sub">Every check is executed, every decision is ruled, every outcome is auditable — without human processing.</p>
           <div className="deck-s4-cards">
-            {[{title:"Speed",desc:"Parallel, agent-driven execution clears candidates in hours, not days"},{title:"Intelligence",desc:"Rule-based interpretation removes human variability and improves accuracy"},{title:"Alignment",desc:"Full alignment to sector-specific frameworks & internal policies"}].map((c,i)=>(
-              <div key={i} className="deck-s4-card"><CheckCircle /><h3>{c.title}</h3><p>{c.desc}</p></div>
+            {[{title:"Speed",desc:"AI agents run multiple checks simultaneously, providing instant feedback and reducing clearance time from days to hours"},{title:"Consistency",desc:"Deterministic rules ensure every candidate produces the same outcome, every time, regardless of who processes them"},{title:"Auditability",desc:"Every decision is documented with full reasoning, creating a complete compliance record ready for audit at any time"}].map((c,i)=>(
+              <div key={i} className="deck-s4-card"><h3>{c.title}</h3><p>{c.desc}</p></div>
             ))}
           </div>
-          <p className="deck-s4-bottom">The result is candidates cleared faster, at lower cost, and with a level of precision manual compliance teams cannot match.</p>
         </div>
       </div>
 
@@ -186,67 +161,71 @@ export default function DeckPage() {
       <div className={`deck-slide ${current === 4 ? "deck-slide-active" : ""}`}>
         <Sidebar num="05" />
         <div className="deck-body deck-s5">
-          <h2 className="deck-s5-heading">How Caio Works</h2>
-          <h3 className="deck-s5-subheading">The Caio Process:</h3>
-          <div className="deck-s5-timeline">
-            <div className="deck-s5-line" />
-            {[
-              {stage:"STAGE 1",title:"Upload",desc:"Candidates submit documents and information",pos:"top"},
-              {stage:"STAGE 2",title:"Extract",desc:"Agents read, interpret and structure data",pos:"bottom"},
-              {stage:"STAGE 3",title:"Execute",desc:"Background checks are completed by AI agents and validated against defined rules",pos:"top"},
-              {stage:"STAGE 4",title:"Chase",desc:"Automated follow-up with candidates and third parties",pos:"bottom"},
-              {stage:"STAGE 5",title:"Decide",desc:"Deterministic rule logic aggregates outcomes and sets clearance status",pos:"top"},
-              {stage:"STAGE 6",title:"Update",desc:"ATS, CRM and audit trails are updated automatically",pos:"bottom"},
-            ].map((s,i)=>(
-              <div key={i} className={`deck-s5-step deck-s5-step-${s.pos}`}>
-                <div className="deck-s5-dot" />
-                <div className="deck-s5-step-content">
-                  {s.pos==="top"?<><h4>{s.title}</h4><p>{s.desc}</p><span className="deck-s5-stage">{s.stage}</span></>:<><span className="deck-s5-stage">{s.stage}</span><h4>{s.title}</h4><p>{s.desc}</p></>}
-                </div>
-              </div>
-            ))}
+          <h2 className="deck-s5-heading">A system that runs compliance end to end</h2>
+          <p className="deck-s5-sub">Caio runs compliance from first document to final outcome. AI agents execute checks, resolve gaps, and keep every candidate moving.</p>
+          <div className="deck-s5-flow">
+            <div className="deck-s5-card">
+              <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M8 26V6h10l6 6v14H8z" strokeLinejoin="round"/><path d="M18 6v6h6" strokeLinejoin="round"/><path d="M12 18h8M12 22h5" strokeLinecap="round"/></svg></div>
+              <h3>Capture</h3>
+              <p>Candidate information and documents are collected and structured through a guided process.</p>
+            </div>
+            <div className="deck-s5-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+            <div className="deck-s5-card">
+              <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="6" y="7" width="20" height="18" rx="2" strokeLinejoin="round"/><path d="M12 15l3 3 5-6" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+              <h3>Check</h3>
+              <p>All required checks are executed and validated against the relevant compliance framework.</p>
+            </div>
+            <div className="deck-s5-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+            <div className="deck-s5-card">
+              <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="16" cy="16" r="10"/><path d="M16 11v5l3.5 3.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+              <h3>Resolve</h3>
+              <p>Missing, incorrect, or incomplete information is identified and handled automatically.</p>
+            </div>
+            <div className="deck-s5-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+            <div className="deck-s5-card">
+              <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="16" cy="16" r="10"/><path d="M12 16l3 3 5-5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+              <h3>Decide</h3>
+              <p>Compliance requirements are evaluated and a clear outcome is&nbsp;produced.</p>
+            </div>
+            <div className="deck-s5-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+            <div className="deck-s5-card deck-s5-card-final">
+              <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 3L5 8v7c0 6.8 4.5 13.2 11 15 6.5-1.8 11-8.2 11-15V8L16 3z" strokeLinejoin="round"/><path d="M11 16l3.5 3.5L21 13" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+              <h3>Final Outcome</h3>
+              <p>A fully reasoned, auditable outcome. You review and approve.</p>
+            </div>
           </div>
-          <p className="deck-s5-bottom">Candidates reach a Final-Check-Ready state with all required checks completed, validated and fully auditable.</p>
         </div>
       </div>
 
-      {/* ===== 6. CANDIDATE OVERVIEW ===== */}
+      {/* ===== 6a. PRODUCT — AUDIT RECORD ===== */}
       <div className={`deck-slide ${current === 5 ? "deck-slide-active" : ""}`}>
         <Sidebar num="06" />
-        <div className="deck-body deck-s6">
-          <div className="deck-s6-left">
-            <div className="deck-s6-table-card">
-              <div className="deck-s6-table-header"><h3>Compliance Checks</h3><span className="deck-s6-filter">Filter ▾</span></div>
-              <table className="deck-s6-table">
-                <thead><tr><th>Check</th><th>AI Reasoning*</th><th>Rule Applied</th><th>Status</th><th>Last Updated</th></tr></thead>
-                <tbody>
-                  {[
-                    {check:"ID Verification",reasoning:"ID V1 data parsed. Name & DOB match passport and CV. Identity confirmed.",rule:"APSCO Compliance+",status:"Cleared",date:"01 November 13:02"},
-                    {check:"Right to Work",reasoning:"Passport validated. British citizen. No share code required. Identity cross-checked.",rule:"APSCO Compliance+",status:"Cleared",date:"02 November 10:30"},
-                    {check:"DBS (Standard)",reasoning:"Certificate parsed. Stage 4 verified. No relevant information found. Identity match confirmed.",rule:"APSCO Compliance+",status:"Cleared",date:"03 November 14:15"},
-                    {check:"DBS (Update Service)",reasoning:"Share code validated. Update Service record matches candidate ID & DOB. No alerts found.",rule:"APSCO Compliance+",status:"Cleared",date:"03 November 16:40"},
-                    {check:"TRA / QTS",reasoning:"TRA record validated. QTS confirmed. No prohibitions or restrictions.",rule:"APSCO Compliance+",status:"Cleared",date:"01 November 14:22"},
-                    {check:"References",reasoning:"Reference 1 valid. Reference 2 contains signature mismatch and missing employer details. Candidate notified and asked to upload new reference.",rule:"APSCO Compliance+",status:"Pending",date:"03 November 09:31"},
-                  ].map((r,i)=>(
-                    <tr key={i}>
-                      <td className="deck-s6-check-name">{r.check}</td>
-                      <td className="deck-s6-reasoning">{r.reasoning}</td>
-                      <td className="deck-s6-rule">{r.rule}</td>
-                      <td><span className={`deck-s6-status ${r.status==="Cleared"?"deck-s6-status-cleared":"deck-s6-status-pending"}`}>{r.status}</span></td>
-                      <td className="deck-s6-date">{r.date}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        <div className="deck-body deck-s6a">
+          <h2 className="deck-s6a-title">Every decision, explained and defensible</h2>
+          <div className="deck-s6a-table-card">
+            <div className="deck-s6-table-header">
+              <h3>Compliance Status: <span className="deck-s6-status-cleared-text">Cleared</span></h3>
+              <span className="deck-s6-decision-rule">APSCo Compliance+ rules</span>
             </div>
-          </div>
-          <div className="deck-s6-right">
-            <h2 className="deck-s6-title">Candidate<br/>Overview</h2>
-            <div className="deck-s6-labels">
-              {["Framework rules applied","AI reasoning documented","Date and timestamp recorded"].map((l,i)=>(
-                <div key={i} className="deck-s6-label">{l}</div>
-              ))}
-            </div>
+            <table className="deck-s6-table">
+              <thead><tr><th>Check</th><th>Caio Reasoning</th><th>Outcome</th></tr></thead>
+              <tbody>
+                {[
+                  {check:"ID Verification",reasoning:"IDVT completed. Name, DOB and facial image validated against passport. Identity confirmed.",status:"Cleared"},
+                  {check:"Right to Work",reasoning:"Passport verified. British citizen confirmed. No share code required. Right to work established.",status:"Cleared"},
+                  {check:"DBS (Standard)",reasoning:"Certificate parsed. No relevant information disclosed. Identity match confirmed against DBS record.",status:"Cleared"},
+                  {check:"DBS (Update Service)",reasoning:"Update Service checked. Record matches candidate ID and DOB. No new information or alerts found.",status:"Cleared"},
+                  {check:"TRA / QTS",reasoning:"TRA record checked. QTS status confirmed. No prohibition order, no misconduct findings, no Section 128 direction.",status:"Cleared"},
+                  {check:"References",reasoning:"2 references received covering required 24 month period. No concerns identified.",status:"Cleared"},
+                ].map((r,i)=>(
+                  <tr key={i}>
+                    <td className="deck-s6-check-name">{r.check}</td>
+                    <td className="deck-s6-reasoning">{r.reasoning}</td>
+                    <td><span className="deck-s6-status deck-s6-status-cleared">{r.status}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -264,60 +243,61 @@ export default function DeckPage() {
             </div>
             <div className="deck-s7-card deck-s7-card-caio">
               <h3><span className="deck-s7-caio-logo">Caio.</span> is built differently:</h3>
-              <ul>{["Autonomous AI agents execute compliance workflows end-to-end","Decisions are governed by explicit, deterministic and auditable rule logic","Humans provide final oversight and sign-off, not manual processing"].map((t,i)=><li key={i}><TickIcon /><span>{t}</span></li>)}</ul>
+              <ul>{["AI agents execute checks. Deterministic rules decide every outcome — not human judgement","Human oversight at the point of approval — not throughout the process","Every decision is fully documented and audit-ready from day one"].map((t,i)=><li key={i}><TickIcon /><span>{t}</span></li>)}</ul>
             </div>
           </div>
           <p className="deck-s7-bottom">Traditional platforms are structurally dependent on humans for execution. Agentic execution has only recently become technically viable.</p>
         </div>
       </div>
 
-      {/* ===== 8. WHY NOW ===== */}
+      {/* ===== 7. WHY NOW ===== */}
       <div className={`deck-slide ${current === 7 ? "deck-slide-active" : ""}`}>
         <Sidebar num="08" />
         <div className="deck-body deck-s8">
           <h2 className="deck-s8-title">Why now?</h2>
-          <p className="deck-s8-sub">Regulatory scope, audit requirements, and labour costs are all increasing —<br/>while compliance complexity is rising faster than agency margins can sustain.</p>
+          <p className="deck-s8-sub">Regulatory scope, audit requirements and labour costs are all increasing —<br/>while agency margins are compressing.</p>
           <div className="deck-s8-grid">
-            {["CCS frameworks across Education, Healthcare and Social Care are expanding in scope and audit depth","Frameworks, PSLs and clients now mandate explicit audit criteria and ongoing evidence","Compliance cost and complexity are rising faster than agency margins","UK labour costs continue to increase, intensifying pressure on agency economics"].map((t,i)=>(
-              <div key={i} className="deck-s8-card"><span className="deck-s8-bullet" /><p>{t}</p></div>
+            {["CCS frameworks across Education, Healthcare and Social Care are expanding in scope and audit depth","Frameworks, PSLs and clients now require ongoing audit evidence, not point-in-time checks","Employer NI increases and rising wage costs are making compliance teams materially more expensive","Rising compliance costs are compressing agency margins"].map((t,i)=>(
+              <div key={i} className="deck-s8-card"><p>{t}</p></div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ===== 9. GLOBAL TAM ===== */}
+      {/* ===== 9. COMPLIANCE EXECUTION MARKET ===== */}
       <div className={`deck-slide ${current === 8 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="10" />
-        <div className="deck-body deck-s9">
-          <h2 className="deck-s9-title">Global TAM — Compliance Operations</h2>
-          <div className="deck-s9-headline"><span className="deck-s9-value">£1.5bn – £1.8bn</span><span className="deck-s9-label">Regulated workforce compliance operations spend</span></div>
-          <div className="deck-s9-chart">
-            {[{country:"United States",range:"£800m – £1bn",width:92},{country:"Europe (FR, DE, ES, IT)",range:"£320m – £385m (combined)",width:68},{country:"United Kingdom",range:"£260m – £310m",width:42},{country:"Australia",range:"£60m – £75m",width:18},{country:"Canada",range:"£40m – £50m",width:14}].map((d,i)=>(
-              <div key={i} className="deck-s9-bar-row">
-                <span className="deck-s9-bar-label">{d.country}</span>
-                <div className="deck-s9-bar-track"><div className="deck-s9-bar" style={{width:`${d.width}%`}} /></div>
-                <span className="deck-s9-bar-value">{d.range}</span>
-              </div>
-            ))}
+        <Sidebar num="09" />
+        <div className="deck-body deck-s9x">
+          <h2 className="deck-s9x-title">The Compliance Operations Market</h2>
+          <div className="deck-s9x-cols">
+            <div className="deck-s9x-card">
+              <span className="deck-s9x-entry">UK compliance operations market</span>
+              <span className="deck-s9x-value">£250m–£350m</span>
+            </div>
+            <div className="deck-s9x-card">
+              <span className="deck-s9x-entry">Global compliance operations market</span>
+              <span className="deck-s9x-global-value">£4bn–£6bn</span>
+            </div>
           </div>
-          <p className="deck-s9-footnote">*Represents the compliance execution layer around third-party checks, not the checks themselves.</p>
+          <p className="deck-s9x-context">Education · Healthcare · Social Care · Early Years · Further Education</p>
         </div>
       </div>
 
       {/* ===== 10. INITIAL ENTRY MARKET ===== */}
       <div className={`deck-slide ${current === 9 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="11" />
+        <Sidebar num="10" />
         <div className="deck-body deck-s10">
           <h2 className="deck-s10-title">Initial Entry Market – UK Education</h2>
-          <div className="deck-s10-headline"><span className="deck-s10-value">£40m – £60m</span><span className="deck-s10-label">Annual compliance execution spend</span></div>
+          <div className="deck-s10-headline"><span className="deck-s10-value">£50m – £80m</span><span className="deck-s10-label">Annual compliance operations cost</span></div>
           <div className="deck-s10-cards">
-            {[{icon:"doc",text:"Workflows are document-heavy, repetitive and rule-based, making them well suited to agent-driven execution at scale."},{icon:"list",text:"Early market access provides direct and accelerated pilot routes, delivering the fastest path to proof, product depth and early ARR."},{icon:"link",text:"Education provides immediate traction and a clear launchpad to scale into healthcare, social care and other regulated sectors."}].map((c,i)=>(
+            {[{icon:"doc",title:"High-volume, rule-based workflows",text:"Document-heavy and repetitive — ideal for automated compliance operations"},{icon:"list",title:"Direct founder access and pilot readiness",text:"15 years in education recruitment with immediate agency relationships and live pilot routes"},{icon:"expand",title:"Clear expansion beyond education",text:"Scales directly into healthcare, social care and the wider regulated workforce market"}].map((c,i)=>(
               <div key={i} className="deck-s10-card">
                 <span className="deck-s10-icon">
                   {c.icon==="doc"&&<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A2D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>}
                   {c.icon==="list"&&<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A2D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>}
-                  {c.icon==="link"&&<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A2D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>}
+                  {c.icon==="expand"&&<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A2D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>}
                 </span>
+                <strong className="deck-s10-card-title">{c.title}</strong>
                 <p>{c.text}</p>
               </div>
             ))}
@@ -327,10 +307,10 @@ export default function DeckPage() {
 
       {/* ===== 11. EXPANSION BEYOND EDUCATION ===== */}
       <div className={`deck-slide ${current === 10 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="03" />
+        <Sidebar num="11" />
         <div className="deck-body deck-s11">
-          <h2 className="deck-s11-title">Expansion Beyond Education</h2>
-          <p className="deck-s11-sub">The Caio execution engine remains constant across sectors.<br/>Only sector-specific compliance rules and evidence logic change.</p>
+          <h2 className="deck-s11-title">One Engine. Every Regulated Workforce.</h2>
+          <p className="deck-s11-sub">The engine is constant. Only compliance rules and evidence requirements change.</p>
           <div className="deck-s11-tree">
             <div className="deck-s11-engine">
               <span className="deck-s11-engine-title">Caio Execution Engine</span>
@@ -356,29 +336,30 @@ export default function DeckPage() {
 
       {/* ===== 12. BUSINESS MODEL ===== */}
       <div className={`deck-slide ${current === 11 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="14" />
+        <Sidebar num="12" />
         <div className="deck-body deck-s12">
           <h2 className="deck-s12-title">Business Model</h2>
-          <p className="deck-s12-sub">A single platform with full functionality, priced by candidate throughput rather than feature access.</p>
-          <div className="deck-s12-chart">
-            {[{label:"Tier 1",h:20,color:"#D0E0DA"},{label:"Tier 2",h:35,color:"#94d4c4"},{label:"Tier 3",h:50,color:"#00B69B"},{label:"Tier 4",h:65,color:"#009B84"},{label:"Tier 5",h:80,color:"#1A2D4D"}].map((t,i)=>(
-              <div key={i} className="deck-s12-bar-col">
-                <div className="deck-s12-bar" style={{height:`${t.h}%`,background:t.color}}><span>{t.label}</span></div>
-              </div>
-            ))}
-            <div className="deck-s12-axis">
-              <svg width="100%" height="20"><line x1="0" y1="10" x2="100%" y2="10" stroke="#0A1628" strokeWidth="1.5"/><polygon points="0,5 0,15 8,10" fill="#0A1628"/><polygon points="100%,10" fill="#0A1628"/></svg>
-              <span>Monthly candidates processed</span>
-              <svg width="20" height="20"><polygon points="12,5 12,15 20,10" fill="#0A1628"/></svg>
+          <p className="deck-s12-sub">Simple, scalable pricing aligned to compliance activity</p>
+          <div className="deck-s12-cols">
+            <div className="deck-s12-card">
+              <span className="deck-s12-entry">Initial compliance clearance</span>
+              <span className="deck-s12-price">~£25</span>
+              <span className="deck-s12-label">per candidate</span>
+            </div>
+            <div className="deck-s12-card">
+              <span className="deck-s12-entry">Recurring revenue</span>
+              <span className="deck-s12-price">~£6–£12</span>
+              <span className="deck-s12-label">per candidate annually</span>
             </div>
           </div>
-          <p className="deck-s12-bottom">Single platform. Same features. Pricing scales with candidate throughput.</p>
+          <p className="deck-s12-punchline">£25k–£30k <span>revenue per agency per year</span></p>
+          <p className="deck-s12-bottom">Predictable unit economics. Revenue scales with workforce size.</p>
         </div>
       </div>
 
       {/* ===== 13. 2026 ROADMAP ===== */}
       <div className={`deck-slide ${current === 12 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="15" />
+        <Sidebar num="13" />
         <div className="deck-body deck-s13">
           <h2 className="deck-s13-title">2026 Roadmap</h2>
           <div className="deck-s13-timeline">
@@ -400,7 +381,7 @@ export default function DeckPage() {
 
       {/* ===== 14. TEAM ===== */}
       <div className={`deck-slide ${current === 13 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="17" />
+        <Sidebar num="14" />
         <div className="deck-body deck-s14">
           <h2 className="deck-s14-heading">Team</h2>
           <div className="deck-s14-content">
@@ -419,7 +400,7 @@ export default function DeckPage() {
 
       {/* ===== 14. THE ASK ===== */}
       <div className={`deck-slide ${current === 14 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="03" />
+        <Sidebar num="15" />
         <div className="deck-body deck-s15">
           <h2 className="deck-s15-heading">The ask</h2>
           <div className="deck-s15-grid">
@@ -449,7 +430,7 @@ export default function DeckPage() {
 
       {/* ===== 15. A NEW ERA ===== */}
       <div className={`deck-slide ${current === 15 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="15" /><WaveBottom />
+        <Sidebar num="16" /><WaveBottom />
         <div className="deck-body deck-s2">
           <h2 className="deck-s2-title">A new era for<br/>regulated sector compliance</h2>
           <div className="deck-s2-points">
