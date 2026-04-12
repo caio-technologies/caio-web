@@ -98,10 +98,10 @@ export default function EducationPage() {
         <div className="container">
           <h2 className="edu-trust-strip-title fade-in">Designed to meet the UK&apos;s highest education standards</h2>
           <div className="edu-trust-strip-logos fade-in fade-in-delay-1">
-            <img src="/KCSIE.png" alt="KCSIE" style={{ width: '80px', height: 'auto' }} />
-            <img src="/Apsco.jpg" alt="APSCo Compliance+" style={{ width: '120px', height: 'auto' }} />
-            <img src="/Rec.png" alt="REC Audited" style={{ width: '140px', height: 'auto' }} />
-            <img src="/CCS.png" alt="Crown Commercial Service" style={{ width: '120px', height: 'auto' }} />
+            <img src="/KCSIE - Edited.png" alt="KCSIE" style={{ width: '80px', height: 'auto' }} />
+            <img src="/Apsco - Edited.png" alt="APSCo Compliance+" style={{ width: '120px', height: 'auto' }} />
+            <img src="/Rec - Edited.png" alt="REC Audited" style={{ width: '140px', height: 'auto' }} />
+            <img src="/CCS - Edited.png" alt="Crown Commercial Service" style={{ width: '120px', height: 'auto' }} />
           </div>
         </div>
       </section>
@@ -227,17 +227,17 @@ export default function EducationPage() {
 
           <div className="edu-audit-grid fade-in fade-in-delay-2">
             <div className="edu-audit-card">
-              <img src="/Apsco.jpg" alt="APSCo" className="edu-audit-logo" />
+              <img src="/Apsco - Edited.png" alt="APSCo" className="edu-audit-logo" />
               <h3>APSCo Compliance+</h3>
               <p>Full documentation trail for every candidate. Evidence of consistent process execution. AI and human actions logged separately — exactly what APSCo auditors look for.</p>
             </div>
             <div className="edu-audit-card">
-              <img src="/Rec.png" alt="REC" className="edu-audit-logo" />
+              <img src="/Rec - Edited.png" alt="REC" className="edu-audit-logo" />
               <h3>REC Audited Education</h3>
               <p>Standardised compliance workflows aligned to REC education standards. Every decision time-stamped and explainable. No gaps in your audit trail.</p>
             </div>
             <div className="edu-audit-card">
-              <img src="/CCS.png" alt="CCS" className="edu-audit-logo" />
+              <img src="/CCS - Edited.png" alt="CCS" className="edu-audit-logo" />
               <h3>CCS Framework</h3>
               <p>Meet the compliance criteria of the Crown Commercial Service framework. Consistent vetting, full KCSIE alignment, and continuous monitoring — documented and defensible.</p>
             </div>

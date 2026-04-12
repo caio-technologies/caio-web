@@ -1269,7 +1269,7 @@ body:has(.deck-print) > .footer { display: none !important; }
 .deck-s9x-card { flex: 1; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 32px 28px; }
 .deck-s9x-entry { display: block; font-size: 11px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
 .deck-s9x-value { display: block; font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 48px); font-weight: 900; color: var(--color-dark-blue); letter-spacing: -2px; line-height: 1; margin-bottom: 10px; white-space: nowrap; }
-.deck-s9x-global-value { display: block; font-family: var(--font-display); font-size: clamp(42px, 5.5vw, 56px); font-weight: 900; color: var(--color-dark-blue); letter-spacing: -2px; line-height: 1; margin-bottom: 10px; }
+.deck-s9x-global-value { display: block; font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 48px); font-weight: 900; color: var(--color-dark-blue); letter-spacing: -2px; line-height: 1; margin-bottom: 10px; white-space: nowrap; }
 .deck-s9x-label { display: block; font-size: 14px; font-weight: 600; color: var(--color-text-secondary); margin: 0; }
 .deck-s9x-context { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.6; letter-spacing: 0.3px; }
 

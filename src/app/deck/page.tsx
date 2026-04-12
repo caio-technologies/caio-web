@@ -137,8 +137,8 @@ function DeckInner() {
           <div className="deck-s3-cards">
             <div className="deck-s3-card">
               <h3>Financial Cost</h3>
-              <p>UK regulated recruitment agencies spend <strong>£260m–£300m</strong> annually on compliance</p>
-              <p><strong>~75% (£195m–£225m)</strong> is repetitive, rules-based work that can now be automated</p>
+              <p>UK regulated recruitment agencies spend <strong>£250m–£300m</strong> annually on compliance</p>
+              <p><strong>~75% (£190m–£225m)</strong> is repetitive, rules-based work that can now be automated</p>
             </div>
             <div className="deck-s3-card">
               <h3>Risk Exposure</h3>
@@ -278,11 +278,11 @@ function DeckInner() {
           <div className="deck-s9x-cols">
             <div className="deck-s9x-card">
               <span className="deck-s9x-entry">UK compliance operations market</span>
-              <span className="deck-s9x-value">£260m–£300m</span>
+              <span className="deck-s9x-value">£250m–£350m</span>
             </div>
             <div className="deck-s9x-card">
               <span className="deck-s9x-entry">Global compliance operations market</span>
-              <span className="deck-s9x-global-value">£4bn–£6bn</span>
+              <span className="deck-s9x-global-value">£3.5bn–£5bn</span>
             </div>
           </div>
           <p className="deck-s9x-context">Regulated Recruitment Sectors — including Education · Healthcare · Social Care · Early Years · Further Education</p>
@@ -294,7 +294,7 @@ function DeckInner() {
         <Sidebar num="10" />
         <div className="deck-body deck-s10">
           <h2 className="deck-s10-title">Initial Entry Market – UK Education</h2>
-          <div className="deck-s10-headline"><span className="deck-s10-value">£50m – £80m</span><span className="deck-s10-label">Annual compliance operations cost</span></div>
+          <div className="deck-s10-headline"><span className="deck-s10-value">£70m – £100m</span><span className="deck-s10-label">Annual compliance operations cost</span></div>
           <div className="deck-s10-cards">
             {[{icon:"doc",title:"High-volume, rule-based workflows",text:"Document-heavy and repetitive — ideal for automated compliance operations"},{icon:"list",title:"Direct founder access and pilot readiness",text:"15 years in education recruitment with immediate agency relationships and live pilot routes"},{icon:"expand",title:"Clear expansion beyond education",text:"Scales directly into healthcare, social care and the wider regulated workforce market"}].map((c,i)=>(
               <div key={i} className="deck-s10-card">
@@ -308,6 +308,7 @@ function DeckInner() {
               </div>
             ))}
           </div>
+          <p style={{fontSize:'11px',color:'#8899AA',marginTop:'12px'}}>Based on £1.74bn education agency spend (DfE AAR/CFR, 2025)</p>
         </div>
       </div>
 
