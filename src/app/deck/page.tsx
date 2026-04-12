@@ -137,8 +137,8 @@ function DeckInner() {
           <div className="deck-s3-cards">
             <div className="deck-s3-card">
               <h3>Financial Cost</h3>
-              <p>UK regulated recruitment agencies spend <strong>£250m–£300m</strong> annually on compliance</p>
-              <p><strong>~75% (£190m–£225m)</strong> is repetitive, rules-based work that can now be automated</p>
+              <p>UK regulated recruitment agencies spend <strong>£250m–£350m</strong> annually on compliance</p>
+              <p><strong>~75% (£190m–£260m)</strong> is repetitive, rules-based work that can now be automated</p>
             </div>
             <div className="deck-s3-card">
               <h3>Risk Exposure</h3>
