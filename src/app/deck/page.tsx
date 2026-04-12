@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-const TOTAL_SLIDES = 17;
+const TOTAL_SLIDES = 16;
 const DECK_PASS = "caio2026";
 
 export default function DeckPage() {
+  return <Suspense><DeckInner /></Suspense>;
+}
+
+function DeckInner() {
+  const searchParams = useSearchParams();
+  const isPrint = searchParams.get("print") !== null;
   const [current, setCurrent] = useState(0);
   const [authed, setAuthed] = useState(false);
   const [pin, setPin] = useState("");
@@ -28,13 +35,13 @@ export default function DeckPage() {
   };
 
   useEffect(() => {
-    if (!authed) return;
+    if (!authed && !isPrint) return;
     const header = document.querySelector(".header") as HTMLElement;
     const footer = document.querySelector(".footer") as HTMLElement;
     if (header) header.style.display = "none";
     if (footer) footer.style.display = "none";
     return () => { if (header) header.style.display = ""; if (footer) footer.style.display = ""; };
-  }, [authed]);
+  }, [authed, isPrint]);
 
   useEffect(() => {
     if (!authed) return;
@@ -61,8 +68,8 @@ export default function DeckPage() {
     else if (x > rect.width * 2 / 3) goTo(current + 1);
   };
 
-  // Password gate
-  if (!authed) {
+  // Password gate (skip in print mode)
+  if (!authed && !isPrint) {
     return (
       <div className="deck-gate">
         <div className="deck-gate-card">
@@ -86,15 +93,15 @@ export default function DeckPage() {
   }
 
   return (
-    <div className="deck" onClick={handleClick}>
-      <div className="deck-nav">
+    <div className={`deck ${isPrint ? "deck-print" : ""}`} onClick={isPrint ? undefined : handleClick}>
+      {!isPrint && <div className="deck-nav">
         {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
           <button key={i} className={`deck-dot ${current === i ? "deck-dot-active" : ""}`} onClick={(e) => { e.stopPropagation(); goTo(i); }} aria-label={`Slide ${i + 1}`} />
         ))}
-      </div>
+      </div>}
 
       {/* ===== 1. TITLE ===== */}
-      <div className={`deck-slide ${current === 0 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 0 ? "deck-slide-active" : ""}`}>
         <div className="deck-s1-content deck-s1-centered">
           <div className="deck-logo"><Image src="/caio-logo.png" alt="Caio" width={109} height={43} /></div>
           <div className="deck-s1-center">
@@ -109,7 +116,7 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 2. THE PROBLEM ===== */}
-      <div className={`deck-slide deck-slide-s2b ${current === 1 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide deck-slide-s2b ${isPrint || current === 1 ? "deck-slide-active" : ""}`}>
         <Sidebar num="02" />
         <div className="deck-body deck-s2b">
           <h2 className="deck-s2b-title">Manual compliance is unsafe,<br/>inconsistent, and inefficient</h2>
@@ -123,14 +130,14 @@ export default function DeckPage() {
 
 
       {/* ===== 3. REAL COST ===== */}
-      <div className={`deck-slide ${current === 2 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 2 ? "deck-slide-active" : ""}`}>
         <Sidebar num="03" />
         <div className="deck-body deck-s3">
           <h2 className="deck-s3-title">The Real Cost of Manual Compliance</h2>
           <div className="deck-s3-cards">
             <div className="deck-s3-card">
               <h3>Financial Cost</h3>
-              <p>UK agencies spend <strong>£260m–£300m</strong> annually on compliance</p>
+              <p>UK regulated recruitment agencies spend <strong>£260m–£300m</strong> annually on compliance</p>
               <p><strong>~75% (£195m–£225m)</strong> is repetitive, rules-based work that can now be automated</p>
             </div>
             <div className="deck-s3-card">
@@ -143,14 +150,14 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 4. SOLUTION ===== */}
-      <div className={`deck-slide ${current === 3 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 3 ? "deck-slide-active" : ""}`}>
         <Sidebar num="04" />
         <div className="deck-body deck-s4">
           <h2 className="deck-s4-heading">Solution</h2>
-          <p className="deck-s4-bold">Caio replaces manual compliance with AI agents and deterministic rules.</p>
-          <p className="deck-s4-sub">Every check is executed, every decision is ruled, every outcome is auditable — without human processing.</p>
+          <p className="deck-s4-bold">Caio automates compliance execution with AI agents and deterministic rules.</p>
+          <p className="deck-s4-sub">AI agents execute every check. Deterministic rules decide every outcome. Every result is fully reasoned and ready for human sign-off.</p>
           <div className="deck-s4-cards">
-            {[{title:"Speed",desc:"AI agents run multiple checks simultaneously, providing instant feedback and reducing clearance time from days to hours"},{title:"Consistency",desc:"Deterministic rules ensure every candidate produces the same outcome, every time, regardless of who processes them"},{title:"Auditability",desc:"Every decision is documented with full reasoning, creating a complete compliance record ready for audit at any time"}].map((c,i)=>(
+            {[{title:"Speed",desc:"Multiple checks run simultaneously. Clearance times drop from days to hours — candidates start working faster."},{title:"Consistency",desc:"The same rules, applied the same way, to every candidate. No subjective judgement, no variance between staff."},{title:"Auditability",desc:"Every decision logged with full reasoning. A complete compliance record available instantly for any audit or inspection."}].map((c,i)=>(
               <div key={i} className="deck-s4-card"><h3>{c.title}</h3><p>{c.desc}</p></div>
             ))}
           </div>
@@ -158,11 +165,11 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 5. HOW CAIO WORKS ===== */}
-      <div className={`deck-slide ${current === 4 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 4 ? "deck-slide-active" : ""}`}>
         <Sidebar num="05" />
         <div className="deck-body deck-s5">
           <h2 className="deck-s5-heading">A system that runs compliance end to end</h2>
-          <p className="deck-s5-sub">Caio runs compliance from first document to final outcome. AI agents execute checks, resolve gaps, and keep every candidate moving.</p>
+          <p className="deck-s5-sub">Caio replaces manual compliance with AI agents for execution and deterministic rules for decisions.</p>
           <div className="deck-s5-flow">
             <div className="deck-s5-card">
               <div className="deck-s5-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M8 26V6h10l6 6v14H8z" strokeLinejoin="round"/><path d="M18 6v6h6" strokeLinejoin="round"/><path d="M12 18h8M12 22h5" strokeLinecap="round"/></svg></div>
@@ -198,7 +205,7 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 6a. PRODUCT — AUDIT RECORD ===== */}
-      <div className={`deck-slide ${current === 5 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 5 ? "deck-slide-active" : ""}`}>
         <Sidebar num="06" />
         <div className="deck-body deck-s6a">
           <h2 className="deck-s6a-title">Every decision, explained and defensible</h2>
@@ -231,7 +238,7 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 7. WHY OTHERS AREN'T ===== */}
-      <div className={`deck-slide ${current === 6 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 6 ? "deck-slide-active" : ""}`}>
         <Sidebar num="07" />
         <div className="deck-body deck-s7">
           <h2 className="deck-s7-title">Why others aren&rsquo;t doing this</h2>
@@ -246,45 +253,44 @@ export default function DeckPage() {
               <ul>{["AI agents execute checks. Deterministic rules decide every outcome — not human judgement","Human oversight at the point of approval — not throughout the process","Every decision is fully documented and audit-ready from day one"].map((t,i)=><li key={i}><TickIcon /><span>{t}</span></li>)}</ul>
             </div>
           </div>
-          <p className="deck-s7-bottom">Traditional platforms are structurally dependent on humans for execution. Agentic execution has only recently become technically viable.</p>
         </div>
       </div>
 
       {/* ===== 7. WHY NOW ===== */}
-      <div className={`deck-slide ${current === 7 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 7 ? "deck-slide-active" : ""}`}>
         <Sidebar num="08" />
         <div className="deck-body deck-s8">
           <h2 className="deck-s8-title">Why now?</h2>
           <p className="deck-s8-sub">Regulatory scope, audit requirements and labour costs are all increasing —<br/>while agency margins are compressing.</p>
           <div className="deck-s8-grid">
-            {["CCS frameworks across Education, Healthcare and Social Care are expanding in scope and audit depth","Frameworks, PSLs and clients now require ongoing audit evidence, not point-in-time checks","Employer NI increases and rising wage costs are making compliance teams materially more expensive","Rising compliance costs are compressing agency margins"].map((t,i)=>(
-              <div key={i} className="deck-s8-card"><p>{t}</p></div>
+            {[{title:"Expanding regulation",desc:"CCS frameworks across Education, Healthcare and Social Care are expanding in scope and audit depth"},{title:"Ongoing evidence required",desc:"Frameworks, PSLs and clients now require ongoing audit evidence, not point-in-time checks"},{title:"Rising labour costs",desc:"Employer NI increases and rising wage costs are making compliance teams materially more expensive"},{title:"Margin compression",desc:"Rising compliance costs are compressing agency margins"}].map((c,i)=>(
+              <div key={i} className="deck-s8-card"><h3>{c.title}</h3><p>{c.desc}</p></div>
             ))}
           </div>
         </div>
       </div>
 
       {/* ===== 9. COMPLIANCE EXECUTION MARKET ===== */}
-      <div className={`deck-slide ${current === 8 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 8 ? "deck-slide-active" : ""}`}>
         <Sidebar num="09" />
         <div className="deck-body deck-s9x">
           <h2 className="deck-s9x-title">The Compliance Operations Market</h2>
           <div className="deck-s9x-cols">
             <div className="deck-s9x-card">
               <span className="deck-s9x-entry">UK compliance operations market</span>
-              <span className="deck-s9x-value">£250m–£350m</span>
+              <span className="deck-s9x-value">£260m–£300m</span>
             </div>
             <div className="deck-s9x-card">
               <span className="deck-s9x-entry">Global compliance operations market</span>
               <span className="deck-s9x-global-value">£4bn–£6bn</span>
             </div>
           </div>
-          <p className="deck-s9x-context">Education · Healthcare · Social Care · Early Years · Further Education</p>
+          <p className="deck-s9x-context">Regulated Recruitment Sectors — including Education · Healthcare · Social Care · Early Years · Further Education</p>
         </div>
       </div>
 
       {/* ===== 10. INITIAL ENTRY MARKET ===== */}
-      <div className={`deck-slide ${current === 9 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 9 ? "deck-slide-active" : ""}`}>
         <Sidebar num="10" />
         <div className="deck-body deck-s10">
           <h2 className="deck-s10-title">Initial Entry Market – UK Education</h2>
@@ -306,7 +312,7 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 11. EXPANSION BEYOND EDUCATION ===== */}
-      <div className={`deck-slide ${current === 10 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 10 ? "deck-slide-active" : ""}`}>
         <Sidebar num="11" />
         <div className="deck-body deck-s11">
           <h2 className="deck-s11-title">One Engine. Every Regulated Workforce.</h2>
@@ -314,64 +320,65 @@ export default function DeckPage() {
           <div className="deck-s11-tree">
             <div className="deck-s11-engine">
               <span className="deck-s11-engine-title">Caio Execution Engine</span>
-              <span className="deck-s11-engine-sub">Agentic execution, auditability, orchestration</span>
+              <span className="deck-s11-engine-sub">Agentic execution · Rule-based decisioning · Full auditability</span>
             </div>
-            <div className="deck-s11-connector">
-              <svg viewBox="0 0 600 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M300 0 L300 30" stroke="#1A2D4D" strokeWidth="2"/>
-                <path d="M100 30 L500 30" stroke="#1A2D4D" strokeWidth="2"/>
-                <path d="M100 30 L100 55" stroke="#1A2D4D" strokeWidth="2"/>
-                <path d="M300 30 L300 55" stroke="#1A2D4D" strokeWidth="2"/>
-                <path d="M500 30 L500 55" stroke="#1A2D4D" strokeWidth="2"/>
-              </svg>
-            </div>
+            <div className="deck-s11-connector-bar"></div>
             <div className="deck-s11-sectors">
-              <span>Education</span>
-              <span>Health &amp; Social Care</span>
-              <span>Other regulated sectors</span>
+              {[{name:"Education", detail:"DBS, QTS, TRA, Right to Work, Safeguarding"},{name:"Health & Social Care", detail:"DBS, Professional Registration, Fit & Proper Person"},{name:"Other Regulated Sectors", detail:"Same engine, new rulesets — modular by design"}].map((s,i)=>(
+                <div key={i} className="deck-s11-sector-card">
+                  <span className="deck-s11-sector-name">{s.name}</span>
+                  <span className="deck-s11-sector-detail">{s.detail}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* ===== 12. BUSINESS MODEL ===== */}
-      <div className={`deck-slide ${current === 11 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 11 ? "deck-slide-active" : ""}`}>
         <Sidebar num="12" />
         <div className="deck-body deck-s12">
           <h2 className="deck-s12-title">Business Model</h2>
-          <p className="deck-s12-sub">Simple, scalable pricing aligned to compliance activity</p>
-          <div className="deck-s12-cols">
-            <div className="deck-s12-card">
-              <span className="deck-s12-entry">Initial compliance clearance</span>
-              <span className="deck-s12-price">~£25</span>
-              <span className="deck-s12-label">per candidate</span>
-            </div>
-            <div className="deck-s12-card">
-              <span className="deck-s12-entry">Recurring revenue</span>
-              <span className="deck-s12-price">~£6–£12</span>
-              <span className="deck-s12-label">per candidate annually</span>
+          <p className="deck-s12-sub">Revenue scales with every agency onboarded</p>
+          <div className="deck-s12-hero-row">
+            <div className="deck-s12-card deck-s12-card-hero">
+              <span className="deck-s12-entry">Per Agency</span>
+              <span className="deck-s12-price">£25k–£30k</span>
+              <span className="deck-s12-label">per year</span>
+              <span className="deck-s12-context">Based on 10 consultants per agency</span>
             </div>
           </div>
-          <p className="deck-s12-punchline">£25k–£30k <span>revenue per agency per year</span></p>
-          <p className="deck-s12-bottom">Predictable unit economics. Revenue scales with workforce size.</p>
+          <div className="deck-s12-unit-row">
+            <div className="deck-s12-unit-card">
+              <span className="deck-s12-unit-entry">Initial Clearance</span>
+              <span className="deck-s12-unit-value">£25</span>
+              <span className="deck-s12-unit-label">per candidate</span>
+            </div>
+            <div className="deck-s12-unit-card">
+              <span className="deck-s12-unit-entry">Ongoing Compliance</span>
+              <span className="deck-s12-unit-value">£15–£21</span>
+              <span className="deck-s12-unit-label">per candidate annually</span>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* ===== 13. 2026 ROADMAP ===== */}
-      <div className={`deck-slide ${current === 12 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 12 ? "deck-slide-active" : ""}`}>
         <Sidebar num="13" />
         <div className="deck-body deck-s13">
           <h2 className="deck-s13-title">2026 Roadmap</h2>
           <div className="deck-s13-timeline">
             <div className="deck-s13-line" />
             {[
-              {quarter:"Q1–Q2",items:["Education MVP live","Pilot agencies onboarded","Core Final-Check-Ready workflows operational"]},
-              {quarter:"Q3",items:["Renewal and expiry automation added","Pilot agencies convert to paid usage","First ARR secured"]},
-              {quarter:"Q4",items:["Additional regulated sector rule sets introduced","Multi-sector compliance engine live"]},
+              {quarter:"Q2",now:true,items:["Engineering team in place","Architecture defined","Build underway"]},
+              {quarter:"Q3",now:false,items:["Education MVP live","Pilot agencies onboarded","Core workflows operational"]},
+              {quarter:"Q4",now:false,items:["Renewal and expiry automation live","Pilot agencies convert to paid","First ARR secured"]},
             ].map((q,i)=>(
-              <div key={i} className="deck-s13-phase">
-                <div className="deck-s13-dot" />
-                <h3>{q.quarter}</h3>
+              <div key={i} className={`deck-s13-phase ${q.now ? "deck-s13-phase-active" : ""}`}>
+                <div className={`deck-s13-dot ${q.now ? "deck-s13-dot-active" : ""}`} />
+                <h3>{q.quarter}{q.now && <span className="deck-s13-now">Now</span>}</h3>
                 {q.items.map((item,j)=><p key={j}>{item}</p>)}
               </div>
             ))}
@@ -380,43 +387,54 @@ export default function DeckPage() {
       </div>
 
       {/* ===== 14. TEAM ===== */}
-      <div className={`deck-slide ${current === 13 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 13 ? "deck-slide-active" : ""}`}>
         <Sidebar num="14" />
         <div className="deck-body deck-s14">
           <h2 className="deck-s14-heading">Team</h2>
-          <div className="deck-s14-content">
-            <div className="deck-s14-left">
-              <div className="deck-s14-avatar">MB</div>
-              <h3 className="deck-s14-name">Matt Brown –<br/>Founder &amp; CEO</h3>
+          <div className="deck-s14-grid">
+            <div className="deck-s14-member">
+              <div className="deck-s14-photo"><Image src="/Matt Profile - Edited.png" alt="Matt Brown" width={120} height={120} /></div>
+              <h3 className="deck-s14-name">Matt Brown</h3>
+              <span className="deck-s14-role">Founder &amp; CEO</span>
+              <p className="deck-s14-bio">15 years in UK education recruitment, including 10 years as CEO of Dunbar Education and iCan Teach UK. Led compliance audits across APSCo, REC and CCS frameworks. Built Caio to automate the problem he spent 15 years solving.</p>
             </div>
-            <div className="deck-s14-right">
-              <p>15 years in UK education recruitment, including 10 years as CEO of Dunbar Education and iCan Teach UK.</p>
-              <p>Built and led recruitment and compliance teams, overseeing thousands of APSCo+, CCS and KCSIE checks.</p>
-              <p>Founder–market fit: direct experience of compliance bottlenecks, inefficiency and operational risk, informing Caio&rsquo;s design.</p>
+            <div className="deck-s14-member">
+              <div className="deck-s14-photo"><Image src="/Jason Profile - Edited.png" alt="Jason" width={120} height={120} /></div>
+              <h3 className="deck-s14-name">Jason de Carvalho</h3>
+              <span className="deck-s14-role">Head of Architecture</span>
+              <p className="deck-s14-bio">11 years at Ocado Technology, including Head of Architecture for a platform licensed by 11 major international retailers. Former Group CTO at Fluro. Designing and leading Caio&rsquo;s technical architecture.</p>
+            </div>
+            <div className="deck-s14-member">
+              <div className="deck-s14-photo"><Image src="/Kelvin Profile - Edited (1).png" alt="Kelvin" width={120} height={120} /></div>
+              <h3 className="deck-s14-name">Kelvin Faith</h3>
+              <span className="deck-s14-role">Software Engineer</span>
+              <p className="deck-s14-bio">Full-stack engineer with direct experience building identity verification and compliance platforms. Delivering Caio&rsquo;s core product across backend, frontend and cloud infrastructure.</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* ===== 14. THE ASK ===== */}
-      <div className={`deck-slide ${current === 14 ? "deck-slide-active" : ""}`}>
+      <div className={`deck-slide ${isPrint || current === 14 ? "deck-slide-active" : ""}`}>
         <Sidebar num="15" />
         <div className="deck-body deck-s15">
           <h2 className="deck-s15-heading">The ask</h2>
           <div className="deck-s15-grid">
             <div className="deck-s15-left">
-              <span className="deck-s15-amount">£100k</span>
+              <span className="deck-s15-amount">£70k</span>
               <span className="deck-s15-round">Friends &amp; Family round</span>
+              <span className="deck-s15-committed">£35k already committed</span>
+              <span className="deck-s15-committed">Seeking £35k to close</span>
               <span className="deck-s15-purpose">Product build and pilot execution</span>
             </div>
             <div className="deck-s15-divider" />
             <div className="deck-s15-right">
               <div className="deck-s15-block">
                 <h3>Initial Outcomes – 90 Days</h3>
-                <p>MVP live with pilot agencies</p>
-                <p>Core execution workflows tested in live environments</p>
-                <p>Compliance outcomes validated and audit-ready</p>
-                <p>Platform ready for commercial rollout</p>
+                <p>Core execution workflows built and tested</p>
+                <p>Pilot agencies onboarded and in testing</p>
+                <p>Compliance decisioning validated and audit-ready</p>
+                <p>Platform ready for initial commercial rollout</p>
               </div>
               <div className="deck-s15-block">
                 <h3>Valuation</h3>
@@ -428,32 +446,16 @@ export default function DeckPage() {
         </div>
       </div>
 
-      {/* ===== 15. A NEW ERA ===== */}
-      <div className={`deck-slide ${current === 15 ? "deck-slide-active" : ""}`}>
-        <Sidebar num="16" /><WaveBottom />
-        <div className="deck-body deck-s2">
-          <h2 className="deck-s2-title">A new era for<br/>regulated sector compliance</h2>
-          <div className="deck-s2-points">
-            {["Education recruitment — safeguarding, DBS, right-to-work","Healthcare staffing — clinical credentials, revalidation, fitness to practise","Social care — workforce registration, training verification, care standards"].map((t,i)=>(
-              <div key={i} className="deck-s2-point"><TickIcon /><span>{t}</span></div>
-            ))}
+      {/* ===== 15. CLOSING / CONTACT ===== */}
+      <div className={`deck-slide deck-slide-full ${isPrint || current === 15 ? "deck-slide-active" : ""}`}>
+        <div className="deck-s16-content deck-s16-centre">
+          <h2 className="deck-s16-title">Let&rsquo;s talk.</h2>
+          <div className="deck-s16-contact">
+            <span className="deck-s16-contact-name">Matt Brown — Founder &amp; CEO</span>
+            <a href="mailto:matt@usecaio.com" className="deck-s16-contact-line">matt@usecaio.com</a>
+            <span className="deck-s16-contact-line">07841 685183</span>
           </div>
-        </div>
-      </div>
-
-      {/* ===== 16. THANK YOU ===== */}
-      <div className={`deck-slide ${current === 16 ? "deck-slide-active" : ""}`}>
-        <div className="deck-wave deck-wave-top-right">
-          <svg viewBox="0 0 600 200" fill="none">{[0,7,14,21,28,35,42,49].map(o=><path key={o} d={`M0 ${80+o} C120 ${30+o} 240 ${130+o} 400 ${60+o} S550 ${100+o} 600 ${80+o}`} stroke="#00B69B" strokeWidth="1.2" strokeOpacity="0.2" fill="none"/>)}</svg>
-        </div>
-        <div className="deck-s16-content">
-          <h2 className="deck-s16-title">Thank you</h2>
-          <div className="deck-s16-logo"><Image src="/caio-logo.png" alt="Caio" width={119} height={48} /></div>
-        </div>
-        <div className="deck-s16-watermark">
-          <svg viewBox="0 0 500 200" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.06">
-            <text x="0" y="170" fontFamily="Nunito, sans-serif" fontSize="200" fontWeight="900" fill="#1A2D4D">caio</text>
-          </svg>
+          <Image src="/caio-logo.png" alt="Caio" width={140} height={56} unoptimized />
         </div>
       </div>
 
@@ -463,7 +465,7 @@ export default function DeckPage() {
 
 /* ===== Sub-components ===== */
 function Sidebar({ num }: { num: string }) {
-  return <div className="deck-sidebar"><span className="deck-sidebar-logo"><Image src="/caio-logo.png" alt="Caio" width={20} height={20} /></span><span className="deck-sidebar-num">{num} | PRE-SEED DECK</span></div>;
+  return <div className="deck-sidebar"><span className="deck-sidebar-logo"><Image src="/caio-logo.png" alt="Caio" width={80} height={80} unoptimized /></span><span className="deck-sidebar-num">{num} | PRE-SEED DECK</span></div>;
 }
 function WaveBottom() {
   return <div className="deck-wave deck-wave-bottom"><svg viewBox="0 0 1200 200" fill="none">{[0,8,16,24,32,40,48].map(o=><path key={o} d={`M0 ${100+o} C200 ${40+o} 400 ${160+o} 600 ${80+o} S900 ${140+o} 1200 ${100+o}`} stroke="#D0E0DA" strokeWidth="1.2" strokeOpacity="0.6" fill="none"/>)}</svg></div>;
