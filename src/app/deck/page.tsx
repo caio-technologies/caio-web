@@ -431,11 +431,11 @@ function DeckInner() {
             <div className="deck-s15-divider" />
             <div className="deck-s15-right">
               <div className="deck-s15-block">
-                <h3>Initial Outcomes – 90 Days</h3>
-                <p>Core execution workflows built and tested</p>
-                <p>Pilot agencies onboarded and in testing</p>
-                <p>Compliance decisioning validated and audit-ready</p>
-                <p>Platform ready for initial commercial rollout</p>
+                <h3>Initial Outcomes</h3>
+                <p>Core product built and tested</p>
+                <p>Pilots completed with partner agencies</p>
+                <p>First customers secured</p>
+                <p>Ready for commercial rollout</p>
               </div>
               <div className="deck-s15-block">
                 <h3>Valuation</h3>
