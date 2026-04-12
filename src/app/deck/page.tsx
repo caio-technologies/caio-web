@@ -455,7 +455,7 @@ function DeckInner() {
             <a href="mailto:matt@usecaio.com" className="deck-s16-contact-line">matt@usecaio.com</a>
             <span className="deck-s16-contact-line">07841 685183</span>
           </div>
-          <Image src="/caio-logo.png" alt="Caio" width={140} height={56} unoptimized />
+          <Image src="/caio-logo.png" alt="Caio" width={100} height={40} unoptimized />
         </div>
       </div>
 
