@@ -138,16 +138,16 @@ export default function HomePage() {
         <div className="container">
           <div className="hp-cost-layout">
             <div className="hp-cost-left fade-in">
-              <h2 className="hp-cost-headline">What compliance really costs your business</h2>
+              <h2 className="hp-cost-headline">What manual compliance really costs your business</h2>
               <p className="hp-cost-sub">Time and people. Revenue lost. Risk left sitting in&nbsp;the&nbsp;process.</p>
               <div className="hp-cost-stats">
                 <div className="hp-cost-stat">
-                  <span className="hp-cost-stat-value">70%</span>
-                  <span className="hp-cost-stat-label">of compliance hours spent on avoidable admin</span>
+                  <span className="hp-cost-stat-value">10,000+</span>
+                  <span className="hp-cost-stat-label">hours wasted daily on manual compliance — UK education alone</span>
                 </div>
                 <div className="hp-cost-stat">
-                  <span className="hp-cost-stat-value">10,000+</span>
-                  <span className="hp-cost-stat-label">hours wasted daily across the industry on automatable compliance tasks</span>
+                  <span className="hp-cost-stat-value">70%</span>
+                  <span className="hp-cost-stat-label">of compliance hours spent on avoidable admin</span>
                 </div>
               </div>
             </div>
