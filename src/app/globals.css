@@ -1093,6 +1093,11 @@ body:has(.deck-print) > .footer { display: none !important; }
 .deck-print .deck-slide-full { overflow: hidden; }
 .deck-print .deck-s16-content { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .deck-print .deck-body { padding: 32px 48px 28px 48px !important; display: flex; flex-direction: column; justify-content: center; }
+/* Remove box-shadows that render as outlines in mobile PDF viewers */
+.deck-print [class*="deck-s"] * { box-shadow: none !important; }
+.deck-print img,
+.deck-print span:has(> img),
+.deck-print [data-nimg] { border: 0 !important; outline: none !important; box-shadow: none !important; }
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   html, body { margin: 0 !important; padding: 0 !important; }
@@ -1106,6 +1111,25 @@ body:has(.deck-print) > .footer { display: none !important; }
   .deck-slide-full { padding-left: 0 !important; }
   .deck-slide-full .deck-s16-content { margin-right: 0 !important; }
   [class*="fullscreen"], button[aria-label*="fullscreen"] { display: none !important; }
+  /* Remove box-shadows that render as outlines in mobile PDF viewers */
+  .deck [class*="deck-s"] * { box-shadow: none !important; }
+  .deck [class*="deck-s2b-point"],
+  .deck [class*="deck-s3-card"],
+  .deck [class*="deck-s4-card"],
+  .deck [class*="deck-s5-card"],
+  .deck [class*="deck-s6"],
+  .deck [class*="deck-s7-card"],
+  .deck [class*="deck-s8-card"],
+  .deck [class*="deck-s9"],
+  .deck [class*="deck-s10-card"],
+  .deck [class*="deck-s11"],
+  .deck [class*="deck-s12"],
+  .deck [class*="deck-s14-photo"],
+  .deck .deck-gate-card { box-shadow: none !important; }
+  /* Remove Next.js Image wrapper outlines */
+  .deck img,
+  .deck span:has(> img),
+  .deck [data-nimg] { border: 0 !important; outline: none !important; box-shadow: none !important; }
   @page { size: 1280px 720px; margin: 0; }
 }
 .deck-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity 0.45s ease; display: flex; background: linear-gradient(to bottom, #EBF3F7, #F6FAFB); }
