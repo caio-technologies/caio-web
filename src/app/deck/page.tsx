@@ -402,7 +402,7 @@ function DeckInner() {
             <div className="deck-s14-member">
               <div className="deck-s14-photo"><Image src="/Jason Profile - Edited.png" alt="Jason" width={120} height={120} /></div>
               <h3 className="deck-s14-name">Jason de Carvalho</h3>
-              <span className="deck-s14-role">Head of Architecture</span>
+              <span className="deck-s14-role">Technical Advisor</span>
               <p className="deck-s14-bio">11 years at Ocado Technology, including Head of Architecture for a platform licensed by 11 major international retailers. Former Group CTO at Fluro. Designing and leading Caio&rsquo;s technical architecture.</p>
             </div>
             <div className="deck-s14-member">
