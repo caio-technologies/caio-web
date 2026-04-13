@@ -35,13 +35,13 @@ function DeckInner() {
   };
 
   useEffect(() => {
-    if (!authed && !isPrint) return;
+    if (!authed) return;
     const header = document.querySelector(".header") as HTMLElement;
     const footer = document.querySelector(".footer") as HTMLElement;
     if (header) header.style.display = "none";
     if (footer) footer.style.display = "none";
     return () => { if (header) header.style.display = ""; if (footer) footer.style.display = ""; };
-  }, [authed, isPrint]);
+  }, [authed]);
 
   useEffect(() => {
     if (!authed) return;
@@ -68,8 +68,8 @@ function DeckInner() {
     else if (x > rect.width * 2 / 3) goTo(current + 1);
   };
 
-  // Password gate (skip in print mode)
-  if (!authed && !isPrint) {
+  // Password gate
+  if (!authed) {
     return (
       <div className="deck-gate">
         <div className="deck-gate-card">
