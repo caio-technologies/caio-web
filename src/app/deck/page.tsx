@@ -423,14 +423,11 @@ function DeckInner() {
         <div className="deck-body deck-s15">
           <h2 className="deck-s15-heading">{isInvestor ? "Investment" : "The ask"}</h2>
           {isInvestor ? (
-            <div className="deck-s15-grid deck-s15-grid-investor">
+            <div className="deck-s15-grid">
               <div className="deck-s15-left">
-                <div className="deck-s15-block">
-                  <h3>Valuation</h3>
-                  <span className="deck-s15-amount">£1.5m</span>
-                  <span className="deck-s15-round">Pre-money valuation</span>
-                  <span className="deck-s15-purpose">SEIS eligible</span>
-                </div>
+                <span className="deck-s15-amount">£1.5m</span>
+                <span className="deck-s15-round">Pre-money valuation</span>
+                <span className="deck-s15-committed">SEIS eligible</span>
               </div>
               <div className="deck-s15-divider" />
               <div className="deck-s15-right">
