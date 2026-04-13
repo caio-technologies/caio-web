@@ -14,6 +14,8 @@ export default function DeckPage() {
 function DeckInner() {
   const searchParams = useSearchParams();
   const isPrint = searchParams.get("print") !== null;
+  const version = searchParams.get("version") || "default";
+  const isInvestor = version === "investor";
   const [current, setCurrent] = useState(0);
   const [authed, setAuthed] = useState(false);
   const [pin, setPin] = useState("");
@@ -249,7 +251,7 @@ function DeckInner() {
               <ul>{["AI could extract data, but could not run compliance workflows end-to-end","Systems helped humans review compliance, but did not execute clearance decisions","Check providers delivered inputs and signals, not auditable outcomes"].map((t,i)=><li key={i}><XIcon /><span>{t}</span></li>)}</ul>
             </div>
             <div className="deck-s7-card deck-s7-card-caio">
-              <h3><span className="deck-s7-caio-logo">Caio.</span> is built differently:</h3>
+              <h3><span className="deck-s7-caio-logo">Caio</span> is built differently:</h3>
               <ul>{["AI agents execute checks. Deterministic rules decide every outcome — not human judgement","Human oversight at the point of approval — not throughout the process","Every decision is fully documented and audit-ready from day one"].map((t,i)=><li key={i}><TickIcon /><span>{t}</span></li>)}</ul>
             </div>
           </div>
@@ -419,31 +421,60 @@ function DeckInner() {
       <div className={`deck-slide ${isPrint || current === 14 ? "deck-slide-active" : ""}`}>
         <Sidebar num="15" />
         <div className="deck-body deck-s15">
-          <h2 className="deck-s15-heading">The ask</h2>
-          <div className="deck-s15-grid">
-            <div className="deck-s15-left">
-              <span className="deck-s15-amount">£70k</span>
-              <span className="deck-s15-round">Friends &amp; Family round</span>
-              <span className="deck-s15-committed">£35k already committed</span>
-              <span className="deck-s15-committed">Seeking £35k to close</span>
-              <span className="deck-s15-purpose">Product build and pilot execution</span>
-            </div>
-            <div className="deck-s15-divider" />
-            <div className="deck-s15-right">
-              <div className="deck-s15-block">
-                <h3>Initial Outcomes</h3>
-                <p>Core product built and tested</p>
-                <p>Pilots completed with partner agencies</p>
-                <p>First customers secured</p>
-                <p>Ready for commercial rollout</p>
+          <h2 className="deck-s15-heading">{isInvestor ? "Investment" : "The ask"}</h2>
+          {isInvestor ? (
+            <div className="deck-s15-grid deck-s15-grid-investor">
+              <div className="deck-s15-left">
+                <div className="deck-s15-block">
+                  <h3>Valuation</h3>
+                  <span className="deck-s15-amount">£1.5m</span>
+                  <span className="deck-s15-round">Pre-money valuation</span>
+                  <span className="deck-s15-purpose">SEIS eligible</span>
+                </div>
               </div>
-              <div className="deck-s15-block">
-                <h3>Valuation</h3>
-                <p>£1.5m pre-money</p>
-                <p>SEIS eligible</p>
+              <div className="deck-s15-divider" />
+              <div className="deck-s15-right">
+                <div className="deck-s15-block">
+                  <h3>Use of Funds</h3>
+                  <p>Product build and pilot execution</p>
+                  <p>Core engineering team</p>
+                  <p>Partner agency onboarding</p>
+                </div>
+                <div className="deck-s15-block">
+                  <h3>Initial Outcomes</h3>
+                  <p>Core product built and tested</p>
+                  <p>Pilots completed with partner agencies</p>
+                  <p>First customers secured</p>
+                  <p>Ready for commercial rollout</p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="deck-s15-grid">
+              <div className="deck-s15-left">
+                <span className="deck-s15-amount">£70k</span>
+                <span className="deck-s15-round">Friends &amp; Family round</span>
+                <span className="deck-s15-committed">£35k already committed</span>
+                <span className="deck-s15-committed">Seeking £35k to close</span>
+                <span className="deck-s15-purpose">Product build and pilot execution</span>
+              </div>
+              <div className="deck-s15-divider" />
+              <div className="deck-s15-right">
+                <div className="deck-s15-block">
+                  <h3>Initial Outcomes</h3>
+                  <p>Core product built and tested</p>
+                  <p>Pilots completed with partner agencies</p>
+                  <p>First customers secured</p>
+                  <p>Ready for commercial rollout</p>
+                </div>
+                <div className="deck-s15-block">
+                  <h3>Valuation</h3>
+                  <p>£1.5m pre-money</p>
+                  <p>SEIS eligible</p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
