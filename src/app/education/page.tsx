@@ -101,7 +101,7 @@ export default function EducationPage() {
             <img src="/KCSIE - Edited.png" alt="KCSIE" style={{ width: '80px', height: 'auto' }} />
             <img src="/Apsco - Edited.png" alt="APSCo Compliance+" style={{ width: '120px', height: 'auto' }} />
             <img src="/Rec - Edited.png" alt="REC Audited" style={{ width: '140px', height: 'auto' }} />
-            <img src="/CCS - Edited.png" alt="Crown Commercial Service" style={{ width: '120px', height: 'auto' }} />
+            <img src="/GCA - Edited.png" alt="Global Compliance Alliance" style={{ width: '120px', height: 'auto' }} />
           </div>
         </div>
       </section>
@@ -222,7 +222,7 @@ export default function EducationPage() {
             On the framework? Confident about your next audit?
           </h2>
           <p className="edu-audit-sub fade-in fade-in-delay-1">
-            Caio is built to meet the compliance criteria required by APSCo, REC, and CCS — so your agency is audit-ready at all times, not just when the auditor calls.
+            Caio is built to meet the compliance criteria required by APSCo, REC, and GCA — so your agency is audit-ready at all times, not just when the auditor calls.
           </p>
 
           <div className="edu-audit-grid fade-in fade-in-delay-2">
@@ -237,8 +237,8 @@ export default function EducationPage() {
               <p>Standardised compliance workflows aligned to REC education standards. Every decision time-stamped and explainable. No gaps in your audit trail.</p>
             </div>
             <div className="edu-audit-card">
-              <img src="/CCS - Edited.png" alt="CCS" className="edu-audit-logo" />
-              <h3>CCS Framework</h3>
+              <img src="/GCA - Edited.png" alt="GCA" className="edu-audit-logo" />
+              <h3>GCA Framework</h3>
               <p>Meet the compliance criteria of the Crown Commercial Service framework. Consistent vetting, full KCSIE alignment, and continuous monitoring — documented and defensible.</p>
             </div>
           </div>
