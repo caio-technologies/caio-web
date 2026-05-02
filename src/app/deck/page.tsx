@@ -436,7 +436,7 @@ function DeckInner() {
           {isInvestor3m ? (
             <div className="deck-s15-grid">
               <div className="deck-s15-left">
-                <span className="deck-s15-amount">£300k</span>
+                <span className="deck-s15-amount">£500k</span>
                 <span className="deck-s15-round">Pre-seed round</span>
                 <span className="deck-s15-committed">£3m pre-money valuation</span>
                 <span className="deck-s15-committed">SEIS eligible</span>
