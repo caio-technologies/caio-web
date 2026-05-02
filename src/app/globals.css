@@ -1357,16 +1357,34 @@ body:has(.deck-print) > .footer { display: none !important; }
 .deck-s13-now { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent); background: var(--color-accent-soft); padding: 3px 10px; border-radius: var(--radius-full); }
 
 /* ===== S14: Team ===== */
-.deck-s14 { justify-content: center; }
-.deck-s14-heading { font-family: var(--font-display); font-size: clamp(30px, 3.5vw, 44px); font-weight: 800; color: var(--color-dark-blue); margin: 0 0 48px; letter-spacing: -1px; }
-.deck-s14-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 64px; width: 100%; }
-.deck-s14-member { display: flex; flex-direction: column; align-items: center; }
-.deck-s14-photo { width: 110px; height: 110px; border-radius: 50%; overflow: hidden; margin-bottom: 12px; background: linear-gradient(135deg, var(--color-surface), var(--color-surface-card)); border: 3px solid var(--color-border-light); display: flex; align-items: center; justify-content: center; }
+.deck-s14 { justify-content: center; gap: 0; }
+.deck-s14-heading { font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 40px); font-weight: 800; color: var(--color-dark-blue); margin: 0 0 28px; letter-spacing: -1px; }
+
+/* Primary row — founder, horizontal card */
+.deck-s14-primary { width: 100%; margin-bottom: 24px; display: flex; justify-content: center; }
+.deck-s14-member-lead { flex-direction: row !important; align-items: center; gap: 28px; padding: 24px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); max-width: 540px; width: 100%; text-align: left !important; }
+.deck-s14-member-lead .deck-s14-info { text-align: left; }
+.deck-s14-member-lead .deck-s14-name { font-size: 19px; }
+.deck-s14-member-lead .deck-s14-role { font-size: 12px; margin-bottom: 8px; }
+.deck-s14-member-lead .deck-s14-bio { font-size: 12px; text-align: left; line-height: 1.5; }
+
+/* Secondary row — 3-column grid */
+.deck-s14-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+
+/* Member card */
+.deck-s14-member { display: flex; flex-direction: column; align-items: center; padding: 20px 16px 16px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.035); }
+
+/* Photos */
+.deck-s14-photo { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; margin-bottom: 12px; background: linear-gradient(135deg, #EEF2F5, #E4EBF0); border: 2.5px solid rgba(255,255,255,0.9); box-shadow: 0 3px 14px rgba(0,0,0,0.08); flex-shrink: 0; }
+.deck-s14-photo-lead { width: 110px; height: 110px; border-radius: 50%; }
 .deck-s14-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; position: static !important; }
+
+/* Typography */
+.deck-s14-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--color-dark-blue); margin: 0 0 2px; letter-spacing: -0.2px; }
+.deck-s14-role { font-size: 11px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: block; }
+.deck-s14-bio { font-size: 11.5px; color: #4A5E73; line-height: 1.5; margin: 0; text-align: center; }
+.deck-s14-bio strong { font-weight: 700; color: var(--color-dark-blue); }
 .deck-s14-initials { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--color-dark-blue); }
-.deck-s14-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--color-dark-blue); margin: 0 0 4px; }
-.deck-s14-role { font-size: 13px; font-weight: 600; color: var(--color-text-muted); margin-bottom: 14px; display: block; }
-.deck-s14-bio { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin: 0; text-align: left; }
 
 /* ===== S15: The Ask ===== */
 .deck-s15 { justify-content: flex-start; padding-top: 72px; }
