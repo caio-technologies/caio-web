@@ -447,8 +447,7 @@ function DeckInner() {
                   <h3>Use of Funds</h3>
                   <p>Engineering team scale-up</p>
                   <p>Go-to-market and agency acquisition</p>
-                  <p>Compliance certification and accreditation</p>
-                  <p>Platform infrastructure and security</p>
+                  <p>Operations and working capital</p>
                 </div>
                 <div className="deck-s15-block">
                   <h3>Milestones</h3>
