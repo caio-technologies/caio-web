@@ -436,24 +436,26 @@ function DeckInner() {
           {isInvestor3m ? (
             <div className="deck-s15-grid">
               <div className="deck-s15-left">
-                <span className="deck-s15-amount">£3m</span>
-                <span className="deck-s15-round">Pre-money valuation</span>
+                <span className="deck-s15-amount">£300k</span>
+                <span className="deck-s15-round">Pre-seed round</span>
+                <span className="deck-s15-committed">£3m pre-money valuation</span>
                 <span className="deck-s15-committed">SEIS eligible</span>
               </div>
               <div className="deck-s15-divider" />
               <div className="deck-s15-right">
                 <div className="deck-s15-block">
                   <h3>Use of Funds</h3>
-                  <p>Product build and pilot execution</p>
-                  <p>Core engineering team</p>
-                  <p>Partner agency onboarding</p>
+                  <p>Engineering team scale-up</p>
+                  <p>Go-to-market and agency acquisition</p>
+                  <p>Compliance certification and accreditation</p>
+                  <p>Platform infrastructure and security</p>
                 </div>
                 <div className="deck-s15-block">
-                  <h3>Initial Outcomes</h3>
-                  <p>Core product built and tested</p>
-                  <p>Pilots completed with partner agencies</p>
-                  <p>First customers secured</p>
-                  <p>Ready for commercial rollout</p>
+                  <h3>Milestones</h3>
+                  <p>Live platform with paying agencies</p>
+                  <p>First ARR secured</p>
+                  <p>Multi-sector expansion underway</p>
+                  <p>Series-ready metrics for next raise</p>
                 </div>
               </div>
             </div>
