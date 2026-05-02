@@ -16,6 +16,7 @@ function DeckInner() {
   const isPrint = searchParams.get("print") !== null;
   const version = searchParams.get("version") || "default";
   const isInvestor = version === "investor";
+  const isInvestor3m = version === "investor3m";
   const [current, setCurrent] = useState(0);
   const [authed, setAuthed] = useState(false);
   const [pin, setPin] = useState("");
@@ -431,8 +432,32 @@ function DeckInner() {
       <div className={`deck-slide ${isPrint || current === 14 ? "deck-slide-active" : ""}`}>
         <Sidebar num="15" />
         <div className="deck-body deck-s15">
-          <h2 className="deck-s15-heading">{isInvestor ? "Investment" : "The ask"}</h2>
-          {isInvestor ? (
+          <h2 className="deck-s15-heading">{(isInvestor || isInvestor3m) ? "Investment" : "The ask"}</h2>
+          {isInvestor3m ? (
+            <div className="deck-s15-grid">
+              <div className="deck-s15-left">
+                <span className="deck-s15-amount">£3m</span>
+                <span className="deck-s15-round">Pre-money valuation</span>
+                <span className="deck-s15-committed">SEIS eligible</span>
+              </div>
+              <div className="deck-s15-divider" />
+              <div className="deck-s15-right">
+                <div className="deck-s15-block">
+                  <h3>Use of Funds</h3>
+                  <p>Product build and pilot execution</p>
+                  <p>Core engineering team</p>
+                  <p>Partner agency onboarding</p>
+                </div>
+                <div className="deck-s15-block">
+                  <h3>Initial Outcomes</h3>
+                  <p>Core product built and tested</p>
+                  <p>Pilots completed with partner agencies</p>
+                  <p>First customers secured</p>
+                  <p>Ready for commercial rollout</p>
+                </div>
+              </div>
+            </div>
+          ) : isInvestor ? (
             <div className="deck-s15-grid">
               <div className="deck-s15-left">
                 <span className="deck-s15-amount">£1.5m</span>
