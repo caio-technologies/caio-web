@@ -402,16 +402,22 @@ function DeckInner() {
               <p className="deck-s14-bio">15 years in UK education recruitment, including 10 years as CEO of Dunbar Education and iCan Teach UK. Led compliance audits across APSCo, REC and CCS frameworks. Built Caio to automate the problem he spent 15 years solving.</p>
             </div>
             <div className="deck-s14-member">
+              <div className="deck-s14-photo"><Image src="/Kelvin Profile - Edited (1).png" alt="Kelvin" width={120} height={120} /></div>
+              <h3 className="deck-s14-name">Kelvin Faith</h3>
+              <span className="deck-s14-role">Software Engineer</span>
+              <p className="deck-s14-bio">Full-stack engineer with direct experience building identity verification and compliance platforms. Delivering Caio&rsquo;s core product across backend, frontend and cloud infrastructure.</p>
+            </div>
+            <div className="deck-s14-member">
               <div className="deck-s14-photo"><Image src="/Jason Profile - Edited.png" alt="Jason" width={120} height={120} /></div>
               <h3 className="deck-s14-name">Jason de Carvalho</h3>
               <span className="deck-s14-role">Technical Advisor</span>
               <p className="deck-s14-bio">11 years at Ocado Technology, including Head of Architecture for a platform licensed by 11 major international retailers. Former Group CTO at Fluro. Designing and leading Caio&rsquo;s technical architecture.</p>
             </div>
             <div className="deck-s14-member">
-              <div className="deck-s14-photo"><Image src="/Kelvin Profile - Edited (1).png" alt="Kelvin" width={120} height={120} /></div>
-              <h3 className="deck-s14-name">Kelvin Faith</h3>
-              <span className="deck-s14-role">Software Engineer</span>
-              <p className="deck-s14-bio">Full-stack engineer with direct experience building identity verification and compliance platforms. Delivering Caio&rsquo;s core product across backend, frontend and cloud infrastructure.</p>
+              <div className="deck-s14-photo"><Image src="/Adam.png" alt="Adam Suggett" width={120} height={120} /></div>
+              <h3 className="deck-s14-name">Adam Suggett</h3>
+              <span className="deck-s14-role">Advisor &amp; Investor</span>
+              <p className="deck-s14-bio">CFO at Causeway Securities. Former Head of Finance at Rothschild &amp; Co (£9bn AUM) and 7IM. Over 15 years in financial services across regulated entities, with extensive M&amp;A and international experience.</p>
             </div>
           </div>
         </div>
