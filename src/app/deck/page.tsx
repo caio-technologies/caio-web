@@ -17,6 +17,7 @@ function DeckInner() {
   const version = searchParams.get("version") || "default";
   const isInvestor = version === "investor";
   const isInvestor3m = version === "investor3m";
+  const isInfra = version === "infra";
   const [current, setCurrent] = useState(0);
   const [authed, setAuthed] = useState(false);
   const [pin, setPin] = useState("");
@@ -514,12 +515,12 @@ function DeckInner() {
       {/* ===== 15. CLOSING / CONTACT ===== */}
       <div className={`deck-slide deck-slide-full ${isPrint || current === 15 ? "deck-slide-active" : ""}`}>
         <div className="deck-s16-content deck-s16-centre">
-          <h2 className="deck-s16-title">Let&rsquo;s talk.</h2>
-          <div className="deck-s16-contact">
+          <h2 className="deck-s16-title">{isInfra ? <>Building the compliance infrastructure{"\u00A0"}layer<br/>for regulated staffing.</> : <>Let&rsquo;s talk.</>}</h2>
+          {!isInfra && <div className="deck-s16-contact">
             <span className="deck-s16-contact-name">Matt Brown — Founder &amp; CEO</span>
             <a href="mailto:matt@usecaio.com" className="deck-s16-contact-line">matt@usecaio.com</a>
             <span className="deck-s16-contact-line">07841 685183</span>
-          </div>
+          </div>}
           <Image src="/caio-logo.png" alt="Caio" width={100} height={40} unoptimized />
         </div>
       </div>
